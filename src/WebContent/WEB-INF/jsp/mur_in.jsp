@@ -8,21 +8,23 @@
 </head>
 <body>
 <h1>まめぇまめぇ</h1>
-<div class="gblnv_box">
-<a class="menu-trigger" href="#"> <!-- ←ハンバーガーボタン -->
-  <span></span>
-  <span></span>
-  <span></span>
-</a>
-<div class="gblnv_block">
-  <ul class="gblnv_list"> <!-- ←ハンバーガーボタン内、グローバルメニュー -->
-    <li><a href="TopServlet">トップ</a></li>
-    <li><a href="MurListServlet">愚痴一覧</a></li>
-    <li><a href="MurInServlet">愚痴入力</a></li>
-    <li><a href="GameCheckServlet">ゲーム選択/チェックボックス</a></li>
-  </ul>
-</div>
-</div>
+<header>
+    <nav id="nav">
+      <ul>
+        <li><a href="#">トップ</a></li>
+        <li><a href="#">愚痴一覧</a></li>
+        <li><a href="#">愚痴入力</a></li>
+        <li><a href="#">ゲーム選択/チェックボックス</a></li>
+      </ul>
+    </nav>
+    <div id="hamburger">
+      <span class="inner_line" id="line1"></span>
+      <span class="inner_line" id="line2"></span>
+      <span class="inner_line" id="line3"></span>
+      <span class="inner_line" id="line4"></span>
+    </div>
+    <h2>ham</h2>
+  </header>
 
 	<nav>
 	<ul class="nav">
@@ -41,15 +43,15 @@
 </body>
 <script type="text/javascript">
 'use strict';>
-	$(document).ready(function() {
-		$(".menu-trigger").click(function () {
-			$(this).toggleClass("active");
-			$(this).next().toggleClass("onanimation");
-			$('ul li').hide();
-			$('ul li').each(function(i) {
-				$(this).delay(80 * i).fadeIn(500);
-    		});
-		});
-	});
+function hamburger() {
+	  document.getElementById('line1').classList.toggle('line_1');
+	  document.getElementById('line2').classList.toggle('line_2');
+	  document.getElementById('line3').classList.toggle('line_3');
+	  document.getElementById('line4').classList.toggle('line_4');
+	  document.getElementById('nav').classList.toggle('in');
+	}
+	document.getElementById('hamburger').addEventListener('click' , function () {
+	  hamburger();
+	} );
 </script>
 </html>
