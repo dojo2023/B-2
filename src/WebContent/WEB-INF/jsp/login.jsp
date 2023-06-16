@@ -3,16 +3,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<link rel="stylesheet" href="/BtwoB/css/login.css">
 <title>まめぇまめぇ</title>
 </head>
 <body>
-<h1>ログイン</h1>
-<hr>
-<form method="POST" action="/LoginServlet.java">
-ID<input type="text" name="ID"><br>
-PW<input type="password" name="PW"><br>
-<input type="submit" name="LOGIN" value="ログイン">
-</form>
+	<div class="mx-auto" style="width: 300px;">
+		<h1 class="mb-3" style="text-align: center">まめぇまめぇ</h1>
+		<form action="/CustomerManagement/LoginServlet" method="post">
+		  <div class="mb-3">
+		    <label for="adminID" class="form-label">ゆ～ざ～メェ～</label>
+		    <input type="text" class="form-control" id="username" name="username">
+		  </div>
+		  <div class="mb-3">
+		    <label for="pass" class="form-label">ぱすわ～ど</label>
+		    <input type="password" class="form-control" id="pass" name="password">
+		  </div>
+		  <button type="submit" class="btn btn-primary">ろぐいん</button><button type="submit" class="btn btn-primary">りせっと</button>
+		  <a href="/BtwoB/RegistServlet">しんきとうろくしますか？</a>
+		</form>
+	</div>
 </body>
 </html>
