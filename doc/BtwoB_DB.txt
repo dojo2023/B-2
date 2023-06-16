@@ -20,11 +20,11 @@ update_at timestamp
 
 【usersテーブルにデータを登録するSQL文】
 insert into users (user_id, user_name, user_pw, created_at, update_at) 
-values ('', '', '', 'CURRENT_TIME', '');	  
+values ('', '', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);	  
 
 【usersテーブルにデータを登録するSQL文 テスト】
 insert into users (user_id, user_name, user_pw, created_at, update_at) 
-values ('1', 'ラム', '1234', 'CURRENT_TIME', '');
+values ('1', 'ラム', '1234', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 【murmursテーブルを作成するSQL文】
 create table murmurs (
@@ -39,20 +39,23 @@ update_at timestamp
 
 【murmursテーブルにデータを登録するSQL文】
 insert into murmurs (user_id, tag, murmur, check, created_at, update_at)
-values ('', '', '','', 'CURRENT_TIME', '');
+values ('', '', '','', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 【eyecatchesテーブルを作成するSQL文】
-create table eyecatches (
+create table murmurs (
 id int auto_increment primary key,
-tag varchar (6) not null,
-message varchar (100) not null,
-created_at timestamp ,
+user_id int(20) not null,
+tag varchar(6) not null,
+murmur varchar(400) not null,
+murmur_check boolean,
+created_at timestamp,
 update_at timestamp 
-);	  
+);
+
 
 【eyecatchesテーブルにデータを登録するSQL文】
 insert into eyecatches (tag, message, created_at, update_at) 
-values ('', '', 'CURRENT_TIME', '');
+values ('', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 【logincountsテーブルを作成するSQL文】
 create table logincounts (
@@ -64,7 +67,7 @@ update_at timestamp
 
 【logincountsテーブルにデータを登録するSQL文】
 insert into logincounts (user_id, created_at, update_at) 
-values ('', 'CURRENT_TIME', '');
+values ('', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 【gamecountsテーブルを作成するSQL文】
 create table gamecounts (
@@ -76,4 +79,5 @@ update_at timestamp
 
 【gamecountsテーブルにデータを登録するSQL文】
 insert into gamecounts (user_id, created_at, update_at) 
-values ('', 'CURRENT_TIME', '');
+values ('', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
