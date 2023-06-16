@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>まめぇまめぇ</title>
+<link rel="stylesheet" href="css/click_space_game.css">
+<script src="click_space_game.js"></script>
 </head>
-<body>
 
+<body>
+<h1 class = earth_spacegame_title>スペースキー連打ゲーム</h1>
+<p class = "earth_image1"><img src = "/BtwoB/img/earth_image1.png" width = "480" height ="500"></p>
 </body>
 </html>
