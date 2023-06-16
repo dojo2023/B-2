@@ -1,1 +1,29 @@
 @charset "UTF-8";
+
+.split{
+    display: table;
+    width: 100%;
+}
+.split-item{
+    display: table-cell;
+    padding: 80px;
+    width: 50%;
+}
+.split-left{
+    background: #696969;
+    color: #ffffff;
+    position: flexd;
+}
+.split-right{
+    background: #000000;
+    color: #ffffff;
+    position: relative;
+}
+.split-left__inner{
+    height: 8000px;
+}
+.split-right__inner{
+    height: 100%;
+    position: fixed;
+    width: 50%;
+}
