@@ -6,21 +6,21 @@
 <link rel="stylesheet" href="/BtwoB/css/login_regist.css">
 <title>まめぇまめぇ</title>
 </head>
+<style>
+body{
+text-align: center;
+}
+.center{
+text-align: center;
+}
+</style>
 <body>
-	<div class="mx-auto" style="width: 300px;">
-		<h1 class="mb-3" style="text-align: center">しんきとうろく</h1>
-		<form action="/CustomerManagement/CustomerRegisterServlet" method="post">
-		  <div class="mb-3">
-		    <label for="customerName" class="form-label">ゆ～ざ～メェ</label>
-		    <input type="text" class="form-control" id="userName" name="username" required>
-		  </div>
-		  <div class="mb-3">
-		    <label for="address" class="form-label">ぱすわ～ど</label>
-		    <input type="text" class="form-control" id="pass" name="password" required>
-		  </div>
-		  <button type="submit" class="btn btn-primary">とうろくする</button> <button type="submit" class="btn btn-primary">りせっと</button>
-		</form>
-	<a href="/BtwoB/LoginServlet">ろぐいんぺーじにもどる</a>
-	</div>
+<h1>まめぇまめぇ</h1>
+<form method="POST" action="/BtwoB/RegistServlet">
+ゆ～ざ～メェ～<input type="username" name="name"><br>
+ぱすわ～ど<input type="password" name="pass"><br>
+ <button type="submit" class="btn btn-primary">とうろく</button><button type="submit" class="btn btn-primary">りせっと</button><br>
+ <a href="/BtwoB/LoginServlet">ろぐいんぺーじにもどる？</a>
+</form>
 </body>
 </html>
