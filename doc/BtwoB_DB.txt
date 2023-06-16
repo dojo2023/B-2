@@ -29,29 +29,30 @@ values ('1', 'ラム', '1234', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 【murmursテーブルを作成するSQL文】
 create table murmurs (
 id int auto_increment primary key,
-user_id int (20) not null,
-tag varchar (6) not null,
-murmur varchar (400) not null,
-check boolean (2),
-created_at timestamp,
-update_at timestamp 
-);	  
-
-【murmursテーブルにデータを登録するSQL文】
-insert into murmurs (user_id, tag, murmur, check, created_at, update_at)
-values ('', '', '','', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-
-【eyecatchesテーブルを作成するSQL文】
-create table murmurs (
-id int auto_increment primary key,
 user_id int(20) not null,
 tag varchar(6) not null,
 murmur varchar(400) not null,
-murmur_check boolean,
+murmur_check boolean default 'true',
 created_at timestamp,
 update_at timestamp 
 );
+	  
+【murmursテーブルにデータを登録するSQL文】
+insert into murmurs (user_id, tag, murmur, created_at, update_at)
+values ('', '', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
+【murmursテーブルにデータを登録するSQL文 テスト】
+insert into murmurs (user_id, tag, murmur, created_at, update_at)
+values ('1', '仕事', 'やってることむずすぎて無理', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+【eyecatchesテーブルを作成するSQL文】
+create table eyecatches (
+id int ,
+tag varchar (6),
+message varchar (100),
+created_at timestamp ,
+update_at timestamp 
+);	  
 
 【eyecatchesテーブルにデータを登録するSQL文】
 insert into eyecatches (tag, message, created_at, update_at) 
