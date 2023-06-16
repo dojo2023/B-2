@@ -14,21 +14,8 @@ text-align: center;
 text-align: center;
 }
 </style>
-<meta charset="UTF-8">
-<title>name card</title>
-<link href="/simpleBC/css/style.css" rel="stylesheet">
-<div class="bg_pattern Polka"></div>
 </head>
 <body>
-<style>
-h1{
-text-align: center;
-}
-.center{
-text-align: center;
-}
-</style>
-<h1>まめぇまめぇ</h1>
 <hr>
 <form method="POST" action="/BtwoB/LoginServlet">
 ゆ～ざ～メェ～<input type="text" name="username"><br>
