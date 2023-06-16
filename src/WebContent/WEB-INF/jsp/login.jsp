@@ -18,7 +18,8 @@
 		    <label for="pass" class="form-label">ぱすわ～ど</label>
 		    <input type="password" class="form-control" id="pass" name="password">
 		  </div>
-		  <button type="submit" class="btn btn-primary">ろぐいん</button>
+		  <button type="submit" class="btn btn-primary">ろぐいん</button><button type="submit" class="btn btn-primary">りせっと</button>
+		  <a href="/BtwoB/RegistServlet">しんきとうろくしますか？</a>
 		</form>
 	</div>
 </body>
