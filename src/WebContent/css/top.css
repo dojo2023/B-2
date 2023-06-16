@@ -1,1 +1,47 @@
 @charset "UTF-8";
+
+/* 画面分割 */
+.split{
+    display: table;
+    width: 100%;
+}
+.split-item{
+    display: table-cell;
+    padding: 80px;
+    width: 50%;
+}
+.split-left{
+    background: #696969;
+    color: #ffffff;
+    position: flexd;
+}
+.split-right{
+    background: #ff8080;
+    color: #ffffff;
+    position: relative;
+}
+.split-left__inner{
+    height: 8000px;
+}
+.split-right__inner{
+    height: 100%;
+    position: fixed;
+    width: 50%;
+}
+
+/* 「愚痴一覧表示ボタン」「新規愚痴入力ボタン」 */
+input[name="murlist_button"]{
+	position:fixed;
+	right:200px;
+	bottom:50px;
+	width: 100px;
+	height: 100px;
+}
+
+input[name="murinput_button"]{
+	position:fixed;
+	right:50px;
+	bottom:50px;
+	width: 100px;
+	height: 100px;
+}
