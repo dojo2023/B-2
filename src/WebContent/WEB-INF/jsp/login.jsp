@@ -11,7 +11,7 @@
 		<h1 class="mb-3" style="text-align: center">まめぇまめぇ</h1>
 		<form action="/CustomerManagement/LoginServlet" method="post">
 		  <div class="mb-3">
-		    <label for="adminID" class="form-label">ゆ～ざ～めい</label>
+		    <label for="adminID" class="form-label">ゆ～ざ～メェ～</label>
 		    <input type="text" class="form-control" id="username" name="username">
 		  </div>
 		  <div class="mb-3">
