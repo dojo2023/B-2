@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>まめぇまめぇ</title>
 </head>
 <body>
-
+<h1>とうろく</h1>
+<hr>
+<form method="POST" action="/BtwoB/RegistServlet.java">
+ゆ～ざ～めい<input type="text" name="username"><br>
+ぱすわ～ど<input type="text" name="EMAIL"><br>
+<input type="submit" name="REGIST" value="登録"><br>
+</form>
 </body>
 </html>
