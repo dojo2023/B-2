@@ -4,7 +4,7 @@ BtwoB データベース
 org.h2.Driver
 
 【JDBC URL】
-jdbc:h2:file:C:/pleiades/workspace/data/BtwoB
+jdbc:h2:file:C:\dojo6Data\B2
 
 【ユーザー名】	【パスワード】
 sa		（なし）
