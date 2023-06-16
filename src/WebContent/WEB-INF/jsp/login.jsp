@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="/BtwoB/css/login.css">
 <title>まめぇまめぇ</title>
 </head>
 <body>
@@ -11,7 +12,7 @@
 		<form action="/CustomerManagement/LoginServlet" method="post">
 		  <div class="mb-3">
 		    <label for="adminID" class="form-label">ゆ～ざ～めい</label>
-		    <input type="text" class="form-control" id="adminID" name="admin_id">
+		    <input type="text" class="form-control" id="username" name="username">
 		  </div>
 		  <div class="mb-3">
 		    <label for="pass" class="form-label">ぱすわ～ど</label>
