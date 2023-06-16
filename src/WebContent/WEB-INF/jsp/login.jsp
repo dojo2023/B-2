@@ -17,7 +17,6 @@ text-align: center;
 </head>
 <body>
 <h1>まめぇまめぇ</h1>
-<hr>
 <form method="POST" action="/BtwoB/LoginServlet">
 ゆ～ざ～メェ～<input type="text" name="username"><br>
 ぱすわ～ど<input type="password" name="PW"><br>
