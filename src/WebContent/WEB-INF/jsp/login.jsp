@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>まめぇまめぇ</title>
 </head>
 <body>
-
+<h1>ログイン</h1>
+<hr>
+<form method="POST" action="/LoginServlet.java">
+ID<input type="text" name="ID"><br>
+PW<input type="password" name="PW"><br>
+<input type="submit" name="LOGIN" value="ログイン">
+</form>
 </body>
 </html>
