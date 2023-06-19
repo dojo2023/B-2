@@ -18,11 +18,15 @@ text-align: center;
 <body>
 <h1>まめぇまめぇ</h1>
 <form method="POST" action="/BtwoB/LoginServlet">
-ゆ～ざ～メェ～<input type="text" name="username"><br>
-ぱすわ～ど<input type="password" name="PW"><br>
+<input type="text" name="username" placeholder="ゆ～ざ～メェ"><br>
+<input type="password" name="PW" placeholder="ぱすわ～ど"><br>
 		  <button type="submit" class="btn btn-primary">ろぐいん</button><button type="submit" class="btn btn-primary">りせっと</button><br>
 
 		  <a href="/BtwoB/RegistServlet">しんきとうろくしますか？</a>
 		  </form>
 </body>
+
+<footer class="footer">
+  <p class="copyright">© 2023 BtwoB Inc. All Rights Reserved.</p>
+</footer>
 </html>
