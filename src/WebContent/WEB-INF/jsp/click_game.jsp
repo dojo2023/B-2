@@ -10,7 +10,13 @@
 </head>
 
 <body>
-<h1 class = earth_clickgame_title>クリック破壊ゲーム</h1>
-<p class = "earth_image1"><img src = "/BtwoB/img/earth_image1.png" width = "480" height ="500"></p>
+
+<!-- タイトル -->
+<h1 class = earth_clickgame_title style="margin-bottom:1px">クリック破壊ゲーム</h1>
+
+<!-- 地球画像１ -->
+<p class = "earth_image1" style="margin-top:1px">
+<img src = "/BtwoB/img/earth_image1.png" width = "525" height ="525"></p>
+
 </body>
 </html>

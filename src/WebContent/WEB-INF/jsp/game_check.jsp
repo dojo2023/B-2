@@ -49,15 +49,15 @@
     </div><!--split-item split-left-->
     <!-- 右画面のdiv -->
     <div class="split-item split-right">
-    	<!-- 左画面の中のdiv -->
+    	<!-- 右画面の中のdiv -->
         <div class="split-right__inner">
         	<p>ゲーム選択</p>
             <!-- ボタン４つ設置 -->
             <table>
-            	<tr><td><input type="button" name="CLICKGAME_BUTTON" value="クリック破壊ゲーム"></td>
-            		<td><input type="button" name="SPACEGAME_BUTTON" value="スペースキー連打ゲーム"></td></tr>
-            	<tr><td><input type="button" name="NICOGAME_BUTTON" value="文字クリックゲーム"></td>
-            		<td><input type="button" name="LAMBGAME_BUTTON" value="ヤギのご飯ゲーム"></td>
+            	<tr><td><input type="button" name="CLICKGAME_BUTTON" value="クリック破壊ゲーム" class="button1"></td>
+            		<td><input type="button" name="SPACEGAME_BUTTON" value="スペースキー連打ゲーム" class="button2"></td></tr>
+            	<tr><td><input type="button" name="NICOGAME_BUTTON" value="文字クリックゲーム" class="button3"></td>
+            		<td><input type="button" name="LAMBGAME_BUTTON" value="ヤギのご飯ゲーム" class="button4"></td>
 			</table>
         </div><!--split-right__inner-->
     </div><!--split-item split-right-->

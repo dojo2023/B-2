@@ -3,18 +3,22 @@
 
 body {
     margin: 0 0 0 0;
-    background-color: #1f2271;
+    background-color : #17122c;
 }
 
-.earth_image1{
-	text-align:center;
-}
+/* クリックゲームタイトル */
 .earth_clickgame_title{
 	color : #f9f9f9;
 	font-size : 50px;
 }
 
+/* スペースキー連打ゲームタイトル */
 .earth_spacegame_title{
 	color : #f9f9f9;
 	font-size : 50px;
+}
+
+/* 地球画像１ */
+.earth_image1{
+	text-align:center;
 }

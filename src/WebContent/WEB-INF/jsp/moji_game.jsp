@@ -10,7 +10,12 @@
 </head>
 
 <body>
-<h1 class = moji_clickgame_title>文字クリックゲーム</h1>
-<p class = "movielike_image"><img src = "/BtwoB/img/movielike_image.png" width = "1000" height ="580"></p>
+
+<!-- タイトル -->
+<h1 class = moji_clickgame_title style="margin-bottom:1px">文字クリックゲーム</h1>
+
+<!-- 動画風の画像 -->
+<p class = "movielike_image"><img src = "/BtwoB/img/movielike_image.png" width="800px"></p>
+
 </body>
 </html>

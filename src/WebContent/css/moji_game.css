@@ -3,9 +3,15 @@
 
 body {
     margin: 0 0 0 0;
-    background-color: #1f2271;
+    background-color: #9a9a9a;
 }
 
+/* タイトル */
+.moji_clickgame_title{
+	color : #ffffff;
+	font-size : 50px;
+}
+/* 動画風の画像 */
 .movielike_image{
-	text-align:center;
+	text-align: center;
 }
