@@ -1,90 +1,159 @@
 @charset "UTF-8";
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f2f2f2;
-    padding: 10px;
-}
-
-.hamburger-menu {
-    display: none;
-    cursor: pointer;
-}
-
-.line {
-    width: 25px;
-    height: 3px;
-    background-color: #000;
-    margin: 5px 0;
-
+/* ヘッダー */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .menu {
-    display: flex;
-    list-style-type: none;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .menu li {
-    margin-right: 20px;
+  margin-left: 20px;
 }
 
-.menu li a {
-    color: #000;
-    text-decoration: none;
+.menu li:first-child {
+  margin-left: 0;
+}
+
+.logo {
+  float: left;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+
+
+.hamburger-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.hamburger-menu .line {
+  width: 100%;
+  height: 2px;
+  background-color: black;
 }
 
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    padding: 10px;
-    list-style-type: none;
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  z-index: 1;
+}
+/*
+.dropdown-menu li {
+  display: inline-block;
+  margin-right: 10px;
+}
+*/
+.dropdown-menu li a {
+  display: block;
+  margin-right: 10px;
+  white-space: nowrap;
+  text-align: left;
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block;
+
+.title-icon {
+  position: relative;
+  cursor: pointer;
 }
 
-/* テキストエリアcss */
-.dropdown {
+.title-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.title-menu .line {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+/* 称号*/
+
+
+
+/* 入力欄を真ん中に設定 */
+.mur_in {
+	text-align:center;
+}
+/* タグのプルダウンメニュー*/
+
+.tag_menu {
+    display: inline-flex;
+    align-items: center;
     position: relative;
-    display: inline-block;
 }
 
-.dropdown-button {
-    background-color: #f2f2f2;
+.tag_menu::after {
+    position: absolute;
+    right: 15px;
+    width: 10px;
+    height: 7px;
+    background-color: #535353;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    content: '';
+    pointer-events: none;
+}
+
+
+
+.tag_menu select {
+    appearance: none;
+    min-width: 230px;
+    height: 2.8em;
+    padding: .4em calc(.8em + 30px) .4em .8em;
     border: none;
-    color: #000;
-    padding: 10px;
+    border-bottom: 2px solid #cccccc;
+    background-color: #fff;
+    color: #333333;
+    font-size: 1em;
     cursor: pointer;
 }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #f2f2f2;
-    min-width: 160px;
-    padding: 10px;
-    z-index: 1;
+.tag_menu select:focus {
+    outline: none;
 }
-
-.dropdown-menu li {
-    padding: 5px 0;
-}
-
-.dropdown-menu a {
-    color: #000;
-    text-decoration: none;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-
-
-.mur_in {
-	text-align:center;
+/* テキストエリアcss */
+textarea {
+  width: 800px; /* 幅（ピクセル単位） */
+  height: 200px;
 }
