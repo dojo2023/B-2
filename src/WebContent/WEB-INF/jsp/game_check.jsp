@@ -24,7 +24,7 @@
 			<form method="GET" action="/BtwoB/GameCheckServlet">
 			<table>
 			<!-- もしチェックがtrueだったら、もしセッションスコープに保存されてるuser_idと同じだったら -->
-			<c:if test = "${MURMUR_CHECK == true}">
+			<c:if test = "${MURMUR_CHECK == TRUE}">
 				<tr><td>id</td><td><input type="text" name="ID" value="${e.id}"></td></tr>
 				<tr><td>user_id</td><td><input type="text" name="USER_ID" value="${e.user_id}"></td></tr>
 				<tr><td>tag</td><td><input type="text" name="TAG" value="${e.tag}"></td></tr>
@@ -44,10 +44,12 @@
         <div class="split-right__inner">
         	<p>ゲーム選択</p>
             <!-- ボタン４つ設置 -->
-            <input type="button" name="CLICKGAME_BUTTON" value="クリック破壊ゲーム">
-            <input type="button" name="SPACEGAME_BUTTON" value="スペースキー連打ゲーム"><br>
-            <input type="button" name="NICOGAME_BUTTON" value="文字クリックゲーム">
-            <input type="button" name="LAMBGAME_BUTTON" value="ヤギのご飯ゲーム">
+            <table>
+            	<tr><td><input type="button" name="CLICKGAME_BUTTON" value="クリック破壊ゲーム"></td>
+            		<td><input type="button" name="SPACEGAME_BUTTON" value="スペースキー連打ゲーム"></td></tr>
+            	<tr><td><input type="button" name="NICOGAME_BUTTON" value="文字クリックゲーム"></td>
+            		<td><input type="button" name="LAMBGAME_BUTTON" value="ヤギのご飯ゲーム"></td>
+			</table>
         </div><!--split-right__inner-->
     </div><!--split-item split-right-->
 </div><!--split-->
