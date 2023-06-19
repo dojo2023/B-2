@@ -1,1 +1,57 @@
 @charset "UTF-8";
+html.modalset {
+  overflow: hidden;
+}
+.samplemodal {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+}
+.samplemodal-wrap {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  white-space: nowrap;
+}
+.samplemodal-wrap::-webkit-scrollbar {
+  display: none;
+}
+.samplemodal-wrap:after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 1px;
+  height: 100%;
+}
+.samplemodal-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(51, 51, 51, 0.8);
+  width: 100%;
+  height: 100%;
+}
+.samplemodal-box {
+  width: 100%;
+  max-width: 900px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.samplemodal-box .inner {
+  background: #fff;
+  padding: 80px 20px;
+  text-align: left;
+}
+.samplemodal-box .inner > :first-child {
+  margin-top: 0;
+}
