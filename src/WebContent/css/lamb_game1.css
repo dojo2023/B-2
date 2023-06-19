@@ -1,4 +1,9 @@
 @charset "UTF-8";
+
+body {
+    background: rgb(97, 231, 24);
+}
+
 .post-btn {
   position: fixed;
   bottom: 10%;
@@ -9,7 +14,7 @@
   color:white;
   font-weight: bold;
   font-size: 30px;
-  background: aqua;
   border-radius: 50%;
+  background: rgb(97, 231, 24);
   text-align: center;
 }

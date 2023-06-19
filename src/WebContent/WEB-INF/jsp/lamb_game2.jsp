@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>まめぇまめぇ</title>
 <script src="lamb_game2.js"></script>
+<link rel="stylesheet" href="css/lamb_game2.css">
 </head>
 <body>
 <div>
