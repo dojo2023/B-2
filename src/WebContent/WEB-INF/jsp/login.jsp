@@ -16,14 +16,14 @@ text-align: center;
 </style>
 </head>
 <body>
-<h1>まめぇまめぇ</h1>
-<form method="POST" action="/BtwoB/LoginServlet">
-<input type="text" name="username" placeholder="ゆ～ざ～メェ"><br>
-<input type="password" name="PW" placeholder="ぱすわ～ど"><br>
-		  <button type="submit" class="btn btn-primary">ろぐいん</button><button type="submit" class="btn btn-primary">りせっと</button><br>
-
-		  <a href="/BtwoB/RegistServlet">しんきとうろくしますか？</a>
-		  </form>
+	<h1>まめぇまめぇ</h1>
+	<form method="POST" action="/BtwoB/LoginServlet">
+		<input type="text" name="user_name" placeholder="ゆ～ざ～メェ"><br>
+		<input type="password" name="user_pw" placeholder="ぱすわ～ど"><br>
+		<button type="submit" class="btn btn-primary">ろぐいん</button>
+		<button type="submit" class="btn btn-primary">りせっと</button><br>
+	</form>
+	<a href="/BtwoB/RegistServlet">しんきとうろくしますか？</a>
 </body>
 
 <footer class="footer">
