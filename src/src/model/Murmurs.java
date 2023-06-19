@@ -87,6 +87,4 @@ public class Murmurs implements Serializable {
 	public void setUpdate_at(String update_at) {
 		this.update_at = update_at;
 	}
-
-
 }
