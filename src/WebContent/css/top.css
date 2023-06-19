@@ -29,6 +29,7 @@
     width: 50%;
 }
 
+
 /* 「愚痴一覧表示ボタン」「新規愚痴入力ボタン」 */
 input[name="murlist_button"]{
 	position:fixed;

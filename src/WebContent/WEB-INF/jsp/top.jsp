@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>まめぇまめぇ</title>
+<link rel="stylesheet" href="css/scroll_graph.css">
 <link rel="stylesheet" href="css/top.css">
 <script src=""></script>
 
@@ -25,13 +26,10 @@
                 <tr><td>tag</td><td><input type="text" name="TAG" value="${e.tag}"></td></tr>
                 <tr><td>murmurs</td><td><input type="text" name="MURMUR" value="${e.murmur}"></td></tr>
             </table> --%>
-            <table>
-                <tr><td>タグの種類</td></tr>
-                <tr><td>愚痴内容</td></tr>
-                <tr><td>タグの種類</td></tr>
-                <tr><td>愚痴内容</td></tr>
-                <tr><td>タグの種類</td></tr>
-                <tr><td>愚痴内容</td></tr>
+            <table class="tagmurmur">
+                <tr style="width: 100px"><td class="tag">その他</td></tr>
+                <tr><td class="blank"></td></tr>
+                <tr><td class="murmur">暑すぎて無理。気温ちょうどいい世界になれ</td></tr>
             </table>
 
         </div><!--split-left__inner-->
