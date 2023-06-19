@@ -1,1 +1,24 @@
 @charset "UTF-8";
+
+/* テーブルデザイン */
+/* タグ表示部分 */
+.tagmurmur tr{
+	display: table;
+}
+.tag {
+	border-radius: 30px;
+	border-spacing: 0;
+    border: none;
+    border-left: 2px solid #ff8080;
+    border-right: 2px solid #ff8080;
+    border-top: 2px solid #ff8080;
+    border-bottom: 2px solid #ff8080;
+    text-align: center;
+}
+.murmur {
+	width: auto;
+	border-collapse: collapse;
+	padding: 8px;
+	border: 2px solid #ff8080;
+	text-align: left;
+}
