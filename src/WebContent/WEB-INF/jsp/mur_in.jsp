@@ -13,8 +13,9 @@
 
 <!--ヘッダーここから-->
 <header>
+	<nav class="navbar">
   <div class="logo">
-    <img src="logo.png" alt="ロゴ" class="left-align">
+    <img src="logo.png" alt="ロゴ">
   </div>
   <nav class="right-align">
     <ul class="menu">
@@ -31,14 +32,14 @@
           <li><a href="GameCheckServlet">ゲーム選択/チェックボックス</a></li>
         </ul>
       </li>
-      <li><a href="" class="right-align">ユーザー名</a></li>
+      <li><a href="" class="right-align no-underline">ユーザー名</a></li>
       <li class="title-icon">
         <div class="title-menu">
           <div class="line"></div>
           <div class="line"></div>
           <div class="line"></div>
         </div>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu grid-container">
           <li><a href="#"><img src="/BtwoB/img/crown_login_gold.png" alt="称号1"></a></li>
           <li><a href="#"><img src="/BtwoB/img/crown_login_silver.png" alt="称号2"></a></li>
           <li><a href="#"><img src="/BtwoB/img/crown_login_bronze.png" alt="称号3"></a></li>
@@ -50,8 +51,9 @@
           <li><a href="#"><img src="/BtwoB/img/crown_game_bronze.png" alt="称号9"></a></li>
         </ul>
       </li>
-      <li><a href="LoginServlet" class="right-align">ログアウト</a></li>
+      <li><a href="LoginServlet" class="right-align no-underline">ログアウト</a></li>
     </ul>
+    </nav>
   </nav>
 </header>
 
