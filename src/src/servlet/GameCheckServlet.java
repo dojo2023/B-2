@@ -31,24 +31,46 @@ public class GameCheckServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		/*
+		 * ・チェックボックスにチェックがついたものをパラメータとして受け取る
+		 * ・updateCheck()メソッドでcheckをtrue→falseに変更
+		 * ・リクエストスコープに変更したあとの愚痴の情報を格納
+		 * ---ここまでこのpostで記述
+		 * ・文字クリックゲーム、ヤギのご飯ゲームはこの格納したリクエストスコープの愚痴を利用
+		 * ・利用する際は、checkがfalse,deleteがtrueのものを表示
+		 * ・その後、deleteをfalseにupdateするメソッドを使用する(まだ作成していない)
+		 */
+
+		/*
+		 * 6/20　佐野　変更点
+		 * ・request.getParameter("button")→submitに変更
+		 * ・フォワード→リダイレクトに変更
+		 */
+
+
 		// ボタンごとの画面遷移を行う
 		// もしクリックゲームが選択されたら
-		if (request.getParameter("BUTTON").equals("クリックゲーム")) {
+		if (request.getParameter("submit").equals("クリック破壊ゲーム")) {
 			// クリックゲーム画面フォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/click_game.jsp");
-			dispatcher.forward(request, response);
+			/*RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/click_game.jsp");
+			dispatcher.forward(request, response);*/
+
+			// リダイレクトする
+			// でもjava.lang.NullPointerExceptionになる
+			response.sendRedirect("/BtwoB/ClickGameServlet");
+			return;
 		}
-		else if (request.getParameter("BUTTON").equals("スペースキー連打ゲーム")) {
+		else if (request.getParameter("submit").equals("スペースキー連打ゲーム")) {
 			// スペースキー連打ゲーム画面にフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/space_game.jsp");
 			dispatcher.forward(request, response);
 		}
-		else if (request.getParameter("BUTTON").equals("文字クリックゲーム")) {
+		else if (request.getParameter("submit").equals("文字クリックゲーム")) {
 			// 文字クリックゲーム画面にフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/moji_game.jsp");
 			dispatcher.forward(request, response);
 		}
-		else if (request.getParameter("BUTTON").equals("ヤギのご飯ゲーム")) {
+		else if (request.getParameter("button").equals("ヤギのご飯ゲーム")) {
 			// ヤギのご飯ゲーム画面にフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/lamb_game1.jsp");
 			dispatcher.forward(request, response);

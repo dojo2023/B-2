@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +34,10 @@
           </ul>
         </li>
         <li><a href="" class="right-align no-underline">ゆ～ざ～メェ</a></li>
+
+        <!-- セッションスコープに入れたユーザ名が取得できるかのテスト -->
+        <li><a href="" class="right-align no-underline">${id_name.user_name}</a></li>
+
         <li class="title-icon">
           <div class="title-menu">
             <div class="line"></div>
@@ -87,6 +92,33 @@
                 <tr><td class="blank"></td></tr>
                 <tr><td class="murmur">暑すぎて無理。気温ちょうどいい世界になれ</td></tr>
             </table>
+
+            <!-- 6/20佐野　変更点
+			・データベースの情報を参照してlist表示した
+			 -->
+            <c:forEach var="e" items="${cardList}" >
+			<form method="GET" action="/BtwoB/GameCheckServlet">
+			<table class="tagmurmur">
+			<!--
+				・もしmurmur_checkがtrueだったら
+				・(もしmurmur_deleteがtrueだったら)これいらないかも
+				・もしセッションスコープに保存されてるuser_idと同じだったら
+				・もしcreated_atの時間が現在から見て1週間以内だったら
+				を追加する必要あり
+			-->
+			<c:if test = "${MURMUR_CHECK == TRUE}">
+				<tr><td><input type="hidden" name="ID" value="${e.id}"></td></tr>
+				<tr><td><input type="hidden" name="USER_ID" value="${e.user_id}"></td></tr>
+				<tr style="width: 100px"><td class="tag"><input type="text" name="TAG" value="${e.tag}"></td></tr>
+				<tr><td class="murmur"><input type="text" name="MURMUR" value="${e.murmur}"></td></tr>
+				<tr><td><input type="hidden" name="MURMUR_CHECK" value="${e.murmur_check}"></td></tr>
+				<tr><td><input type="hidden" name="MURMUR_DELETE" value="${e.murmur_delete}"></td></tr>
+				<tr><td><input type="hidden" name="CREATED_AT" value="${e.created_at}"></td></tr>
+				<tr><td><input type="hidden" name="UPDATE_AT" value="${e.update_at}"></td></tr>
+			</c:if>
+			</table>
+			</form>
+			</c:forEach>
 
         </div><!--split-left__inner-->
     </div><!--split-item split-left-->

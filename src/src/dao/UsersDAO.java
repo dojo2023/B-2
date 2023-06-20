@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import model.LoginUser;
 import model.Users;
 
 public class UsersDAO {
@@ -116,5 +117,72 @@ public class UsersDAO {
 		}
 		// 結果を返す
 		return result;
+	}
+
+
+	// user_nameとuser_pwからuser_idとuser_nameを取り出すメソッド
+	// user_idは特定の人の愚痴を取り出すときにつかったりする
+	// user_nameはヘッダーに名前表示するのに使う
+	// LoginServlet.javaでuser_idとuser_nameをセッションスコープに保存
+	public LoginUser loginInfo(Users users) {
+		Connection conn = null;
+		LoginUser lu = new LoginUser();
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6Data\\B2", "sa", "");
+
+			// SQL文を準備する
+			String sql = "select USER_ID, USER_NAME from USERS where USER_NAME = ? and USER_PW = ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			if (users.getUser_name() != null) {
+				pStmt.setString(1, users.getUser_name());
+			}
+			else {
+				pStmt.setString(1, "");
+			}
+			if (users.getUser_pw() != null) {
+				pStmt.setString(2, users.getUser_pw());
+			}
+			else {
+				pStmt.setString(2, "");
+			}
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// LoginUserにuser_idとuser_nameを格納
+			// ここが問題!!!!!!!!!
+			lu = new LoginUser(rs.getString("user_id"), rs.getString("user_name"));
+
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			lu = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			lu = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					lu = null;
+				}
+			}
+		}
+
+		// 結果を返す
+		return lu;
 	}
 }
