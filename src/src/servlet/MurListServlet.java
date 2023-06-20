@@ -41,12 +41,13 @@ public class MurListServlet extends HttpServlet {
 		String tag = request.getParameter("tag");
 		String murmur = request.getParameter("murmur");
 		boolean check = Boolean.parseBoolean(request.getParameter("check"));
+		boolean delete = Boolean.parseBoolean(request.getParameter("delete"));
 		String created_at = request.getParameter("created_at");
 		String update_at =  request.getParameter("update_at");
 
 		// 削除処理を行う（trueをfalseに）
 		MurmursDAO mDao = new MurmursDAO();
-		if (mDao.update(new Murmurs(id, user_id, tag, murmur, check, created_at, update_at))) {	// 削除成功
+		if (mDao.updateCheck(new Murmurs(id, user_id, tag, murmur, check, delete, created_at, update_at))) {	// 削除成功
 			System.out.println("愚痴削除成功");
 			// 結果ページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mur_list.jsp");

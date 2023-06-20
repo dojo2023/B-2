@@ -38,6 +38,7 @@ public class MurmursDAO {
 				rs.getString("TAG"),
 				rs.getString("MURMUR"),
 				rs.getBoolean("MURMUR_CHECK"),
+				rs.getBoolean("MURMUR_DELETE"),
 				rs.getString("CREATED_AT"),
 				rs.getString("UPDATE_AT")
 				);
@@ -136,7 +137,7 @@ public class MurmursDAO {
 	// チェックボックス変更メソッド（trueからfalse）（一覧表示から愚痴を消す）
 	// ゲーム選択画面でチェックつけたやつにも使う
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean update(Murmurs murmurs) {
+	public boolean updateCheck(Murmurs murmurs) {
 		Connection conn = null;
 		boolean result = false;
 
