@@ -34,12 +34,13 @@ public class MurInServlet extends HttpServlet {
 		String tag = request.getParameter("tag");
 		String murmur = request.getParameter("murmur");
 		boolean check = Boolean.parseBoolean(request.getParameter("check"));
+		boolean delete = Boolean.parseBoolean(request.getParameter("delete"));
 		String created_at = request.getParameter("created_at");
 		String update_at =  request.getParameter("update_at");
 
 		// 登録処理を行う
 		MurmursDAO mDao = new MurmursDAO();
-		if (mDao.insert(new Murmurs(id, user_id, tag, murmur, check, created_at, update_at))) {	// 登録成功
+		if (mDao.insert(new Murmurs(id, user_id, tag, murmur, check, delete, created_at, update_at))) {	// 登録成功
 			System.out.println("愚痴登録成功");
 			// 結果ページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top.jsp");
