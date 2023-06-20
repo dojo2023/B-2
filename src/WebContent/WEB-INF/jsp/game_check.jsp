@@ -11,7 +11,7 @@
 <script src="game_check.js"></script>
 </head>
 <body>
-<h1>あいうえお</h1>
+<!-- <h1>あいうえお</h1> -->
 
 <!-- 左右画面のdiv -->
 <div class="split">
@@ -23,11 +23,11 @@
             <p>チェックボックス</p>
 
             <!-- 愚痴一覧テーブル scroll_graph.css適用-->
-           <!--  <table class="tagmurmur">
+            <table class="tagmurmur">
                 <tr style="width: 100px"><td class="tag">その他</td></tr>
                 <tr><td class="blank"></td></tr>
                 <tr><td class="murmur">暑すぎて無理。気温ちょうどいい世界になれ</td></tr>
-            </table> -->
+            </table> 
 
 			<c:forEach var="e" items="${cardList}" >
 			<form method="GET" action="/BtwoB/GameCheckServlet">

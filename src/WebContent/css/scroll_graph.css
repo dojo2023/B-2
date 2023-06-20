@@ -22,3 +22,8 @@
 	border: 2px solid #ff8080;
 	text-align: left;
 }
+
+.split-left__inner{
+	width:100%;
+	overflow-x:hidden;
+}
