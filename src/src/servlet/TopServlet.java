@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.EyecatchesDAO;
 import dao.MurmursDAO;
 import model.Murmurs;
 
@@ -23,6 +24,13 @@ public class TopServlet extends HttpServlet {
 		MurmursDAO mDao = new MurmursDAO();
 		// MurmursDAOのget()メソッドを呼び出して、返ってきた愚痴の情報のリストを取得
 		List<Murmurs> cardList = mDao.get();
+		// 愚痴取得結果をリクエストスコープに格納する
+		request.setAttribute("cardList", cardList);
+
+		// EyecatchesDAOのインスタンス化
+		EyecatchesDAO eDao = new EyecatchesDAO();
+		// EyecatchesDAOのget()メソッドを呼び出して、返ってきた愚痴の情報のリストを取得
+		List<Murmurs> cardList = eDao.get();
 		// 愚痴取得結果をリクエストスコープに格納する
 		request.setAttribute("cardList", cardList);
 
