@@ -153,6 +153,9 @@ header {
 }
 .split-left__inner{
     height: 8000px;
+    width:100%;
+    overflow-y:scroll;
+	overflow-x:hidden;
 }
 .split-right__inner{
     height: 100%;
