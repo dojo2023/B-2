@@ -31,7 +31,28 @@ public class GameCheckServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		// ボタンごとの画面遷移を行う
+		// もしクリックゲームが選択されたら
+		if (request.getParameter("BUTTON").equals("クリックゲーム")) {
+			// クリックゲーム画面フォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/click_game.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if (request.getParameter("BUTTON").equals("スペースキー連打ゲーム")) {
+			// スペースキー連打ゲーム画面にフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/space_game.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if (request.getParameter("BUTTON").equals("文字クリックゲーム")) {
+			// 文字クリックゲーム画面にフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/moji_game.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if (request.getParameter("BUTTON").equals("ヤギのご飯ゲーム")) {
+			// ヤギのご飯ゲーム画面にフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/lamb_game1.jsp");
+			dispatcher.forward(request, response);
+		}
 
 
 	}
