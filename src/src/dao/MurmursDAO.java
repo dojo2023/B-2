@@ -132,4 +132,59 @@ public class MurmursDAO {
 		// 結果を返す
 		return result;
 	}
+
+	// チェックボックス変更メソッド（trueからfalse）（一覧表示から愚痴を消す）
+	// ゲーム選択画面でチェックつけたやつにも使う
+	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
+	public boolean update(Murmurs murmurs) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6Data\\B2", "sa", "");
+
+			// SQL文を準備する
+			String sql = "update MURMURS set MURMUR_CHECK=FALSE UPDATE_AT=now() where ID=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+
+			if (murmurs.getId() != 0) {
+				pStmt.setString(1, String.valueOf(murmurs.getId()));
+			}
+			else {
+				pStmt.setString(1, null);
+			}
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
 }
