@@ -12,6 +12,62 @@
 </head>
 <body>
 <!-- <h1>あいうえお</h1> -->
+<!--ヘッダーここから-->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="ロゴ">
+    </div>
+    <nav class="right-align">
+      <ul class="menu">
+        <li class="hamburger-icon">
+          <div class="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <ul class="dropdown-menu left-align">
+            <li><a href="TopServlet">　トップ</a></li>
+            <li><a href="MurListServlet">愚痴一覧</a></li>
+            <li><a href="MurInServlet">愚痴入力</a></li>
+            <li><a href="GameCheckServlet">ゲーム選択/チェックボックス</a></li>
+          </ul>
+        </li>
+        <li><a href="" class="right-align no-underline">ゆ～ざ～メェ</a></li>
+        <li class="title-icon">
+          <div class="title-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <ul class="dropdown-menu">
+            <li>
+              <div class="grid-container">
+                <a href="#"><img src="/BtwoB/img/crown_login_gold.png" alt="称号1"></a>
+                <a href="#"><img src="/BtwoB/img/crown_login_silver.png" alt="称号2"></a>
+                <a href="#"><img src="/BtwoB/img/crown_login_bronze.png" alt="称号3"></a>
+                <a href="#"><img src="/BtwoB/img/crown_mur_gold.png" alt="称号4"></a>
+                <a href="#"><img src="/BtwoB/img/crown_mur_silver.png" alt="称号5"></a>
+                <a href="#"><img src="/BtwoB/img/crown_mur_bronze.png" alt="称号6"></a>
+                <a href="#"><img src="/BtwoB/img/crown_game_gold.png" alt="称号7"></a>
+                <a href="#"><img src="/BtwoB/img/crown_game_silver.png" alt="称号8"></a>
+                <a href="#"><img src="/BtwoB/img/crown_game_bronze.png" alt="称号9"></a>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li><a href="LoginServlet" class="right-align no-underline">ろぐあうと</a></li>
+      </ul>
+    </nav>
+  </nav>
+</header>
+
+
+
+
+
+<hr>
+<!-- ヘッダーここまで -->
 
 <!-- 左右画面のdiv -->
 <div class="split">
