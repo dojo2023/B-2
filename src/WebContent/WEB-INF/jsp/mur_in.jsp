@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>まめぇまめぇ</title>
 
+<link rel="stylesheet" href="/BtwoB/css/header.css">
 <link rel="stylesheet" href="/BtwoB/css/mur_in.css">
 </head>
 <body>
