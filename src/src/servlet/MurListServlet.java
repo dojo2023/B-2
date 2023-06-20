@@ -33,7 +33,31 @@ public class MurListServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// ここで得たパラメータをMurmursDAOでアップデートする
+		// リクエストパラメータを取得する
+		request.setCharacterEncoding("UTF-8");
+		int id = Integer.parseInt(request.getParameter("id"));
+		int user_id = Integer.parseInt(request.getParameter("user_id"));
+		String tag = request.getParameter("tag");
+		String murmur = request.getParameter("murmur");
+		boolean check = Boolean.parseBoolean(request.getParameter("check"));
+		String created_at = request.getParameter("created_at");
+		String update_at =  request.getParameter("update_at");
 
+		// 削除処理を行う（trueをfalseに）
+		MurmursDAO mDao = new MurmursDAO();
+		if (mDao.update(new Murmurs(id, user_id, tag, murmur, check, created_at, update_at))) {	// 削除成功
+			System.out.println("愚痴削除成功");
+			// 結果ページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mur_list.jsp");
+			dispatcher.forward(request, response);
+		}
+		else {	// 削除失敗
+			System.out.println("愚痴削除失敗");
+			// 結果ページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mur_list.jsp");
+			dispatcher.forward(request, response);
+		}
 
 
 	}
