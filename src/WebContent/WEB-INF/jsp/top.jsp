@@ -11,7 +11,50 @@
 
 </head>
 <body>
-
+<!--ヘッダーここから-->
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="ロゴ" class="left-align">
+  </div>
+  <nav class="right-align">
+    <ul class="menu">
+      <li class="hamburger-icon">
+        <div class="hamburger-menu">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="TopServlet">トップ</a></li>
+          <li><a href="MurListServlet">愚痴一覧</a></li>
+          <li><a href="MurInServlet">愚痴入力</a></li>
+          <li><a href="GameCheckServlet">ゲーム選択/チェックボックス</a></li>
+        </ul>
+      </li>
+      <li><a href="" class="right-align">ユーザー名</a></li>
+      <li class="title-icon">
+        <div class="title-menu">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="#"><img src="/BtwoB/img/crown_login_gold.png" alt="称号1"></a></li>
+          <li><a href="#"><img src="/BtwoB/img/crown_login_silver.png" alt="称号2"></a></li>
+          <li><a href="#"><img src="/BtwoB/img/crown_login_bronze.png" alt="称号3"></a></li>
+          <li><a href="#"><img src="/BtwoB/img/crown_mur_gold.png" alt="称号4"></a></li>
+          <li><a href="#"><img src="/BtwoB/img/crown_mur_silver.png" alt="称号5"></a></li>
+          <li><a href="#"><img src="/BtwoB/img/crown_mur_bronze.png" alt="称号6"></a></li>
+          <li><a href="#"><img src="/BtwoB/img/crown_game_gold.png" alt="称号7"></a></li>
+          <li><a href="#"><img src="/BtwoB/img/crown_game_silver.png" alt="称号8"></a></li>
+          <li><a href="#"><img src="/BtwoB/img/crown_game_bronze.png" alt="称号9"></a></li>
+        </ul>
+      </li>
+      <li><a href="LoginServlet" class="right-align">ログアウト</a></li>
+    </ul>
+  </nav>
+</header>
+<!-- ヘッダーここまで -->
 <!-- 左右画面のdiv -->
 <div class="split">
     <!-- 左画面のdiv -->
