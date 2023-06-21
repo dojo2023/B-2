@@ -139,7 +139,7 @@
 		</div><!-- split-right__inner -->
 	</div><!-- split-item split-right -->
 </div><!--split-->
-<script src="js/page_top.js"></script>
+<script src="js/graph.js"></script>
 </body>
 <script>
 //ヘッダー部分のjs
