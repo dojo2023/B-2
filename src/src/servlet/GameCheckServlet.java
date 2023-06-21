@@ -41,12 +41,6 @@ public class GameCheckServlet extends HttpServlet {
 		 * ・その後、deleteをfalseにupdateするメソッドを使用する(まだ作成していない)
 		 */
 
-		/*
-		 * 6/20　佐野　変更点
-		 * ・request.getParameter("button")→submitに変更
-		 * ・フォワード→リダイレクトに変更
-		 */
-
 
 		// ボタンごとの画面遷移を行う
 		// もしクリックゲームが選択されたら
