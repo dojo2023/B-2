@@ -14,7 +14,7 @@ import model.Murmurs;
 
 public class MurmursDAO {
 	// 愚痴の取得メソッド
-	public List<Murmurs> get(String id) {
+	public List<Murmurs> get(LoginUser lu) {
 		Connection conn = null;
 		List<Murmurs> cardList = new ArrayList<Murmurs>();
 
@@ -29,7 +29,7 @@ public class MurmursDAO {
 			String sql = "select * from murmurs WHERE user_id = ? AND murmur_check is false";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			pStmt.setString(1, id);
+			pStmt.setString(1, String.valueOf(lu.getUser_id()));
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
@@ -201,7 +201,7 @@ public class MurmursDAO {
 	// チェックボックス変更メソッド（trueからfalse）（一覧表示から愚痴を消す）
 	// ゲーム選択画面でチェックつけたやつにも使う
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean updateCheck(String id) {
+	public boolean updateCheck(LoginUser lu) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -217,8 +217,7 @@ public class MurmursDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-
-				pStmt.setString(1, id);
+			pStmt.setString(1, String.valueOf(lu.getUser_id()));
 
 
 			// SQL文を実行する

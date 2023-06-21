@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.MurmursDAO;
+import model.LoginUser;
 import model.Murmurs;
 
 @WebServlet("/TopServlet")
@@ -21,7 +22,8 @@ public class TopServlet extends HttpServlet {
 		// MurmursDAOのインスタンス化
 		MurmursDAO mDao = new MurmursDAO();
 		// MurmursDAOのget()メソッドを呼び出して、返ってきた愚痴の情報のリストを取得
-		List<Murmurs> cardList = mDao.get();
+		LoginUser lu = new LoginUser(1, "ラム");
+		List<Murmurs> cardList = mDao.get(lu);
 		// 愚痴取得結果をリクエストスコープに格納する
 		request.setAttribute("cardList", cardList);
 

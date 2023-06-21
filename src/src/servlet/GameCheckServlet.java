@@ -24,8 +24,9 @@ public class GameCheckServlet extends HttpServlet {
 		// MurmursDAOのインスタンス化
 		MurmursDAO mDao = new MurmursDAO();
 		// MurmursDAOのget()メソッドを呼び出して、返ってきた愚痴の情報のリストを取得
-		String id= "1"; //後でここはセッションスコープの値を取り出して入れる。
-		List<Murmurs> cardList = mDao.get(id);
+		//後でここはセッションスコープの値を取り出して入れる。
+		LoginUser lu = new LoginUser(1, "ラム");
+		List<Murmurs> cardList = mDao.get(lu);
 		// 愚痴取得結果をリクエストスコープに格納する
 		request.setAttribute("cardList", cardList);
 		// ゲーム選択/チェックボックス画面にフォワードする
@@ -45,14 +46,22 @@ public class GameCheckServlet extends HttpServlet {
 		 */
 
 		//チェックボックスがオンかオフかを確認したい
+
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 
-		for() {//cardlistのlistがあるだけ回す for in ,for on
-		String checkbox = request.getParameter("checkbox1");//checkbox+cardList.id
-		MurmursDAO mDao = new MurmursDAO();
-		if(checkbox == "on") {
-			mDao.updateCheck("1");
+		for(List<Murmurs> list: cardList) {//cardlistのlistがあるだけ回す for in ,for on
+			int id = Integer.parseInt(request.getParameter("ID"));
+			int user_id = Integer.parseInt(request.getParameter("USER_ID"));
+			String user_name = request.getParameter("USER_NAME");
+			String checkbox = request.getParameter("checkbox" + id);//checkbox+cardList.id
+			MurmursDAO mDao = new MurmursDAO();
+			if(checkbox == "on") {
+				// 引数はLoginUser型の変数
+				// つまりuser_idとuser_name
+				// new LoginUser(user_id,user_name)
+				mDao.updateCheck(new LoginUser(user_id,user_name));
+			}
 		}
 		// ボタンごとの画面遷移を行う
 

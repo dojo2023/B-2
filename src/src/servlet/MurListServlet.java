@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.MurmursDAO;
+import model.LoginUser;
 import model.Murmurs;
 
 
@@ -22,7 +23,8 @@ public class MurListServlet extends HttpServlet {
 		// MurmursDAOのインスタンス化
 		MurmursDAO mDao = new MurmursDAO();
 		// MurmursDAOのget()メソッドを呼び出して、返ってきた愚痴の情報のリストを取得
-		List<Murmurs> cardList = mDao.get();
+		LoginUser lu = new LoginUser(1, "ラム");
+		List<Murmurs> cardList = mDao.get(lu);
 		// 愚痴取得結果をリクエストスコープに格納する
 		request.setAttribute("cardList", cardList);
 
@@ -45,9 +47,12 @@ public class MurListServlet extends HttpServlet {
 		String created_at = request.getParameter("created_at");
 		String update_at =  request.getParameter("update_at");
 
+		// 仮の値　後にセッションスコープに保存されたuser_nameを使用する
+		String user_name = "ラム";
+
 		// 削除処理を行う（trueをfalseに）
 		MurmursDAO mDao = new MurmursDAO();
-		if (mDao.updateCheck(new Murmurs(id, user_id, tag, murmur, check, delete, created_at, update_at))) {	// 削除成功
+		if (mDao.updateCheck(new LoginUser(user_id, user_name))) {	// 削除成功
 			System.out.println("愚痴削除成功");
 			// 結果ページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mur_list.jsp");
