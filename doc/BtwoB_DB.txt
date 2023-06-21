@@ -32,8 +32,8 @@ id int auto_increment primary key,
 user_id int(20) not null,
 tag varchar(6) not null,
 murmur varchar(400) not null,
-murmur_check boolean default 'true',
-murmur_delete boolean default 'true',
+murmur_check boolean default 'false',
+murmur_delete boolean default 'false',
 created_at timestamp,
 update_at timestamp 
 );
