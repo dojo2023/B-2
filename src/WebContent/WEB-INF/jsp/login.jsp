@@ -32,14 +32,15 @@ text-align: center;
 <div class="overlay">
 	<div class="window">
 		<label class="close" for="pop-up">×</label>
-		<p class="text">ポップアップの中身が入ります</p>
-		<c:if test="${showPopup}">
+		<p class="text">ログイン失敗！</p>
+
+  <c:if test="${not empty showPopup}">
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("pop-up").checked = true;
     });
   </script>
-</c:if>
+  </c:if>
 	</div>
 </div>
 <!-- ポップアップここまで -->
