@@ -158,7 +158,7 @@ public class UsersDAO {
 
 			// LoginUserにuser_idとuser_nameを格納
 			// ここが問題!!!!!!!!!
-			lu = new LoginUser(rs.getString("user_id"), rs.getString("user_name"));
+			lu = new LoginUser(rs.getInt("user_id"), rs.getString("user_name"));
 
 		}
 		catch (SQLException e) {

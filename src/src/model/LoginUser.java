@@ -3,23 +3,23 @@ package model;
 import java.io.Serializable;
 
 public class LoginUser implements Serializable {
-	private String user_id;	// ログイン時のユーザID
+	private int user_id;	// ログイン時のユーザID
 	private String user_name; // ログイン時のユーザネーム
 
 	public LoginUser() {
-		this(null, null);
+		this(0, null);
 	}
 
-	public LoginUser(String user_id, String user_name) {
+	public LoginUser(int user_id, String user_name) {
 		this.user_id = user_id;
 		this.user_name = user_name;
 	}
 
-	public String getUser_id() {
+	public int getUser_id() {
 		return user_id;
 	}
 
-	public void setUser_id(String user_id) {
+	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
 

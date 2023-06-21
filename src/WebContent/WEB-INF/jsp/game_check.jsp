@@ -70,6 +70,7 @@
 <!-- ヘッダーここまで -->
 
 <!-- 左右画面のdiv -->
+<form method="POST" action="/BtwoB/GameCheckServlet">
 <div class="split">
 	<!-- 左画面のdiv -->
     <div class="split-item split-left">
@@ -85,35 +86,32 @@
                 <tr><td class="murmur">暑すぎて無理。気温ちょうどいい世界になれ</td></tr>
             </table>
 
+
 			<c:forEach var="e" items="${cardList}" >
-			<form method="GET" action="/BtwoB/GameCheckServlet">
 			<table class="tagmurmur">
 			<!--
-				・もしmurmur_checkがtrueだったら
-				・(もしmurmur_deleteがtrueだったら)これいらないかも
+				・もしmurmur_checkがtrueだったら〇
 				・もしセッションスコープに保存されてるuser_idと同じだったら
 				を追加する必要あり
 			-->
-			<c:if test = "${MURMUR_CHECK == TRUE}">
-
-				<!-- 6/20佐野　変更点
-				・表示しないid等のtypeをhiddenに変更
-				・MURMUR_DELETEを追加（チェックボックスの判定に使用）
-				・checkboxを追加、name=checkboxとした
-				 -->
-
-				<tr><td><input type="hidden" name="ID" value="${e.id}"></td></tr>
-				<tr><td><input type="hidden" name="USER_ID" value="${e.user_id}"></td></tr>
-				<tr style="width: 100px"><td class="tag"><input type="text" name="TAG" value="${e.tag}"></td></tr>
-				<tr><td><input type="checkbox" name="checkbox"></td><td class="murmur"><input type="text" name="MURMUR" value="${e.murmur}"></td></tr>
-				<tr><td><input type="hidden" name="MURMUR_CHECK" value="${e.murmur_check}"></td></tr>
-				<tr><td><input type="hidden" name="MURMUR_DELETE" value="${e.murmur_delete}"></td></tr>
-				<tr><td><input type="hidden" name="CREATED_AT" value="${e.created_at}"></td></tr>
-				<tr><td><input type="hidden" name="UPDATE_AT" value="${e.update_at}"></td></tr>
+			<c:if test = "${e.murmur_check == false}">
+				<tr><td><input type="hidden" name="ID + ${e.id}" value="${e.id}"></td></tr>
+				<tr><td><input type="hidden" name="USER_ID + ${e.id}" value="${e.user_id}"></td></tr>
+				<tr style="width: 100px"><td class="TAG"><input type="text" name="TAG + ${e.id}" value="${e.tag}"></td></tr>
+				<tr><td><input type="checkbox" name="checkbox${e.id}"></td>
+				<td class="murmur">
+				<input type="text" name="MURMUR  + ${e.id}" value="${e.murmur}">
+				</td>
+				</tr>
+				<tr><td><input type="hidden" name="MURMUR_CHECK + ${e.id}" value="${e.murmur_check}"></td></tr>
+				<tr><td><input type="hidden" name="MURMUR_DELETE  + ${e.id}" value="${e.murmur_delete}"></td></tr>
+				<tr><td><input type="hidden" name="CREATED_AT + ${e.id}" value="${e.created_at}"></td></tr>
+				<tr><td><input type="hidden" name="UPDATE_AT + ${e.id}" value="${e.update_at}"></td></tr>
 			</c:if>
 			</table>
-			</form>
 			</c:forEach>
+			<!-- </form> -->
+
         </div><!--split-left__inner-->
     </div><!--split-item split-left-->
     <!-- 右画面のdiv -->
@@ -122,7 +120,7 @@
         <div class="split-right__inner">
         	<p>ゲーム選択</p>
             <!-- ボタン４つ設置 -->
-            <form method="POST" action="/BtwoB/GameCheckServlet">
+            <!-- <form method="POST" action="/BtwoB/GameCheckServlet"> -->
             <table>
             	<!-- 6/20佐野　button→submitに変更 -->
             	<tr><td><input type="submit" name="CLICKGAME_BUTTON" value="クリック破壊ゲーム" class="button1"></td>
@@ -130,10 +128,11 @@
             	<tr><td><input type="submit" name="NICOGAME_BUTTON" value="文字クリックゲーム" class="button3"></td>
             		<td><input type="submit" name="LAMBGAME_BUTTON" value="ヤギのご飯ゲーム" class="button4"></td>
 			</table>
-			</form>
+			<!-- </form> -->
         </div><!--split-right__inner-->
     </div><!--split-item split-right-->
 </div><!--split-->
+</form>
 
 </body>
 <script>
