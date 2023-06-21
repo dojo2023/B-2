@@ -16,7 +16,11 @@
 
 <!-- 地球画像１ -->
 <p class = "earth_image1" style="margin-top:1px">
-<img id="image_file" src = "/BtwoB/img/earth_image1.png" width = "525" height ="525" onclick="henkou()" ></p>
+<img id="image_file" src = "/BtwoB/img/earth_image1.png" width = "525" height ="525" onclick="henkou()" onclick="audio()"></p>
+
+<audio id="btn_audio">
+    <source src="/BtwoB/img/bakuhatu1.mp3" type="audio/mp3">
+</audio>
 
 <script>
 var img_src = new Array("/BtwoB/img/earth_image1.png","/BtwoB/img/earth_image2.png","/BtwoB/img/earth_image3.png","/BtwoB/img/earth_image4.png");
@@ -32,6 +36,11 @@ function henkou() {
 		document.getElementById("image_file").src = "/BtwoB/img/earth_image4.png";
 		}
 		}
+
+function audio() {
+    document.getElementById('btn_audio').currentTime = 0; //連続クリックに対応
+    document.getElementById('btn_audio').play(); //クリックしたら音を再生
+}
 
 </script>
 </body>
