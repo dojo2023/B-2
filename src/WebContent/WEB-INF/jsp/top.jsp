@@ -97,7 +97,7 @@
 			・データベースの情報を参照してlist表示した
 			 -->
             <c:forEach var="e" items="${cardList}" >
-			<form method="GET" action="/BtwoB/GameCheckServlet">
+			<form method="GET" action="/BtwoB/TopServlet">
 			<table class="tagmurmur">
 			<!--
 				・もしmurmur_checkがtrueだったら

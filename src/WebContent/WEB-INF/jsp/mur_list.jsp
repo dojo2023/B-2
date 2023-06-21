@@ -114,7 +114,7 @@
 			・削除ボタンをmurmurの横に表示した
 			 -->
             <c:forEach var="e" items="${cardList}" >
-			<form method="GET" action="/BtwoB/GameCheckServlet">
+			<form method="GET" action="/BtwoB/MurListServlet">
 			<table class="tagmurmur">
 			<!--
 				・もしmurmur_checkがtrueだったら
