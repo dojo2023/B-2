@@ -54,7 +54,6 @@ public class LoginServlet extends HttpServlet {
 			// ここにポップアップ表示するかも
 			  request.setAttribute("showPopup", true);
 
-
 			// ログイン失敗確認用
 			System.out.println("ログイン失敗");
 
