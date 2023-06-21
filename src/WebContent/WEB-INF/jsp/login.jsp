@@ -26,14 +26,24 @@ text-align: center;
 	</form>
 	<a href="/BtwoB/RegistServlet">しんきとうろくしますか？</a>
 </body>
-<label class="open" for="pop-up">ポップアップを表示する</label>
+
+<!-- ポップアップ -->
 <input type="checkbox" id="pop-up">
 <div class="overlay">
 	<div class="window">
 		<label class="close" for="pop-up">×</label>
 		<p class="text">ポップアップの中身が入ります</p>
+		<c:if test="${showPopup}">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("pop-up").checked = true;
+    });
+  </script>
+</c:if>
 	</div>
 </div>
+<!-- ポップアップここまで -->
+
 <footer class="footer">
   <p class="copyright">© 2023 BtwoB Inc. All Rights Reserved.</p>
 </footer>
