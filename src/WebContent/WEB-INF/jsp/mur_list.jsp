@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>まめぇまめぇ</title>
+<link rel="stylesheet" href="/BtwoB/css/header.css">
 <link rel="stylesheet" href="css/scroll_graph.css">
 <link rel="stylesheet" href="css/mur_list.css">
 <script src="mur_list.js"></script>
@@ -13,59 +14,59 @@
 <body>
 <!--ヘッダーここから-->
 <header>
-  <nav class="navbar">
-    <div class="logo">
-      <img src="logo.png" alt="ロゴ">
-    </div>
-    <nav class="right-align">
-      <ul class="menu">
-        <li class="hamburger-icon">
-          <div class="hamburger-menu">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <ul class="dropdown-menu left-align">
-            <li><a href="TopServlet">　トップ</a></li>
-            <li><a href="MurListServlet">愚痴一覧</a></li>
-            <li><a href="MurInServlet">愚痴入力</a></li>
-            <li><a href="GameCheckServlet">ゲーム選択/チェックボックス</a></li>
-          </ul>
-        </li>
-        <li><a href="" class="right-align no-underline">ゆ～ざ～メェ</a></li>
-        <li class="title-icon">
-          <div class="title-menu">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <ul class="dropdown-menu">
-            <li>
-              <div class="grid-container">
-                <a href="#"><img src="/BtwoB/img/crown_login_gold.png" alt="称号1"></a>
-                <a href="#"><img src="/BtwoB/img/crown_login_silver.png" alt="称号2"></a>
-                <a href="#"><img src="/BtwoB/img/crown_login_bronze.png" alt="称号3"></a>
-                <a href="#"><img src="/BtwoB/img/crown_mur_gold.png" alt="称号4"></a>
-                <a href="#"><img src="/BtwoB/img/crown_mur_silver.png" alt="称号5"></a>
-                <a href="#"><img src="/BtwoB/img/crown_mur_bronze.png" alt="称号6"></a>
-                <a href="#"><img src="/BtwoB/img/crown_game_gold.png" alt="称号7"></a>
-                <a href="#"><img src="/BtwoB/img/crown_game_silver.png" alt="称号8"></a>
-                <a href="#"><img src="/BtwoB/img/crown_game_bronze.png" alt="称号9"></a>
-              </div>
-            </li>
-          </ul>
-        </li>
-        <li><a href="LoginServlet" class="right-align no-underline">ろぐあうと</a></li>
-      </ul>
-    </nav>
-  </nav>
+	<nav class="navbar">
+
+	<!-- まめぇまめぇのロゴ画像 -->
+	<div class="logo">
+		<img src="logo.png" alt="ロゴ">
+	</div>
+	<nav class="right-align">
+		<ul class="menu">
+
+			<!-- ハンバーガーメニューアイコン -->
+			<li class="hamburger-icon">
+		<div class="hamburger-menu">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+			<ul class="dropdown-menu left-align">
+				<li><a href="TopServlet">　トップ</a></li>
+				<li><a href="MurListServlet">愚痴一覧</a></li>
+				<li><a href="MurInServlet">愚痴入力</a></li>
+				<li><a href="GameCheckServlet">ゲーム選択/チェックボックス</a></li>
+			</ul>
+			</li>
+		<!-- ユーザ名表示 -->
+		<li><a href="" class="right-align no-underline">ゆ～ざ～メェ</a></li>
+
+		<!-- 称号アイコン -->
+		<li class="title-icon">
+			<a href="#" class="title-icon-link">
+				<img src="/BtwoB/img/crown_login_bronze.png" alt="デフォルトの称号アイコン" class="selected-title" id="selectedTitle">
+			</a>
+			<ul class="dropdown-menu">
+			<li>
+				<div class="grid-container">
+				<a href="#" onclick="changeTitleIcon('/BtwoB/img/crown_login_gold.png')"><img src="/BtwoB/img/crown_login_gold.png" alt="称号1"></a>
+				<a href="#" onclick="changeTitleIcon('/BtwoB/img/crown_login_silver.png')"><img src="/BtwoB/img/crown_login_silver.png" alt="称号2"></a>
+				<a href="#" onclick="changeTitleIcon('/BtwoB/img/crown_login_bronze.png')"><img src="/BtwoB/img/crown_login_bronze.png" alt="称号3"></a>
+				<a href="#" onclick="changeTitleIcon('/BtwoB/img/crown_mur_gold.png')"><img src="/BtwoB/img/crown_mur_gold.png" alt="称号4"></a>
+				<a href="#" onclick="changeTitleIcon('/BtwoB/img/crown_mur_silver.png')"><img src="/BtwoB/img/crown_mur_silver.png" alt="称号5"></a>
+				<a href="#" onclick="changeTitleIcon('/BtwoB/img/crown_mur_bronze.png')"><img src="/BtwoB/img/crown_mur_bronze.png" alt="称号6"></a>
+				<a href="#" onclick="changeTitleIcon('/BtwoB/img/crown_game_gold.png')"><img src="/BtwoB/img/crown_game_gold.png" alt="称号7"></a>
+				<a href="#" onclick="changeTitleIcon('/BtwoB/img/crown_game_silver.png')"><img src="/BtwoB/img/crown_game_silver.png" alt="称号8"></a>
+				<a href="#" onclick="changeTitleIcon('/BtwoB/img/crown_game_bronze.png')"><img src="/BtwoB/img/crown_game_bronze.png" alt="称号9"></a>
+				</div>
+			</li>
+			</ul>
+		</li>
+			<!-- ログアウト(ログイン画面に遷移) -->
+			<li><a href="LoginServlet" class="right-align no-underline">ろぐあうと</a></li>
+		</ul>
+	</nav>
+	</nav>
 </header>
-
-
-
-
-
-<hr>
 <!-- ヘッダーここまで -->
 
 <!-- 左右画面のdiv -->
@@ -103,7 +104,7 @@
             </td>
             <td>
             <table class="delete_button">
-            	<tr><td><input type="submit" name="SUBMIT" value="消去"></td></tr>
+            	<tr><td><input type="submit" name="SUBMIT" value="削除"></td></tr>
             </table><!-- delete_button -->
             </td>
             </tr>
@@ -126,7 +127,7 @@
 				<tr><td><input type="hidden" name="ID" value="${e.id}"></td></tr>
 				<tr><td><input type="hidden" name="USER_ID" value="${e.user_id}"></td></tr>
 				<tr style="width: 100px"><td class="tag"><input type="text" name="TAG" value="${e.tag}"></td></tr>
-				<tr><td class="murmur"><input type="text" name="MURMUR" value="${e.murmur}"></td><td><input type="submit" name="SUBMIT" value="消去" class="delete_button"></td></tr>
+				<tr><td class="murmur"><input type="text" name="MURMUR" value="${e.murmur}"></td><td><input type="submit" name="SUBMIT" value="削除" class="delete_button"></td></tr>
 				<tr><td><input type="hidden" name="MURMUR_CHECK" value="${e.murmur_check}"></td></tr>
 				<tr><td><input type="hidden" name="MURMUR_DELETE" value="${e.murmur_delete}"></td></tr>
 				<tr><td><input type="hidden" name="CREATED_AT" value="${e.created_at}"></td></tr>
@@ -154,7 +155,7 @@
 
 </body>
 <script>
-
+//ヘッダー部分のjs
 //JavaScriptでドロップダウンメニューの動作を制御
 const hamburgerIcon = document.querySelector('.hamburger-icon');
 const titleIcon = document.querySelector('.title-icon');
@@ -165,23 +166,31 @@ const titleDropdown = document.querySelector('.title-icon .dropdown-menu');
 
 //ハンバーガーメニューアイコンにカーソルを合わせた時の動作
 hamburgerIcon.addEventListener('mouseenter', () => {
-hamburgerDropdown.classList.add('show');
+	hamburgerDropdown.classList.add('show');
 });
 
 //ハンバーガーメニューアイコンからカーソルが離れた時の動作
 hamburgerIcon.addEventListener('mouseleave', () => {
-hamburgerDropdown.classList.remove('show');
+	hamburgerDropdown.classList.remove('show');
 });
+
+//ドロップダウンメニューから画像を選んでクリックすると、タイトルアイコンが変更されます
+function changeTitleIcon(iconPath) {
+	const selectedTitle = document.getElementById('selectedTitle');
+	selectedTitle.src = iconPath;
+}
 
 //称号マークのハンバーガーメニューにカーソルを合わせた時の動作
 titleIcon.addEventListener('mouseenter', () => {
-titleDropdown.classList.add('show');
+	titleDropdown.classList.add('show');
 });
+
 
 //称号マークのハンバーガーメニューからカーソルが離れた時の動作
 titleIcon.addEventListener('mouseleave', () => {
-titleDropdown.classList.remove('show');
+	titleDropdown.classList.remove('show');
 });
+
 
 </script>
 
