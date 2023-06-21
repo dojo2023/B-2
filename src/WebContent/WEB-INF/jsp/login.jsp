@@ -4,6 +4,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="/BtwoB/css/login.css">
+<link rel="stylesheet" href="/BtwoB/css/popup.css">
 <title>まめぇまめぇ</title>
 </head>
 <style>
@@ -25,7 +26,14 @@ text-align: center;
 	</form>
 	<a href="/BtwoB/RegistServlet">しんきとうろくしますか？</a>
 </body>
-
+<label class="open" for="pop-up">ポップアップを表示する</label>
+<input type="checkbox" id="pop-up">
+<div class="overlay">
+	<div class="window">
+		<label class="close" for="pop-up">×</label>
+		<p class="text">ポップアップの中身が入ります</p>
+	</div>
+</div>
 <footer class="footer">
   <p class="copyright">© 2023 BtwoB Inc. All Rights Reserved.</p>
 </footer>

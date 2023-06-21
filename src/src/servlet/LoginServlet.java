@@ -52,7 +52,6 @@ public class LoginServlet extends HttpServlet {
 		}
 		else {  // ログイン失敗
 			// ここにポップアップ表示するかも
-
 			// ログイン失敗確認用
 			System.out.println("ログイン失敗");
 
