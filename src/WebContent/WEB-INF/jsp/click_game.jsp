@@ -16,7 +16,23 @@
 
 <!-- 地球画像１ -->
 <p class = "earth_image1" style="margin-top:1px">
-<img src = "/BtwoB/img/earth_image1.png" width = "525" height ="525"></p>
+<img id="image_file" src = "/BtwoB/img/earth_image1.png" width = "525" height ="525" onclick="henkou()" ></p>
 
+<script>
+var img_src = new Array("/BtwoB/img/earth_image1.png","/BtwoB/img/earth_image2.png","/BtwoB/img/earth_image3.png","/BtwoB/img/earth_image4.png");
+var i = 0;
+
+function henkou() {
+	document.getElementById("image_file").innerHTML = ++i;
+	if (i == 18) {
+		document.getElementById("image_file").src = "/BtwoB/img/earth_image2.png";
+		} else if (i == 34) {
+		document.getElementById("image_file").src = "/BtwoB/img/earth_image3.png";
+		} else if (i == 50) {
+		document.getElementById("image_file").src = "/BtwoB/img/earth_image4.png";
+		}
+		}
+
+</script>
 </body>
 </html>
