@@ -74,7 +74,7 @@ public class MurmursDAO {
 	}
 
 	// checkがfalseの愚痴の取得メソッド
-	public List<FalseMurmurs> getCheckFalse(LoginUser lu) {
+	/*public List<FalseMurmurs> getCheckFalse(LoginUser lu) {
 		Connection conn = null;
 		List<FalseMurmurs> cardList = new ArrayList<FalseMurmurs>();
 
@@ -132,7 +132,7 @@ public class MurmursDAO {
 
 		// 結果を返す
 		return cardList;
-	}
+	}*/
 
 	// 愚痴の登録メソッド
 	public boolean insert(Murmurs card) {
@@ -201,7 +201,7 @@ public class MurmursDAO {
 	// チェックボックス変更メソッド（trueからfalse）（一覧表示から愚痴を消す）
 	// ゲーム選択画面でチェックつけたやつにも使う
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean updateCheck(LoginUser lu) {
+	public boolean updateCheck(FalseMurmurs fm) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -217,7 +217,7 @@ public class MurmursDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			pStmt.setString(1, String.valueOf(lu.getUser_id()));
+			pStmt.setString(1, String.valueOf(fm.getId()));
 
 
 			// SQL文を実行する

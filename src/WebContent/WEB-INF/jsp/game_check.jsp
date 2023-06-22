@@ -95,7 +95,7 @@
 				を追加する必要あり
 			-->
 			<c:if test = "${e.murmur_check == false}">
-				<tr><td><input type="hidden" name="ID + ${e.id}" value="${e.id}"></td></tr>
+				<tr><td><input type="hidden" name="ID" value="${e.id}"></td></tr>
 				<tr><td><input type="hidden" name="USER_ID + ${e.id}" value="${e.user_id}"></td></tr>
 				<tr style="width: 100px"><td class="TAG"><input type="text" name="TAG + ${e.id}" value="${e.tag}"></td></tr>
 				<tr><td><input type="checkbox" name="checkbox${e.id}"></td>
