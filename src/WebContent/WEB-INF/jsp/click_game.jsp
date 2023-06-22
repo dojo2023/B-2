@@ -22,6 +22,13 @@
     <source src="/BtwoB/img/bakuhatu1.mp3" type="audio/mp3">
 </audio>
 
+<p class="btn"><a onClick="sound()">クリック</a></p>
+
+<audio id="sound" preload="auto">
+    <source src="http://idotdesign.net/wp-content/themes/idotdesign/sound/sound.mp3" type="audio/mp3">
+    <source src="http://idotdesign.net/wp-content/themes/idotdesign/sound/sound.wav" type="audio/wav">
+</audio>
+
 <script>
 var img_src = new Array("/BtwoB/img/earth_image1.png","/BtwoB/img/earth_image2.png","/BtwoB/img/earth_image3.png","/BtwoB/img/earth_image4.png");
 var i = 0;
