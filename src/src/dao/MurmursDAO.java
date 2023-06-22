@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.FalseMurmurs;
 import model.LoginUser;
 import model.Murmurs;
 
@@ -26,7 +25,7 @@ public class MurmursDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6Data\\B2", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select * from murmurs WHERE user_id = ? AND murmur_check is false";
+			String sql = "select * from murmurs WHERE user_id = ? AND murmur_delete is false";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			pStmt.setString(1, String.valueOf(lu.getUser_id()));
@@ -74,9 +73,9 @@ public class MurmursDAO {
 	}
 
 	// checkがfalseの愚痴の取得メソッド
-	/*public List<FalseMurmurs> getCheckFalse(LoginUser lu) {
+	public List<Murmurs> chTrueDeFalse(LoginUser lu) {
 		Connection conn = null;
-		List<FalseMurmurs> cardList = new ArrayList<FalseMurmurs>();
+		List<Murmurs> cardList = new ArrayList<Murmurs>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -86,25 +85,26 @@ public class MurmursDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6Data\\B2", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select USER_ID, MURMUR from MURMURS where USER_ID=? AND MURMUR_CHECK=FALSE";
+			String sql = "select * from MURMURS where UESR_ID = ? and MURMUR_DELETE is false and MURMUR_CHECK is true";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (lu.getUser_id() != 0) {
-				pStmt.setString(1, String.valueOf(lu.getUser_id()));
-			}
-			else {
-				pStmt.setString(1, null);
-			}
+			pStmt.setString(1, String.valueOf(lu.getUser_id()));
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
-				FalseMurmurs card = new FalseMurmurs(
+				Murmurs card = new Murmurs(
+				rs.getInt("ID"),
 				rs.getInt("USER_ID"),
-				rs.getString("MURMUR")
+				rs.getString("TAG"),
+				rs.getString("MURMUR"),
+				rs.getBoolean("MURMUR_CHECK"),
+				rs.getBoolean("MURMUR_DELETE"),
+				rs.getString("CREATED_AT"),
+				rs.getString("UPDATE_AT")
 				);
 				cardList.add(card);
 			}
@@ -132,7 +132,7 @@ public class MurmursDAO {
 
 		// 結果を返す
 		return cardList;
-	}*/
+	}
 
 	// 愚痴の登録メソッド
 	public boolean insert(Murmurs card) {
@@ -201,7 +201,7 @@ public class MurmursDAO {
 	// チェックボックス変更メソッド（trueからfalse）（一覧表示から愚痴を消す）
 	// ゲーム選択画面でチェックつけたやつにも使う
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean updateCheck(FalseMurmurs fm) {
+	public boolean updateCheck(int id) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -213,11 +213,11 @@ public class MurmursDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6Data\\B2", "sa", "");
 
 			// SQL文を準備する
-			String sql = "update MURMURS set MURMUR_CHECK=TRUE UPDATE_AT=now() where ID=?";
+			String sql = "update MURMURS set MURMUR_CHECK =true where ID= ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			pStmt.setString(1, String.valueOf(fm.getId()));
+			pStmt.setInt(1, id);
 
 
 			// SQL文を実行する
@@ -269,6 +269,52 @@ public class MurmursDAO {
 			result = rs.getRow();
 			rs.beforeFirst();
 
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
+	// murmur_checkがtrue でかつ murmur_deleteがfalseのデータのmurmur_checkはfalseにするメソッド
+	public boolean updateMurFalse(LoginUser lu) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6Data\\B2", "sa", "");
+
+			// SQL文を準備する
+			String sql = "update MURMURS set MURMUR_CHECK = false where USER_ID = ? and MURMUR_CHECK = true and MURMUR_DELETE = false";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setInt(1, lu.getUser_id());
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();

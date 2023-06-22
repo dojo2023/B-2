@@ -8,8 +8,8 @@ let lineConfig = {
         datasets: [{
             label: 'Red',
             data: [50, 30, 20,60,40,10],
-            borderColor: '#000000',
-            backgroundColor: ['#6699FF','#99CC33','#FF9900','#FF99FF','#FFCC33','#CC66FF'],
+            borderColor: '#ffffff',
+            backgroundColor: ['#B0C4DE','#66CDAA','#FFDEAD','#FFB6C1','#F0E68C','#DDA0DD'],
         }],
     },
 };

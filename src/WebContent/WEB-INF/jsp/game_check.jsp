@@ -94,9 +94,9 @@
 				・もしセッションスコープに保存されてるuser_idと同じだったら
 				を追加する必要あり
 			-->
-			<c:if test = "${e.murmur_check == false}">
+
 				<tr><td><input type="hidden" name="ID" value="${e.id}"></td></tr>
-				<tr><td><input type="hidden" name="USER_ID + ${e.id}" value="${e.user_id}"></td></tr>
+				<tr><td><input type="hidden" name="USER_ID" value="${e.user_id}"></td></tr>
 				<tr style="width: 100px"><td class="TAG"><input type="text" name="TAG + ${e.id}" value="${e.tag}"></td></tr>
 				<tr><td><input type="checkbox" name="checkbox${e.id}"></td>
 				<td class="murmur">
@@ -107,7 +107,7 @@
 				<tr><td><input type="hidden" name="MURMUR_DELETE  + ${e.id}" value="${e.murmur_delete}"></td></tr>
 				<tr><td><input type="hidden" name="CREATED_AT + ${e.id}" value="${e.created_at}"></td></tr>
 				<tr><td><input type="hidden" name="UPDATE_AT + ${e.id}" value="${e.update_at}"></td></tr>
-			</c:if>
+
 			</table>
 			</c:forEach>
 			<!-- </form> -->
@@ -123,10 +123,10 @@
             <!-- <form method="POST" action="/BtwoB/GameCheckServlet"> -->
             <table>
             	<!-- 6/20佐野　button→submitに変更 -->
-            	<tr><td><input type="submit" name="CLICKGAME_BUTTON" value="クリック破壊ゲーム" class="button1"></td>
-            		<td><input type="submit" name="SPACEGAME_BUTTON" value="スペースキー連打ゲーム" class="button2"></td></tr>
-            	<tr><td><input type="submit" name="NICOGAME_BUTTON" value="文字クリックゲーム" class="button3"></td>
-            		<td><input type="submit" name="LAMBGAME_BUTTON" value="ヤギのご飯ゲーム" class="button4"></td>
+            	<tr><td><input type="submit" name="submit" value="クリック破壊ゲーム" class="button1"></td>
+            		<td><input type="submit" name="submit" value="スペースキー連打ゲーム" class="button2"></td></tr>
+            	<tr><td><input type="submit" name="submit" value="文字クリックゲーム" class="button3"></td>
+            		<td><input type="submit" name="submit" value="ヤギのご飯ゲーム" class="button4"></td>
 			</table>
 			<!-- </form> -->
         </div><!--split-right__inner-->
