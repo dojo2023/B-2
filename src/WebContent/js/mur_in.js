@@ -1,13 +1,27 @@
-document.querySelector('.murmur_end_button').addEventListener('click', function() {
-  var murmurText = document.querySelector('textarea[name="murmur_text"]').value.trim();
-  var errorMessage = document.getElementById('error-message');
+// 愚痴入力のjs
+// 戻るボタンと入力完了ボタンをクリックしたときの処理
+document.addEventListener("DOMContentLoaded", function() {
+		var backButton = document.querySelector(".back_button");
+		var endButton = document.querySelector(".murmur_end_button");
+		var errorMessage = document.querySelector("#error_message");
 
-  if (murmurText === '') {
-    errorMessage.textContent = '愚痴を入力してください。';
-    return;
-  }
+		backButton.addEventListener("click", function() {
+		// 戻るボタンがクリックされた時の処理（画面遷移など）
+		console.log("戻るボタンがクリックされました");
+		window.location.href = "TopServlet";
+		});
 
-  errorMessage.textContent = ''; // メッセージをリセット
+		endButton.addEventListener("click", function() {
+		var murmurText = document.querySelector("textarea[name='murmur_text']").value;
 
-  // ここで愚痴の送信処理を行う
+		if (murmurText.trim() !== "") {
+		// 入力完了ボタンがクリックされ、内容が入力されている場合の処理（画面遷移など）
+			console.log("入力完了ボタンがクリックされました");
+			window.location.href = "TopServlet";
+		}
+		else {
+			// 入力完了ボタンがクリックされ、内容が未入力の場合の処理
+			errorMessage.style.display = "block";
+		}
+		});
 });
