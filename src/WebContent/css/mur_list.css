@@ -11,16 +11,16 @@
     width: 50%;
 }
 .split-left{
-    background: #696969;
-    color: #ffffff;
+    background: #FFE4E1;
+    color: #000000;
     position: flexd;
     flex:1;
     height:100vh;
     overflow:auto;
 }
 .split-right{
-    /* background: #000000; */
-    color: #ffffff;
+    background: #FFE4E1;
+    color: #000000;
     position: relative;
     flex:1;
     padding:20px;
