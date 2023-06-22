@@ -74,7 +74,7 @@
 <!-- 左右画面のdiv -->
 <div class="split">
     <!-- 左画面のdiv -->
-    <div class="split-item split-left">
+    <div class="split-left">
         <!-- 左画面の中のdiv -->
         <div class="split-left__inner">
         <!-- ここに愚痴一覧のテーブル -->
@@ -122,7 +122,7 @@
     </div><!--split-item split-left-->
 
 	<!-- 右画面のdiv -->
-	<div class="split-item split-right">
+	<div class="split-right">
 	<!-- 「週間円グラフ」 -->
 			<div class="weekly_piegraph" style="position:relative;width:450px;height:450px;margin: auto;text-align:center;">
 			<canvas id="Chart"></canvas>
@@ -130,7 +130,7 @@
 		<!-- 右画面の中のdiv -->
 		<div class="split-right__inner">
 
-			
+		
 			
 			<!-- 画面右下「愚痴一覧表示ボタン」「新規愚痴入力ボタン」-->
 			<a href="MurListServlet"><input type="image" src="/BtwoB/img/murlist_button.png" onclick="/BtwoB/MurListServlet" value="愚痴一覧表示" name="murlist_button"></a>

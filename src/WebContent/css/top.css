@@ -4,6 +4,7 @@
 .split{
     display: table;
     width: 100%;
+    display:flex;
 }
 .split-item{
     display: table-cell;
@@ -14,17 +15,23 @@
     background: #696969;
     color: #ffffff;
     position: flexd;
+    flex:1;
+    height:100vh;
+    overflow:auto;
 }
 .split-right{
-    /* background: #ff8080; */
+    background: #ff8080;
     color: #ffffff;
     position: relative;
+    flex:1;
+    padding:50px 50px 20px 20px;
 }
 .split-left__inner{
     height: 8000px;
     width:100%;
     overflow-y:scroll;
 	overflow-x:hidden;
+	padding:50px 50px 20px 50px;
 }
 .split-right__inner{
     height: 100%;
@@ -36,16 +43,16 @@
 /* 「愚痴一覧表示ボタン」「新規愚痴入力ボタン」 */
 input[name="murlist_button"]{
 	position:fixed;
-	right:200px;
-	bottom:50px;
+	right:150px;
+	bottom:40px;
 	width: 100px;
 	height: 100px;
 }
 
 input[name="murinput_button"]{
 	position:fixed;
-	right:50px;
-	bottom:50px;
+	right:30px;
+	bottom:40px;
 	width: 100px;
 	height: 100px;
 }

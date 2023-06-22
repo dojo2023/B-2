@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/scroll_graph.css">
 <link rel="stylesheet" href="css/mur_list.css">
 <script src="mur_list.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js "></script>
 </head>
 <body>
 <!--ヘッダーここから-->
@@ -72,7 +73,7 @@
 <!-- 左右画面のdiv -->
 <div class="split">
     <!-- 左画面のdiv -->
-    <div class="split-item split-left">
+    <div class="split-left">
         <!-- 左画面の中のdiv -->
         <div class="split-left__inner">
 
@@ -141,18 +142,22 @@
     </div><!--split-item split-left-->
 
 	<!-- 右画面のdiv -->
-	<div class="split-item split-right">
+	<div class="split-right">
+	<!-- 「週間円グラフ」 -->
+			<div class="weekly_piegraph" style="position:relative;width:450px;height:450px;margin: auto;text-align:center;">
+			<canvas id="Chart"></canvas>
+			</div>
+	
 		<!-- 右画面の中のdiv -->
 		<div class="split-right__inner">
 
-		<!-- 「一覧円グラフ」 -->
-		<canvas id="total_piegraph"></canvas>
+		
 
 		</div><!-- split-right__inner -->
 	</div><!-- split-item split-right -->
 </div><!--split-->
 
-
+<script src="js/graph.js"></script>
 </body>
 <script>
 //ヘッダー部分のjs

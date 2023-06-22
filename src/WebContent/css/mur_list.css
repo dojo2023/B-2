@@ -3,6 +3,7 @@
 .split{
     display: table;
     width: 100%;
+    display:flex;
 }
 .split-item{
     display: table-cell;
@@ -13,17 +14,23 @@
     background: #696969;
     color: #ffffff;
     position: flexd;
+    flex:1;
+    height:100vh;
+    overflow:auto;
 }
 .split-right{
-    background: #000000;
+    /* background: #000000; */
     color: #ffffff;
     position: relative;
+    flex:1;
+    padding:20px;
 }
 .split-left__inner{
     height: 8000px;
     width:100%;
     overflow-y:scroll;
 	overflow-x:hidden;
+	padding:20px;
 }
 .split-right__inner{
     height: 100%;
