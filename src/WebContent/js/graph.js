@@ -9,6 +9,7 @@ let lineConfig = {
             label: 'Red',
             data: [50, 30, 20],
             borderColor: 'Red',
+            backgroundColor: ['#66CDAA','#FFD700','#FFC6C1'],
         }],
     },
 };

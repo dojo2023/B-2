@@ -123,12 +123,13 @@
 
 	<!-- 右画面のdiv -->
 	<div class="split-item split-right">
+	<!-- 「週間円グラフ」 -->
+			<div class="weekly_piegraph" style="position:relative;width:450px;height:450px;margin: auto;text-align:center;">
+			<canvas id="Chart"></canvas>
+			</div>
 		<!-- 右画面の中のdiv -->
 		<div class="split-right__inner">
 
-			<!-- 「週間円グラフ」 -->
-			
-			<canvas id="Chart"></canvas>
 			
 			
 			<!-- 画面右下「愚痴一覧表示ボタン」「新規愚痴入力ボタン」-->
