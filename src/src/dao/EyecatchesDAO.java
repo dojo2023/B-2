@@ -8,11 +8,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Eyecatches;
+import model.LoginUser;
 
 public class EyecatchesDAO {
 	// メソッド①　タグの割合をリスト形式で持ってくる
-	public List<TagPercentage> get(Eyecatches ec) {
+	public List<TagPercentage> getPercent(LoginUser lu) {
 		Connection conn = null;
 		List<TagPercentage> cardList = new ArrayList<TagPercentage>();
 
@@ -27,7 +27,7 @@ public class EyecatchesDAO {
 			String sql = "select tag, count(tag) as orders, count(*) * 100.0 / sum(count(*)) over() as percentage_of_orders from murmurs where user_id = ? group by tag order by orders desc;\r\n";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			pStmt.setString(1, String.valueOf(ec.getUser_id()));
+			pStmt.setString(1, String.valueOf(lu.getUser_id()));
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
