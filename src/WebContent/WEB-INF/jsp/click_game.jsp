@@ -16,17 +16,12 @@
 
 <!-- 地球画像１ -->
 <p class = "earth_image1" style="margin-top:1px">
-<img id="image_file" src = "/BtwoB/img/earth_image1.png" width = "525" height ="525" onclick="henkou()" onclick="audio()"></p>
+<img id="image_file" src = "/BtwoB/img/earth_image1.png" width = "525" height ="525" onclick="henkou()" ></p>
+
+<div class="btn" onclick="audio()">音がなるよ!!</div>
 
 <audio id="btn_audio">
     <source src="/BtwoB/img/bakuhatu1.mp3" type="audio/mp3">
-</audio>
-
-<p class="btn"><a onClick="sound()">クリック</a></p>
-
-<audio id="sound" preload="auto">
-    <source src="http://idotdesign.net/wp-content/themes/idotdesign/sound/sound.mp3" type="audio/mp3">
-    <source src="http://idotdesign.net/wp-content/themes/idotdesign/sound/sound.wav" type="audio/wav">
 </audio>
 
 <script>
