@@ -67,7 +67,7 @@
 }
 
 /* 削除ボタン */
-/* input[name="SUBMIT"] {
+input[name="SUBMIT"] {
 	background-color: #ffff80;
 	border-radius: 50%;
  	line-height: 100px;
@@ -84,7 +84,22 @@ input[name="SUBMIT"]:hover {
 	-webkit-box-shadow: 0 2px 0 #e6d900;
 	box-shadow: 0 2px 0 #e6d900;
 }
- */
+
+/*
 table.delete_button {
     cursor: url('/BtwoB/img/bakudan.cur'), auto;
 }
+  */
+table.delete_button  {
+    cursor: default;
+}
+
+table.delete_button :hover {
+    cursor: url('/BtwoB/img/bakudan.cur'), auto;
+}
+
+table.delete_button :active {
+    cursor: url('/BtwoB/img/bakudan.cur'), auto;
+}
+
+
