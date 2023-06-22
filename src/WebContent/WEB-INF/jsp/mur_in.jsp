@@ -92,7 +92,7 @@
 	<input type="button" value="入力完了" class="murmur_end_button">
 
 	<!-- 愚痴が未入力だった時のエラーメッセージ -->
-	<p id="error_message" style="color: red; display: none;">愚痴を入力してください。</p>
+	<p id="error_message" style="color: red; display: none;">愚痴を入力してね！</p>
 </form>
 
 </div>
