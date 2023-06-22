@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.MurmursDAO;
-import model.FalseMurmurs;
 import model.LoginUser;
 import model.Murmurs;
 
@@ -40,17 +39,10 @@ public class MurListServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		int id = Integer.parseInt(request.getParameter("id"));
-		/*int user_id = Integer.parseInt(request.getParameter("user_id"));
-		String tag = request.getParameter("tag");
-		String murmur = request.getParameter("murmur");
-		boolean check = Boolean.parseBoolean(request.getParameter("check"));
-		boolean delete = Boolean.parseBoolean(request.getParameter("delete"));
-		String created_at = request.getParameter("created_at");
-		String update_at =  request.getParameter("update_at");*/
 
 		// 削除処理を行う（trueをfalseに）
 		MurmursDAO mDao = new MurmursDAO();
-		if (mDao.updateCheck(new FalseMurmurs(id))) {	// 削除成功
+		if (mDao.updateCheckDelete(id)) {	// 削除成功
 			System.out.println("愚痴削除成功");
 			// 結果ページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mur_list.jsp");

@@ -135,7 +135,7 @@ public class MurmursDAO {
 	}
 
 	// 愚痴の登録メソッド
-	public boolean insert(Murmurs card) {
+	public boolean insert(int user_id, String tag, String murmur) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -151,25 +151,9 @@ public class MurmursDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-
-			if (card.getUser_id() != 0) {
-				pStmt.setString(1, String.valueOf(card.getUser_id()));
-			}
-			else {
-				pStmt.setString(1, null);
-			}
-			if (card.getTag() != null && !card.getTag().equals("")) {
-				pStmt.setString(2, card.getTag());
-			}
-			else {
-				pStmt.setString(2, null);
-			}
-			if (card.getMurmur() != null && !card.getMurmur().equals("")) {
-				pStmt.setString(3, card.getMurmur());
-			}
-			else {
-				pStmt.setString(3, "");
-			}
+			pStmt.setString(1, String.valueOf(user_id));
+			pStmt.setString(2, tag);
+			pStmt.setString(3, murmur);
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
@@ -310,6 +294,53 @@ public class MurmursDAO {
 
 			// SQL文を完成させる
 			pStmt.setInt(1, lu.getUser_id());
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
+	// 愚痴一覧画面の削除ボタンを押したらmurmur_checkもmurmur_deleteもtrueにするメソッド
+	public boolean updateCheckDelete(int id) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6Data\\B2", "sa", "");
+
+			// SQL文を準備する
+			String sql = "update MURMURS set MURMUR_CHECK = true, MURMUR_DELETE = true where ID= ?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setInt(1, id);
+
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
