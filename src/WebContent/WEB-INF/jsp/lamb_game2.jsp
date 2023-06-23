@@ -9,14 +9,10 @@
 <link rel="stylesheet" href="css/lamb_game2.css">
 </head>
 <body>
- <div id="app">
-    <img src="https://4.bp.blogspot.com/-piPWJlRYOIo/UUhH7Pfy1rI/AAAAAAAAO5k/4JfvOTxND24/s400/mail.png" id="ball"align="left"width="200" height="100">
-    <img src="https://4.bp.blogspot.com/-piPWJlRYOIo/UUhH7Pfy1rI/AAAAAAAAO5k/4JfvOTxND24/s400/mail.png" id="letter"align="left"width="200" height="100">
-    <img src="https://4.bp.blogspot.com/-piPWJlRYOIo/UUhH7Pfy1rI/AAAAAAAAO5k/4JfvOTxND24/s400/mail.png" id=""align="left"width="200" height="100">
+<div id="app">
+    <img src="https://4.bp.blogspot.com/-piPWJlRYOIo/UUhH7Pfy1rI/AAAAAAAAO5k/4JfvOTxND24/s400/mail.png" id="ball"align="left"width="500" height="500"><br>
 
-    <img src="https://4.bp.blogspot.com/-O_6mCoV6Ffk/VveIznoHZDI/AAAAAAAA5N4/8DpXpRHEpa42Zq2kiHAZv91bqWXGMIMXg/s400/animal_yagi.png" id="yagi"align="right" width="150px"><br>
-    <img src="https://4.bp.blogspot.com/-O_6mCoV6Ffk/VveIznoHZDI/AAAAAAAA5N4/8DpXpRHEpa42Zq2kiHAZv91bqWXGMIMXg/s400/animal_yagi.png" id="yagi1"align="right" width="150px"><br>
-    <img src="https://4.bp.blogspot.com/-O_6mCoV6Ffk/VveIznoHZDI/AAAAAAAA5N4/8DpXpRHEpa42Zq2kiHAZv91bqWXGMIMXg/s400/animal_yagi.png" id="yagi2"align="right" width="150px"><br>
+    <img src="/BtwoB/img/Icon_B065_otegami_yagi_700_700.mov" id="yagi"align="right"width="200" height="200"><br>
 </div>
 
 <div class="post-btn">
@@ -29,9 +25,11 @@
     console.log("タップされたよ!");
   }
   ball.style.position = "absolute";
+
   ball.onmousedown = function(event){
 	  document.addEventListener("mousemove",onMouseMove);
 	}
+
 	var onMouseMove = function(event){
 	  var x = event.clientX;
 	  var y = event.clientY;
