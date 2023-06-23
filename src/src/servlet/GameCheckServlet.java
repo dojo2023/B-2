@@ -29,7 +29,7 @@ public class GameCheckServlet extends HttpServlet {
 		LoginUser lu = new LoginUser(1, "ラム");
 
 		//murmur_checkがtrue でかつ murmur_deleteがfalseのデータのmurmur_checkはfalseにする
-		mDao.chTrueDeFalse(lu);
+		mDao.updateMurFalse(lu);
 
 		List<Murmurs> cardList = mDao.get(lu);
 		// 愚痴取得結果をリクエストスコープに格納する。画面表示の後も使うのでセッションスコープに格納
@@ -99,7 +99,7 @@ public class GameCheckServlet extends HttpServlet {
 		} else if (request.getParameter("submit").equals("文字クリックゲーム")) {
 			response.sendRedirect("/BtwoB/MojiGameServlet");
 			return;
-		} else if (request.getParameter("button").equals("ヤギのご飯ゲーム")) {
+		} else if (request.getParameter("submit").equals("ヤギのご飯ゲーム")) {
 			response.sendRedirect("/BtwoB/LambGame1Servlet");
 			return;
 		}

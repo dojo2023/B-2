@@ -85,7 +85,7 @@ public class MurmursDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6Data\\B2", "sa", "");
 
 			// SQL文を準備する
-			String sql = "select * from MURMURS where UESR_ID = ? and MURMUR_DELETE is false and MURMUR_CHECK is true";
+			String sql = "select * from MURMURS where USER_ID = ? and MURMUR_DELETE is false and MURMUR_CHECK is true";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる

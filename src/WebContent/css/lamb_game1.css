@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-    background: rgb(97, 231, 24);
+    background: #99CCFF;
 }
 
 .post-btn {
@@ -15,6 +15,47 @@ body {
   font-weight: bold;
   font-size: 30px;
   border-radius: 50%;
-  background: rgb(97, 231, 24);
+  /* background: rgb(97, 231, 24); */
   text-align: center;
+}
+
+.split{
+	 height: 100%;
+    display: table;
+    width: 100%;
+}
+.split-item{
+    display: table-cell;
+    padding: 80px;
+    width: 50%;
+}
+.split-left{
+   /*  background: #696969; */
+    color: #000000;
+    position: flexd;
+}
+.split-right{
+    /* background: #000000; */
+    color: #ffffff;
+    position: relative;
+}
+.split-left__inner{
+    height: 100%;
+    position: fixed;
+    width:50%;
+}
+.split-right__inner{
+    height: 100%;
+    position: fixed;
+    width: 50%;
+}
+
+.murmur {
+	width: 50vw; /* 画面幅の50% */
+    max-width: 20%; /* 最大幅を50%に制限 */
+	border-collapse: collapse;
+	padding: 8px;
+	background-color: #ffffff; /* 白い塗りつぶし */
+	border: none;
+	text-align: left;
 }
