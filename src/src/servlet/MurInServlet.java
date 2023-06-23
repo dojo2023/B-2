@@ -28,8 +28,8 @@ public class MurInServlet extends HttpServlet {
 		// ここで得たパラメータ(tagとmurmur)をMurmursDAOでインサートする
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String tag = request.getParameter("tag");
-		String murmur = request.getParameter("murmur");
+		String tag = request.getParameter("TAG");
+		String murmur = request.getParameter("MURMUR");
 
 		// あとでセッションスコープに入れたuser_idを使うのでここは編集します！！！
 		int user_id = 1;
