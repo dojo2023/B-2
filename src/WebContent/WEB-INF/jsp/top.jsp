@@ -8,6 +8,7 @@
 <title>まめぇまめぇ</title>
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/scroll_graph.css">
+<link rel="stylesheet" href="/BtwoB/css/popup.css">
 <link rel="stylesheet" href="css/top.css">
 <script src=""></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js "></script>
@@ -130,8 +131,8 @@
 		<!-- 右画面の中のdiv -->
 		<div class="split-right__inner">
 
-		
-			
+
+
 			<!-- 画面右下「愚痴一覧表示ボタン」「新規愚痴入力ボタン」-->
 			<a href="MurListServlet"><input type="image" src="/BtwoB/img/murlist_button.png" onclick="/BtwoB/MurListServlet" value="愚痴一覧表示" name="murlist_button"></a>
 			<a href="MurInServlet"><input type="image" src="/BtwoB/img/murinput_button.png" onclick="/BtwoB/MurInServlet" value="新規入力" name="murinput_button"></a>
@@ -142,6 +143,25 @@
 </div><!--split-->
 <script src="js/graph.js"></script>
 </body>
+
+<!-- ポップアップ -->
+<input type="checkbox" id="pop-up">
+<div class="overlay">
+	<div class="window">
+		<label class="close" for="pop-up">×</label>
+		<%-- <c:out><p class="text" value="${eyecatch}"></p></c:out> --%>
+		<c:out value="${eyecatch}"></c:out>
+  <c:if test="${not empty showPopup}">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("pop-up").checked = true;
+    });
+  </script>
+  </c:if>
+	</div>
+</div>
+<!-- ポップアップここまで -->
+
 <script>
 //ヘッダー部分のjs
 //JavaScriptでドロップダウンメニューの動作を制御

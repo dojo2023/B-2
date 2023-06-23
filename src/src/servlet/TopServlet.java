@@ -9,10 +9,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import dao.EyecatchesDAO;
 import dao.MurmursDAO;
 import model.LoginUser;
 import model.Murmurs;
+import model.TagPercentage;
 
 @WebServlet("/TopServlet")
 public class TopServlet extends HttpServlet {
@@ -29,10 +32,43 @@ public class TopServlet extends HttpServlet {
 
 //		// EyecatchesDAOのインスタンス化
 //		EyecatchesDAO eDao = new EyecatchesDAO();
-//		// EyecatchesDAOのget()メソッドを呼び出して、返ってきた愚痴の情報のリストを取得
-//		List<Murmurs> cardList = eDao.get();
-//		// 愚痴取得結果をリクエストスコープに格納する
+//		// EyecatchesDAOのget()メソッドを呼び出して、返ってきたタグの割合リストを取得
+//		List<TagPercentage> cardList = eDao.get();
+//		// 取得結果をリクエストスコープに格納する
 //		request.setAttribute("cardList", cardList);
+
+		// EyecatchesDAOのインスタンス化
+		EyecatchesDAO eDao = new EyecatchesDAO();
+		// EyecatchesDAOのgetPercent()メソッドを呼び出して、返ってきたタグの割合リストを取得
+		List<TagPercentage> tagPersentList = eDao.getPercent(lu);
+
+		/*	// メッセージをリクエストスコープに格納
+			String message = eDao.getMessage(tagPersentList.get(0).getTag());
+			request.setAttribute("message", message);*/
+
+
+		String tag = null;
+		int murNum = 0;
+		for (TagPercentage tagPList : tagPersentList) {
+
+		    if (tagPList.getOrders() > murNum) {
+		        murNum = tagPList.getOrders();
+		        tag = tagPList.getTag();
+		    }
+		    else if (tagPList.getOrders() == murNum) {
+		    	tag = "その他";
+		    }
+		}
+
+		System.out.println(tag);
+
+		// セッションスコープに一番ourdesが多いタグのmessageを保存する
+		HttpSession session = request.getSession();
+		System.out.println(eDao.getMessage(tag));
+		session.setAttribute("eyecatch", eDao.getMessage(tag));
+
+		// ログインしたらポップアップを表示する
+		request.setAttribute("showPopup", true);
 
 
 		// 登録ページにフォワードする
@@ -45,6 +81,7 @@ public class TopServlet extends HttpServlet {
 
 
 
-		}*/
 
+			}
+	*/
 }

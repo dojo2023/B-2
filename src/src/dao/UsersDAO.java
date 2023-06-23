@@ -156,9 +156,18 @@ public class UsersDAO {
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
+			if(rs.next()) {
+				//データあり
+				lu = new LoginUser();
+				lu.setUser_id(rs.getInt("user_id"));
+				lu.setUser_name(rs.getString("user_name"));
+				//lu = new LoginUser(rs.getInt("user_id"), rs.getString("user_name"));
+			}else {
+				//データなし
+			}
+
 			// LoginUserにuser_idとuser_nameを格納
 			// ここが問題!!!!!!!!!
-			lu = new LoginUser(rs.getInt("user_id"), rs.getString("user_name"));
 
 		}
 		catch (SQLException e) {

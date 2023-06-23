@@ -43,6 +43,7 @@ public class LoginServlet extends HttpServlet {
 			System.out.println(user_name + user_pw);
 			HttpSession session = request.getSession();
 			session.setAttribute("id_name" ,uDao.loginInfo(new Users(user_name, user_pw)));
+			request.setAttribute("showPopup", true);
 
 			// セッションスコープに保存されているかデバッグ
 			System.out.println(uDao.loginInfo(new Users(user_name, user_pw)));
