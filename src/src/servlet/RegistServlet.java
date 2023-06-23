@@ -41,7 +41,7 @@ public class RegistServlet extends HttpServlet {
 			// トップサーブレットにリダイレクトする
 			response.sendRedirect("/BtwoB/LoginServlet");
 		}
-		else {												// 登録失敗
+		else if (uDAO.insert(new Users(user_name, user_pw)) == true){												// 登録失敗
 			 request.setAttribute("showPopup", true);
 
 			// トップサーブレットにリダイレクトする
