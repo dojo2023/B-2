@@ -31,22 +31,41 @@ public class MurInServlet extends HttpServlet {
 		String tag = request.getParameter("TAG");
 		String murmur = request.getParameter("MURMUR");
 
+		System.out.println(tag);
+
 		// あとでセッションスコープに入れたuser_idを使うのでここは編集します！！！
 		int user_id = 1;
 
 		// 登録処理を行う
 		MurmursDAO mDao = new MurmursDAO();
-		if (mDao.insert(user_id, tag, murmur)) {	// 登録成功
-			System.out.println("愚痴登録成功");
-			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top.jsp");
-			dispatcher.forward(request, response);
+		if (request.getParameter("SUBMIT").equals("入力完了")) {
+			if (murmur.equals("")) {
+				// 一番下に表示する（あとで）
+				String errorMessage = "愚痴を入力してね！";
+				request.setAttribute("errorMessage", errorMessage);
+
+				// エラーメッセージを表示するためのフォワード先を設定
+			    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mur_in.jsp");
+			    dispatcher.forward(request, response);
+			}
+			else if (mDao.insert(user_id, tag, murmur)) {	// 登録成功
+				System.out.println("愚痴登録成功");
+				// TopServletにリダイレクトする
+				response.sendRedirect("/BtwoB/TopServlet");
+				return;
+			}
+			else {	// 登録失敗
+				System.out.println("愚痴登録失敗");
+				// TopServletにリダイレクトする
+				response.sendRedirect("/BtwoB/TopServlet");
+				return;
+			}
 		}
-		else {	// 登録失敗
-			System.out.println("愚痴登録失敗");
-			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top.jsp");
-			dispatcher.forward(request, response);
+		else {
+			// TopServletにリダイレクトする
+			response.sendRedirect("/BtwoB/TopServlet");
+			return;
 		}
+
 	}
 }

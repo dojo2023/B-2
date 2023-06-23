@@ -94,22 +94,22 @@
 			</label><!--sortmenu" -->
 
 			<!-- ここに愚痴一覧のテーブル -->
-			<table class="mur_list">
+			<!-- <table class="mur_list">
 			<tr>
 			<td>
 			<table class="tagmurmur">
                 <tr style="width: 100px"><td class="tag">その他</td></tr>
                 <tr><td class="blank"></td></tr>
                 <tr><td class="murmur">暑すぎて無理。気温ちょうどいい世界になれ。</td></tr>
-            </table><!-- tagmurmur -->
+            </table>tagmurmur
             </td>
             <td>
             <table class="delete_button">
             	<tr><td><input type="submit" name="SUBMIT" value="削除"></td></tr>
-            </table><!-- delete_button -->
+            </table>delete_button
             </td>
             </tr>
-            </table><!-- mur_list -->
+            </table> --><!-- mur_list -->
 
 			<!-- 6/20佐野　変更点
 			・データベースの情報を参照してlist表示した
@@ -117,6 +117,9 @@
 			 -->
             <c:forEach var="e" items="${cardList}" >
 			<form method="GET" action="/BtwoB/MurListServlet">
+			<table class="mur_list">
+			<tr>
+			<td>
 			<table class="tagmurmur">
 			<!--
 				・もしmurmur_checkがtrueだったら
@@ -124,17 +127,23 @@
 				・もしセッションスコープに保存されてるuser_idと同じだったら
 				を追加する必要あり
 			-->
-			<c:if test = "${MURMUR_CHECK == TRUE}">
 				<tr><td><input type="hidden" name="ID" value="${e.id}"></td></tr>
 				<tr><td><input type="hidden" name="USER_ID" value="${e.user_id}"></td></tr>
-				<tr style="width: 100px"><td class="tag"><input type="text" name="TAG" value="${e.tag}"></td></tr>
-				<tr><td class="murmur"><input type="text" name="MURMUR" value="${e.murmur}"></td><td><input type="submit" name="SUBMIT" value="削除" class="delete_button"></td></tr>
+				<tr style="width: 100px"><td class="tag">${e.tag}</td></tr>
+				<tr><td class="murmur">${e.murmur}</td></tr>
 				<tr><td><input type="hidden" name="MURMUR_CHECK" value="${e.murmur_check}"></td></tr>
 				<tr><td><input type="hidden" name="MURMUR_DELETE" value="${e.murmur_delete}"></td></tr>
 				<tr><td><input type="hidden" name="CREATED_AT" value="${e.created_at}"></td></tr>
 				<tr><td><input type="hidden" name="UPDATE_AT" value="${e.update_at}"></td></tr>
-			</c:if>
 			</table>
+			</td>
+            <td>
+            <table class="delete_button">
+            	<tr><td><input type="submit" name="SUBMIT" value="削除"></td></tr>
+            </table><!-- delete_button -->
+            </td>
+            </tr>
+            </table><!-- mur_list -->
 			</form>
 			</c:forEach>
 
@@ -147,11 +156,11 @@
 			<div class="weekly_piegraph" style="position:relative;width:450px;height:450px;margin: auto;text-align:center;">
 			<canvas id="Chart"></canvas>
 			</div>
-	
+
 		<!-- 右画面の中のdiv -->
 		<div class="split-right__inner">
 
-		
+
 
 		</div><!-- split-right__inner -->
 	</div><!-- split-item split-right -->

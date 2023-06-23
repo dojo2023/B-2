@@ -92,20 +92,17 @@ input[name="SUBMIT"]:hover {
 	box-shadow: 0 2px 0 #e6d900;
 }
 
-/*
-table.delete_button {
-    cursor: url('/BtwoB/img/bakudan.cur'), auto;
-}
-  */
-table.delete_button  {
+
+/* 爆弾カーソル */
+.delete_button  {
     cursor: default;
 }
 
-table.delete_button :hover {
+.delete_button :hover {
     cursor: url('/BtwoB/img/bakudan.cur'), auto;
 }
 
-table.delete_button :active {
+.delete_button :active {
     cursor: url('/BtwoB/img/bakudan.cur'), auto;
 }
 

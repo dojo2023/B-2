@@ -8,18 +8,18 @@
 .tag {
 	border-radius: 30px;
 	border-spacing: 0;
+    background-color: #ffffff; /* 白い塗りつぶし */
     border: none;
-    border-left: 2px solid #ff8080;
-    border-right: 2px solid #ff8080;
-    border-top: 2px solid #ff8080;
-    border-bottom: 2px solid #ff8080;
     text-align: center;
+    padding: 8px;
 }
 .murmur {
-	width: auto;
+	width: 50vw; /* 画面幅の50% */
+    max-width: 50%; /* 最大幅を50%に制限 */
 	border-collapse: collapse;
 	padding: 8px;
-	border: 2px solid #ff8080;
+	background-color: #ffffff; /* 白い塗りつぶし */
+	border: none;
 	text-align: left;
 }
 

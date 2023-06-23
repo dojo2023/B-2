@@ -1,5 +1,9 @@
 @charset "UTF-8";
 /* 愚痴入力のcss */
+/* 背景色変更 */
+.container {
+      background-color: #FFE4E1;
+    }
 /* 入力欄を真ん中に設定 */
 .mur_in {
 	text-align:center;
@@ -37,10 +41,16 @@
 }
 
 .tag_menu select:focus {
-    outline: none;
+	outline: none;
 }
 /* テキストエリアcss */
-textarea {
-  width: 800px; /* 幅（ピクセル単位） */
-  height: 200px;
+#nyuryokuarea {
+	width: 800px; /* 幅（ピクセル単位） */
+	height: 200px;
+	font-size: 25px; /* 好みのサイズに変更してください */
 }
+
+/* エラーメッセージの色 */
+.error-message {
+	color: red;
+  }

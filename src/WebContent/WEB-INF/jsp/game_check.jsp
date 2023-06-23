@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/scroll_graph.css">
 <link href="css/game_check.css" rel="stylesheet">
 <title>まめぇまめぇ</title>
+<link rel="stylesheet" href="/BtwoB/css/header.css">
 <script src="game_check.js"></script>
 </head>
 <body>

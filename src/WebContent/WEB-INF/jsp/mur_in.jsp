@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,7 @@
 
 <link rel="stylesheet" href="/BtwoB/css/header.css">
 <link rel="stylesheet" href="/BtwoB/css/mur_in.css">
+<!-- <script src="js/header.js"> -->
 </head>
 <body>
 
@@ -68,12 +70,13 @@
 </header>
 <!-- ヘッダーここまで -->
 
-
+<div class="container">
 <!-- タグのプルダウンメニュー -->
+<form method="POST" action="/BtwoB/MurInServlet">
 <div class="mur_in">
 <label class="tag_menu">
 <p>入力　　</p>
-	<select>
+	<select name="TAG">
 		<option>仕事</option>
 		<option>友達</option>
 		<option>家族</option>
@@ -84,20 +87,31 @@
 </label><br>
 
 <!-- テキストエリア -->
-<form id="myForm">
-	<textarea name="murmur_text" id="nyuryokuarea"></textarea><br>
+<div id="myForm">
+	<textarea name="MURMUR" id="nyuryokuarea"></textarea><br>
 
 	<!-- 戻るボタンと入力完了ボタン -->
-	<input type="button" value="戻る" class="back_button">
-	<input type="button" value="入力完了" class="murmur_end_button">
-
+	<input type="submit" value="戻る" class="back_button" name="SUBMIT">
+	<input type="submit" value="入力完了" class="murmur_end_button" name="SUBMIT">
+<br>
 	<!-- 愚痴が未入力だった時のエラーメッセージ -->
-	<p id="error_message" style="color: red; display: none;">愚痴を入力してね！</p>
-</form>
+	<span class="error-message">${errorMessage}</span>
+	<%-- <c:out value="${errorMessage}"></c:out> --%>
+
+
+
 
 </div>
+
+</div>
+</form>
+
 <script src="js/mur_in.js"></script>
 <!-- <script src="js/header.js"></script> -->
+<footer>
+    <!-- フッターコンテンツ -->
+  </footer>
+</div>
 </body>
 
 <script>
@@ -136,8 +150,6 @@ titleIcon.addEventListener('mouseenter', () => {
 titleIcon.addEventListener('mouseleave', () => {
  	titleDropdown.classList.remove('show');
 });
-
-
 </script>
 </html>
 
