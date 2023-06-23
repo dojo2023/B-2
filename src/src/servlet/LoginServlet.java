@@ -50,9 +50,10 @@ public class LoginServlet extends HttpServlet {
 			// トップサーブレットにリダイレクトする
 			response.sendRedirect("/BtwoB/TopServlet");
 		}
-		else {  // ログイン失敗
+		// もしログインが失敗していたら？
+		else if (uDao.isLoginOK(new Users(user_name, user_pw)) == false) {  // ログイン失敗
 			// ここにポップアップ表示するかも
-			  request.setAttribute("showPopup", true);
+			request.setAttribute("showPopup", true);
 
 			// ログイン失敗確認用
 			System.out.println("ログイン失敗");
@@ -60,6 +61,7 @@ public class LoginServlet extends HttpServlet {
 			// 結果ページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 			  dispatcher.forward(request, response);
-			}
-	    }
+		}
+
 	}
+}

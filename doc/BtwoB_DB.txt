@@ -57,7 +57,7 @@ order by orders desc;
 
 【eyecatchesテーブルを作成するSQL文】
 create table eyecatches (
-id int ,
+id int auto_increment primary key,
 tag varchar (6),
 message varchar (100),
 created_at timestamp ,
@@ -67,6 +67,9 @@ update_at timestamp
 【eyecatchesテーブルにデータを登録するSQL文】
 insert into eyecatches (tag, message, created_at, update_at) 
 values ('', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+【データをランダムで取得するSQL文】
+select * from eyecatches where tag = '任意のタグ名' order by rand() limit 1;
 
 【logincountsテーブルを作成するSQL文】
 create table logincounts (

@@ -42,7 +42,8 @@ public class RegistServlet extends HttpServlet {
 			response.sendRedirect("/BtwoB/LoginServlet");
 		}
 		else {												// 登録失敗
-			System.out.println("登録失敗");
+			 request.setAttribute("showPopup", true);
+
 			// トップサーブレットにリダイレクトする
 			response.sendRedirect("/BtwoB/LoginServlet");
 		}
