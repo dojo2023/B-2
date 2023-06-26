@@ -4,10 +4,10 @@ let lineCtx = document.getElementById("Chart");
 let lineConfig = {
     type: 'pie',
     data: {
-        labels: ['仕事', '友達', '家族','恋愛','自分','その他'],
+        labels: labelsData,
+
         datasets: [{
-            label: 'Red',
-            data: [50, 30, 20,60,40,10],
+            data: datesValue,
             borderColor: '#ffffff',
             backgroundColor: ['#B0C4DE','#66CDAA','#FFDEAD','#FFB6C1','#F0E68C','#DDA0DD'],
         }],
