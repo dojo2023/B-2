@@ -141,28 +141,38 @@ header {
     padding: 80px;
     width: 50%;
 }
-.split-left{
-    background: #696969;
-    color: #ffffff;
+
+ 
+ .split-left{
+    background: #FFE4E1;
+    color: #000000;
     position: flexd;
+    flex:1;
+    height:100vh;
+    overflow:auto;
 }
 .split-right{
-    background: #000000;
-    color: #ffffff;
+    background:#FFE4E1;
+    color: #000000;
     position: relative;
+    flex:1;
+    padding:10px 50px 20px 20px;
 }
 .split-left__inner{
     height: 8000px;
     width:100%;
     overflow-y:scroll;
 	overflow-x:hidden;
+	padding:10px 50px 20px 50px;
 }
 .split-right__inner{
     height: 100%;
     position: fixed;
     width: 50%;
 }
-
+ 
+ 
+ 
 /* ゲーム選択の4つのボタンのクラス */
 .button1{
 	width: 200px;
