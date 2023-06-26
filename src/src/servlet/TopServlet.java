@@ -22,13 +22,14 @@ public class TopServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
 		// MurmursDAOのインスタンス化
 		MurmursDAO mDao = new MurmursDAO();
 		// MurmursDAOのget()メソッドを呼び出して、返ってきた愚痴の情報のリストを取得
 		LoginUser lu = new LoginUser(1, "ラム");
 		List<Murmurs> cardList = mDao.get(lu);
 		// 愚痴取得結果をリクエストスコープに格納する
-		request.setAttribute("cardList", cardList);
+		session.setAttribute("cardList", cardList);
 
 //		// EyecatchesDAOのインスタンス化
 //		EyecatchesDAO eDao = new EyecatchesDAO();
@@ -46,11 +47,12 @@ public class TopServlet extends HttpServlet {
 			String message = eDao.getMessage(tagPersentList.get(0).getTag());
 			request.setAttribute("message", message);*/
 
+		// リストを宣言する
+//		List<percentage_of_orders> PoOList = new ArrayList<percentage_of_orders>();
 
 		String tag = null;
 		int murNum = 0;
 		for (TagPercentage tagPList : tagPersentList) {
-
 		    if (tagPList.getOrders() > murNum) {
 		        murNum = tagPList.getOrders();
 		        tag = tagPList.getTag();
@@ -58,14 +60,24 @@ public class TopServlet extends HttpServlet {
 		    else if (tagPList.getOrders() == murNum) {
 		    	tag = "その他";
 		    }
+
+
+		    // PoOListにPerentage_of_orders()を入れていく
+//		    PoOList.add(tagPList.getPercentage_of_orders());
 		}
 
 		System.out.println(tag);
 
+
+
+		// リクエストスコープにPercentage_of_ordersが入ったリストを格納
 		// セッションスコープに一番ourdesが多いタグのmessageを保存する
-		HttpSession session = request.getSession();
+		System.out.println(tagPersentList);
+		session.setAttribute("tagPersentList", tagPersentList);
+
 		System.out.println(eDao.getMessage(tag));
 		session.setAttribute("eyecatch", eDao.getMessage(tag));
+
 
 		// ログインしたらポップアップを表示する
 		request.setAttribute("showPopup", true);

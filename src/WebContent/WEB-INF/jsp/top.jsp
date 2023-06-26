@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="/BtwoB/css/popup.css">
 <link rel="stylesheet" href="css/top.css">
 <script src=""></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js "></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 </head>
 <body>
 <!--ヘッダーここから-->
@@ -71,7 +71,6 @@
 </header>
 <!-- ヘッダーここまで -->
 
-
 <!-- 左右画面のdiv -->
 <div class="split">
     <!-- 左画面のdiv -->
@@ -125,14 +124,12 @@
 	<!-- 右画面のdiv -->
 	<div class="split-right">
 	<!-- 「週間円グラフ」 -->
+
 			<div class="weekly_piegraph" style="position:relative;width:450px;height:450px;margin: auto;text-align:center;">
 			<canvas id="Chart"></canvas>
 			</div>
 		<!-- 右画面の中のdiv -->
 		<div class="split-right__inner">
-
-
-
 			<!-- 画面右下「愚痴一覧表示ボタン」「新規愚痴入力ボタン」-->
 			<a href="MurListServlet"><input type="image" src="/BtwoB/img/murlist_button.png" onclick="/BtwoB/MurListServlet" value="愚痴一覧表示" name="murlist_button"></a>
 			<a href="MurInServlet"><input type="image" src="/BtwoB/img/murinput_button.png" onclick="/BtwoB/MurInServlet" value="新規入力" name="murinput_button"></a>
@@ -141,6 +138,22 @@
 		</div><!-- split-right__inner -->
 	</div><!-- split-item split-right -->
 </div><!--split-->
+<!-- 愚痴グラフのデータ取得 -->
+<!-- <script src="js/graph.js"> -->
+<script>
+labelsData = [
+	<c:forEach var="e" items="${tagPersentList}">
+	'${e.tag}',
+	</c:forEach>
+];
+
+datesValue = [
+	<c:forEach var="e" items="${tagPersentList}">
+	'${e.percentage_of_orders}',
+	</c:forEach>
+];
+
+</script>
 <script src="js/graph.js"></script>
 </body>
 
@@ -151,15 +164,17 @@
 		<label class="close" for="pop-up">×</label>
 		<%-- <c:out><p class="text" value="${eyecatch}"></p></c:out> --%>
 		<c:out value="${eyecatch}"></c:out>
-  <c:if test="${not empty showPopup}">
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.getElementById("pop-up").checked = true;
-    });
-  </script>
-  </c:if>
+		<%-- <c:if test="${not empty showPopup}">
+
+		</c:if> --%>
 	</div>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("pop-up").checked = true;
+    });
+</script>
+
 <!-- ポップアップここまで -->
 
 <script>
