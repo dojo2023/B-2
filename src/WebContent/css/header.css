@@ -3,7 +3,7 @@
 header {
 	display: block;
 	background-color: #ffffff;
-	padding: 20px;
+	padding: 2px 20px 2px 20px;
 }
 
 .navbar {
@@ -14,7 +14,7 @@ header {
 
 /* まめぇまめぇのロゴ画像 */
 .logo img {
-    width: 50px;
+    width: 300px;
     height: auto;
 }
 
