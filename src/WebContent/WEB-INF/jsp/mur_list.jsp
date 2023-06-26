@@ -39,7 +39,7 @@
 			</ul>
 			</li>
 		<!-- ユーザ名表示 -->
-		<li><a href="" class="right-align no-underline">ゆ～ざ～メェ</a></li>
+		<li><a href="" class="right-align no-underline">ゆ～ざ～メェ　${id_name.user_name}</a></li>
 
 		<!-- 称号アイコン -->
 		<li class="title-icon">
@@ -88,12 +88,13 @@
             <!-- 「表示方法プルダウンメニュー」 -->
          	<label class="sortmenu">
   			<select name="ORDER">
-				<option value="new">新しい順</option>
-				<option value="old">古い順</option>
-				<option value="tag">タグ順</option>
+  				<option>古い順</option>
+				<option>新しい順</option>
+				<option>タグ</option>
 			</select>
 			</label><!--sortmenu" -->
-
+			<input type="submit" name="SUBMIT" value="決定">
+</form>
 			<!-- ここに愚痴一覧のテーブル -->
 			<!-- <table class="mur_list">
 			<tr>
@@ -121,33 +122,36 @@
 			<table class="mur_list">
 			<tr>
 			<td>
-			<table class="tagmurmur">
-			<!--
-				・もしmurmur_checkがtrueだったら
-				・(もしmurmur_deleteがtrueだったら)これいらないかも
-				・もしセッションスコープに保存されてるuser_idと同じだったら
-				を追加する必要あり
-			-->
+
+
 			<c:forEach var="e" items="${cardList}" >
+			<form method="POST" action="/BtwoB/MurListServlet">
+			<table class="tagmurmur">
+
 				<tr><td><input type="hidden" name="ID" value="${e.id}"></td></tr>
 				<tr><td><input type="hidden" name="USER_ID" value="${e.user_id}"></td></tr>
 				<tr style="width: 100px"><td class="tag">${e.tag}</td></tr>
-				<tr><td class="murmur">${e.murmur}</td></tr>
+				<tr><td class="murmur">${e.murmur}</td>
+				<td class="delete_button">
+				<input class="delete_button" type="submit" name="SUBMIT" value="削除"></td></tr>
 				<tr><td><input type="hidden" name="MURMUR_CHECK" value="${e.murmur_check}"></td></tr>
 				<tr><td><input type="hidden" name="MURMUR_DELETE" value="${e.murmur_delete}"></td></tr>
 				<tr><td><input type="hidden" name="CREATED_AT" value="${e.created_at}"></td></tr>
 				<tr><td><input type="hidden" name="UPDATE_AT" value="${e.update_at}"></td></tr>
-			</c:forEach>
+
 			</table>
+			</form>
+			</c:forEach>
+
 			</td>
             <td>
             <table class="delete_button">
-            	<tr><td><input type="submit" name="SUBMIT" value="削除"></td></tr>
-            </table><!-- delete_button -->
+            	<!-- <tr><td><input type="submit" name="SUBMIT" value="削除"></td></tr> -->
+            </table>
             </td>
             </tr>
             </table><!-- mur_list -->
-			</form>
+
 
 
         </div><!--split-left__inner-->
@@ -169,6 +173,20 @@
 	</div><!-- split-item split-right -->
 </div><!--split-->
 
+<script>
+labelsData = [
+	<c:forEach var="e" items="${tagPersentList}">
+	'${e.tag}',
+	</c:forEach>
+];
+
+datesValue = [
+	<c:forEach var="e" items="${tagPersentList}">
+	'${e.percentage_of_orders}',
+	</c:forEach>
+];
+
+</script>
 <script src="js/graph.js"></script>
 </body>
 <script>

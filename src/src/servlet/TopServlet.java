@@ -22,13 +22,20 @@ public class TopServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
+		if (session.getAttribute("id_name") == null) {
+			response.sendRedirect("/BtwoB/LoginServlet");
+			return;
+		}
+
 		// MurmursDAOのインスタンス化
 		MurmursDAO mDao = new MurmursDAO();
+
 		// MurmursDAOのget()メソッドを呼び出して、返ってきた愚痴の情報のリストを取得
-		LoginUser lu = new LoginUser(1, "ラム");
+		LoginUser lu = (LoginUser)session.getAttribute("id_name");
 		List<Murmurs> cardList = mDao.get(lu);
-		// 愚痴取得結果をリクエストスコープに格納する
+		// 愚痴取得結果をセッションスコープに格納する
 		session.setAttribute("cardList", cardList);
 
 //		// EyecatchesDAOのインスタンス化

@@ -134,6 +134,188 @@ public class MurmursDAO {
 		return cardList;
 	}
 
+
+	// 登録した順（新しい順）愚痴の取得メソッド
+	public List<Murmurs> getNew(LoginUser lu) {
+		Connection conn = null;
+		List<Murmurs> cardList = new ArrayList<Murmurs>();
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6Data\\B2", "sa", "");
+
+			// SQL文を準備する
+			String sql = "select * from murmurs WHERE user_id = ? AND murmur_delete is false order by id desc";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			pStmt.setString(1, String.valueOf(lu.getUser_id()));
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// 結果表をコレクションにコピーする
+			while (rs.next()) {
+				Murmurs card = new Murmurs(
+				rs.getInt("ID"),
+				rs.getInt("USER_ID"),
+				rs.getString("TAG"),
+				rs.getString("MURMUR"),
+				rs.getBoolean("MURMUR_CHECK"),
+				rs.getBoolean("MURMUR_DELETE"),
+				rs.getString("CREATED_AT"),
+				rs.getString("UPDATE_AT")
+				);
+				cardList.add(card);
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			cardList = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			cardList = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					cardList = null;
+				}
+			}
+		}
+
+		// 結果を返す
+		return cardList;
+	}
+
+	// ふるい順愚痴の取得メソッド
+	public List<Murmurs> getOld(LoginUser lu) {
+		Connection conn = null;
+		List<Murmurs> cardList = new ArrayList<Murmurs>();
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6Data\\B2", "sa", "");
+
+			// SQL文を準備する
+			String sql = "select * from murmurs WHERE user_id = ? AND murmur_delete is false order by id asc";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			pStmt.setString(1, String.valueOf(lu.getUser_id()));
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// 結果表をコレクションにコピーする
+			while (rs.next()) {
+				Murmurs card = new Murmurs(
+				rs.getInt("ID"),
+				rs.getInt("USER_ID"),
+				rs.getString("TAG"),
+				rs.getString("MURMUR"),
+				rs.getBoolean("MURMUR_CHECK"),
+				rs.getBoolean("MURMUR_DELETE"),
+				rs.getString("CREATED_AT"),
+				rs.getString("UPDATE_AT")
+				);
+				cardList.add(card);
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			cardList = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			cardList = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					cardList = null;
+				}
+			}
+		}
+
+		// 結果を返す
+		return cardList;
+	}
+
+	// タグごとの愚痴の取得メソッド
+	public List<Murmurs> getTag(LoginUser lu) {
+		Connection conn = null;
+		List<Murmurs> cardList = new ArrayList<Murmurs>();
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6Data\\B2", "sa", "");
+
+			// SQL文を準備する
+			String sql = "select * from murmurs WHERE user_id = ? AND murmur_delete is false order by tag desc";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			pStmt.setString(1, String.valueOf(lu.getUser_id()));
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// 結果表をコレクションにコピーする
+			while (rs.next()) {
+				Murmurs card = new Murmurs(
+				rs.getInt("ID"),
+				rs.getInt("USER_ID"),
+				rs.getString("TAG"),
+				rs.getString("MURMUR"),
+				rs.getBoolean("MURMUR_CHECK"),
+				rs.getBoolean("MURMUR_DELETE"),
+				rs.getString("CREATED_AT"),
+				rs.getString("UPDATE_AT")
+				);
+				cardList.add(card);
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			cardList = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			cardList = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					cardList = null;
+				}
+			}
+		}
+
+		// 結果を返す
+		return cardList;
+	}
+
+
 	// 愚痴の登録メソッド
 	public boolean insert(int user_id, String tag, String murmur) {
 		Connection conn = null;

@@ -40,7 +40,7 @@
 			</ul>
 			</li>
 		<!-- ユーザ名表示 -->
-		<li><a href="" class="right-align no-underline">ゆ～ざ～メェ</a></li>
+		<li><a href="" class="right-align no-underline">ゆ～ざ～メェ　${id_name.user_name}</a></li>
 
 		<!-- 称号アイコン -->
 		<li class="title-icon">
@@ -64,7 +64,7 @@
 			</ul>
 		</li>
 			<!-- ログアウト(ログイン画面に遷移) -->
-			<li><a href="LoginServlet" class="right-align no-underline">ろぐあうと</a></li>
+			<li><a href="LogoutServlet" class="right-align no-underline">ろぐあうと</a></li>
 		</ul>
 	</nav>
 	</nav>

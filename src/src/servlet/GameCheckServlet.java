@@ -21,12 +21,19 @@ public class GameCheckServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
+		if (session.getAttribute("id_name") == null) {
+			response.sendRedirect("/BtwoB/LoginServlet");
+			return;
+		}
+
 		// MurmursDAOのインスタンス化
 		MurmursDAO mDao = new MurmursDAO();
 		// MurmursDAOのget()メソッドを呼び出して、返ってきた愚痴の情報のリストを取得
 		//後でここはセッションスコープの値を取り出して入れる。
-		LoginUser lu = new LoginUser(1, "ラム");
+		//LoginUser lu = new LoginUser(1, "ラム");
+		LoginUser lu = (LoginUser)session.getAttribute("id_name");
 
 		//murmur_checkがtrue でかつ murmur_deleteがfalseのデータのmurmur_checkはfalseにする
 		mDao.updateMurFalse(lu);
@@ -50,9 +57,14 @@ public class GameCheckServlet extends HttpServlet {
 		 * ・利用する際は、checkがfalse,deleteがtrueのものを表示
 		 * ・その後、deleteをfalseにupdateするメソッドを使用する(まだ作成していない)
 		 */
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id_name") == null) {
+			response.sendRedirect("/BtwoB/LoginServlet");
+			return;
+		}
 
 		request.setCharacterEncoding("UTF-8");
-		HttpSession session = request.getSession();
 
 		MurmursDAO mDao = new MurmursDAO();
 
@@ -83,11 +95,12 @@ public class GameCheckServlet extends HttpServlet {
 			}
 		}
 
+		LoginUser lu = (LoginUser)session.getAttribute("id_name");
 		//ゲームで使う愚痴のデータセットをセッションスコープに保存する
 		//murmur_checkがtrueでmurmur_deleteがFALSEのデータ
 		// sessionスコープに保存しているユーザのuser_idとuser_nameを引数として渡す。
 		// chTrueDeFalse()メソッドでcheckがtrue,deleteがfalseのmurmursの情報を取得。
-		session.setAttribute("chTdeF", mDao.chTrueDeFalse(new LoginUser(1, "ラム")));
+		session.setAttribute("chTdeF", mDao.chTrueDeFalse(lu));
 
 		// ボタンごとの画面遷移を行う
 		if (request.getParameter("submit").equals("クリック破壊ゲーム")) {
