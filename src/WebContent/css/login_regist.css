@@ -6,3 +6,8 @@ text-align: center;
 text-align: center;
 }
 
+/* まめぇまめぇのロゴ画像 */
+.logo img {
+    width: 300px;
+    height: auto;
+}
