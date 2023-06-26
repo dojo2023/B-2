@@ -84,12 +84,13 @@
                 <tr><td>tag</td><td><input type="text" name="TAG" value="${e.tag}"></td></tr>
                 <tr><td>murmurs</td><td><input type="text" name="MURMUR" value="${e.murmur}"></td></tr>
             </table> --%>
+            <form method="POST" action="/BtwoB/MurListServlet">
             <!-- 「表示方法プルダウンメニュー」 -->
          	<label class="sortmenu">
-  			<select>
-			<option value="new">新しい順</option>
-			<option value="old">古い順</option>
-			<option value="tag">タグ順</option>
+  			<select name="ORDER">
+				<option value="new">新しい順</option>
+				<option value="old">古い順</option>
+				<option value="tag">タグ順</option>
 			</select>
 			</label><!--sortmenu" -->
 
@@ -115,8 +116,8 @@
 			・データベースの情報を参照してlist表示した
 			・削除ボタンをmurmurの横に表示した
 			 -->
-            <c:forEach var="e" items="${cardList}" >
-			<form method="GET" action="/BtwoB/MurListServlet">
+
+
 			<table class="mur_list">
 			<tr>
 			<td>
@@ -127,6 +128,7 @@
 				・もしセッションスコープに保存されてるuser_idと同じだったら
 				を追加する必要あり
 			-->
+			<c:forEach var="e" items="${cardList}" >
 				<tr><td><input type="hidden" name="ID" value="${e.id}"></td></tr>
 				<tr><td><input type="hidden" name="USER_ID" value="${e.user_id}"></td></tr>
 				<tr style="width: 100px"><td class="tag">${e.tag}</td></tr>
@@ -135,6 +137,7 @@
 				<tr><td><input type="hidden" name="MURMUR_DELETE" value="${e.murmur_delete}"></td></tr>
 				<tr><td><input type="hidden" name="CREATED_AT" value="${e.created_at}"></td></tr>
 				<tr><td><input type="hidden" name="UPDATE_AT" value="${e.update_at}"></td></tr>
+			</c:forEach>
 			</table>
 			</td>
             <td>
@@ -145,7 +148,7 @@
             </tr>
             </table><!-- mur_list -->
 			</form>
-			</c:forEach>
+
 
         </div><!--split-left__inner-->
     </div><!--split-item split-left-->
