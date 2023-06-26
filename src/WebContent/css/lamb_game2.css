@@ -4,17 +4,3 @@ body {
     background: rgb(97, 231, 24);
 }
 
-.post-btn {
-  position: fixed;
-  bottom: 10%;
-  right: 25%;
-  width: 70px;
-  height: 70px;
-  line-height:70px;
-  color:white;
-  font-weight: bold;
-  font-size: 30px;
-  border-radius: 50%;
-  background: rgb(97, 231, 24);
-  text-align: center;
-}
