@@ -123,3 +123,14 @@
   bottom: 20px;
   right: 20px;
 }
+
+
+.modal__contents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__content {
+  text-align: center;
+}

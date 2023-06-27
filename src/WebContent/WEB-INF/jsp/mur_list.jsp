@@ -41,7 +41,7 @@
 			</ul>
 			</li>
 		<!-- ユーザ名表示 -->
-		<li><a href="" class="right-align no-underline">ゆ～ざ～メェ　${id_name.user_name}</a></li>
+		<li><a href="" class="right-align no-underline">${id_name.user_name}</a></li>
 
 		<!-- 称号アイコン -->
 		<li class="title-icon">
@@ -146,7 +146,7 @@
 			</c:forEach>
 
 			<!-- pagetop遷移用 -->
-			<p id="page-top"><a href="#"><span>Page Top</span></a></p>
+			<p id="page-top"><a href="#"><span>うえにもどる</span></a></p>
 			<!-- <input id="page-top"><a href="#"><span>Page Top</span></a> -->
 
 			</td>
