@@ -78,7 +78,7 @@ public class TopServlet extends HttpServlet {
 
 
 		// リクエストスコープにPercentage_of_ordersが入ったリストを格納
-		// セッションスコープに一番ourdesが多いタグのmessageを保存する
+		// セッションスコープに一番ordersが多いタグのmessageを保存する
 		System.out.println(tagPersentList);
 		session.setAttribute("tagPersentList", tagPersentList);
 
@@ -88,8 +88,11 @@ public class TopServlet extends HttpServlet {
 
 		// ログインしたらポップアップを表示する
 		request.setAttribute("showPopup", true);
-
-
+		int x= (Integer)session.getAttribute("top_count");
+		x++;
+		session.setAttribute("top_count", x);
+		int y= (Integer)session.getAttribute("top_count");
+		System.out.println(y);
 		// 登録ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top.jsp");
 		dispatcher.forward(request, response);

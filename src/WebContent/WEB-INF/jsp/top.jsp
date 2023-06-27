@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/scroll_graph.css">
 <link rel="stylesheet" href="/BtwoB/css/popup.css">
 <link rel="stylesheet" href="css/top.css">
-<script src=""></script>
+<script src="js/page_top.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 </head>
 <body>
@@ -118,6 +118,9 @@
 			</form>
 			</c:forEach>
 
+			<!-- pagetop遷移用 -->
+			<p id="page-top"><a href="#"><span>Page Top</span></a></p>
+
         </div><!--split-left__inner-->
     </div><!--split-item split-left-->
 
@@ -155,7 +158,13 @@ datesValue = [
 
 </script>
 <script src="js/graph.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="js/page_top.js"></script>
+<script src="js/8-1-8.js"></script>
 </body>
+</body>
+
+<input type="hidden" id ="top_count" name="top_count" value="${top_count}">
 
 <!-- ポップアップ -->
 <input type="checkbox" id="pop-up">
@@ -170,9 +179,14 @@ datesValue = [
 	</div>
 </div>
 <script>
-	document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("pop-up").checked = true;
-    });
+	const top_count = document.getElementById("top_count").value;
+	if(top_count == 1){
+		document.getElementById("pop-up").checked=true ;
+	};
+//	document.addEventListener("DOMContentLoaded", function() {
+  //  document.getElementById("pop-up").checked=true ;
+    //});
+
 </script>
 
 <!-- ポップアップここまで -->

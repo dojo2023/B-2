@@ -45,9 +45,13 @@ public class LoginServlet extends HttpServlet {
 
 			// セッションスコープに保存されているかデバッグ
 			System.out.println(uDao.loginInfo(new Users(user_name, user_pw)));
+			Integer top_count = 0;
+			session.setAttribute("top_count",top_count);
 
 			// トップサーブレットにリダイレクトする
 			response.sendRedirect("/BtwoB/TopServlet");
+
+
 		}
 		// もしログインが失敗していたら？
 		else if (uDao.isLoginOK(new Users(user_name, user_pw)) == false) {  // ログイン失敗
