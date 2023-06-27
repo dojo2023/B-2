@@ -134,7 +134,7 @@
 				<tr style="width: 100px"><td class="tag">${e.tag}</td></tr>
 				<tr><td class="murmur">${e.murmur}</td>
 				<td class="delete_button">
-				<input class="delete_button" type="submit" name="SUBMIT" value="削除"></td></tr>
+				<input class="delete_button" type="submit" name="SUBMIT" value="削除"<a href="javascript:void(0);" onclick="var yes=confirm('本当に削除しますか？'); if (yes) alert('承知しました。削除します。'); return false;"></a>></td></tr>
 				<tr><td><input type="hidden" name="MURMUR_CHECK" value="${e.murmur_check}"></td></tr>
 				<tr><td><input type="hidden" name="MURMUR_DELETE" value="${e.murmur_delete}"></td></tr>
 				<tr><td><input type="hidden" name="CREATED_AT" value="${e.created_at}"></td></tr>

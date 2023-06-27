@@ -90,6 +90,7 @@ public class MurListServlet extends HttpServlet {
 				doGet(request,response);
 			}
 		}
+		
 		else {
 			int id = Integer.parseInt(request.getParameter("ID"));
 			// 削除処理を行う（trueをfalseに）
