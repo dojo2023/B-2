@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/BtwoB/css/header.css">
 <link rel="stylesheet" href="css/scroll_graph.css">
 <link rel="stylesheet" href="css/mur_list.css">
+<link rel="stylesheet" href="/BtwoB/css/popup.css">
 <script src="mur_list.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js "></script>
 </head>
@@ -189,6 +190,25 @@ datesValue = [
 </script>
 <script src="js/graph.js"></script>
 </body>
+
+<input type="checkbox" id="pop-up">
+<div class="overlay">
+	<div class="window">
+		<label class="close" for="pop-up">×</label>
+		<p class="text">愚痴が溜まっています。<br> 発散しませんか？</p>
+
+  <c:if test="${not empty showPopup}">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("pop-up").checked = true;
+    });
+  </script>
+  </c:if>
+	</div>
+</div>
+<!-- ポップアップここまで -->
+
+
 <script>
 //ヘッダー部分のjs
 //JavaScriptでドロップダウンメニューの動作を制御
