@@ -49,7 +49,7 @@ public class MurListServlet extends HttpServlet {
 			response.sendRedirect("/BtwoB/LoginServlet");
 			return;
 		}
-
+		request.setAttribute("showPopup", true);
 		// ここで得たパラメータをMurmursDAOでアップデートする
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
