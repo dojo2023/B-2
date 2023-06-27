@@ -1,0 +1,110 @@
+create table users (
+user_id int auto_increment primary key,
+user_name varchar (20) not null,
+user_pw varchar (10) not null,
+created_at timestamp,
+update_at timestamp 
+);
+insert into users (user_id, user_name, user_pw, created_at, update_at) 
+values ('1', 'ラム', '1234', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+create table murmurs (
+id int auto_increment primary key,
+user_id int(20) not null,
+tag varchar(6) not null,
+murmur varchar(400) not null,
+murmur_check boolean default 'false',
+murmur_delete boolean default 'false',
+created_at timestamp,a
+update_at timestamp 
+);
+create table murmurs (
+id int auto_increment primary key,
+user_id int(20) not null,
+tag varchar(6) not null,
+murmur varchar(400) not null,
+murmur_check boolean default 'false',
+murmur_delete boolean default 'false',
+created_at timestamp,
+update_at timestamp 
+);
+insert into murmurs (user_id, tag, murmur, created_at, update_at)
+values ('1', '仕事', 'やってることむずすぎて無理', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into murmurs (user_id, tag, murmur, created_at, update_at)
+values ('1', '友人', 'もうきらい！', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into murmurs (user_id, tag, murmur, created_at, update_at)
+values ('1', '家族', 'ぱぱなんてもうしらないっ', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into murmurs (user_id, tag, murmur, created_at, update_at)
+values ('1', '仕事', 'やめたい', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into murmurs (user_id, tag, murmur, created_at, update_at)
+values ('1', 'その他', 'おなかへった', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into murmurs (user_id, tag, murmur, created_at, update_at)
+values ('2', '仕事', 'やってることむずすぎて無理', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+create table eyecatches (
+id int auto_increment primary key,
+tag varchar (6),
+message varchar (100),
+created_at timestamp ,
+update_at timestamp 
+);  
+insert into eyecatches (tag, message, created_at, update_at) 
+values 
+('仕事', '「ホッチキス」の本当の名前は知ってる？
+　ホッチキスはアメリカの会社の名前で、本当の商品名は「ステイプラー」って言うんだよ', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('仕事', 'お寿司屋さんのお茶が熱いのには理由があるんだよ。
+　寿司ネタの脂分を次に食べるお寿司に残さないために熱いお茶でリセットするんだ！', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('仕事', '色鉛筆の芯が円形なのには理由があるんだよ
+　実は色鉛筆の芯はすごく柔らかくて折れやすいんだ！ だから衝撃を逃がせるように丸い形をしているよ。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('仕事', 'ほぼ毎日触るマウスについて！
+　パソコンのマウスを動かした時の長さの単位は「ミッキー」って言うんだって。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into eyecatches (tag, message, created_at, update_at) 
+values 
+('友だち', 'スマートフォンの電話の声は本人の声じゃないって知ってた？
+　たくさんの音声データの中から本人に似ているものが選ばれ、それが相手の耳に届けられているんだよ。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('友だち', '知り合いにもいるかな？
+　日本で一番多いフルネームは「田中実」さん。二番目は「佐藤清」さんで、三番目は「佐藤正」さんだよ。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('友だち', 'あくびをどうしても止めたいとき！
+　そんな時には上唇をなめるといいよ。上唇をなめる筋肉とあくびをするときに使う筋肉が同じだから止まるんだって。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into eyecatches (tag, message, created_at, update_at) 
+values 
+('家族', 'ウサギが寂しいと死んじゃうというのは嘘なんだよ～。
+　ウサギは一匹一匹持って生きてる動物なんだ！', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('家族', '犬が舌を出して「ハアハア」しているのは「パンティング」って名前があるんだよ。
+　汗による体温調節が出来ないから唾液を蒸発させることで熱を放出してるんだ！', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('家族', 'カピバラも家で飼えるって知ってた？
+　カピバラは天敵から逃げるために時速50㎞で走れるようになったんだよ。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into eyecatches (tag, message, created_at, update_at) 
+values 
+('恋愛', '咳にも消費カロリーがあるって知ってる？
+　一回咳をするごとに2kcal消費されるんだ。ちなみに切手をなめた時の摂取カロリーも2kcalだよ。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('恋愛', 'ティラミスっておいしいよね
+　ティラミスはイタリア語で「私を元気付けて！」「私を天国に連れて行って！」「私をハイにして！」という意味があるんだよ。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('恋愛', '街路樹に落葉樹が多い理由を知ってる？
+　夏は日差しをさえぎり木陰を作ることができて、冬は葉が落ちるため日差しが届き温もりを与えてくれるからなんだって。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into eyecatches (tag, message, created_at, update_at) 
+values 
+('自分', '流した涙の行先は？
+　涙は蒸発したら80年かけて雨になるんだって。80年生きれば自分の涙の雨を浴びれるかも！', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('自分', '自分の血管のことって考えたことある？
+　人一人の血管を全て繋げると地球２周半分の長さになるんだよ。その長さはおよそ10万㎞。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('自分', '富士山、鷹、茄子に続くのは？
+　縁起が良い初夢「一富士　二鷹　三茄子」には「四扇（おうぎ）　五煙草（たばこ）　六座頭（ざとう）」という続きがあるんだよ。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into eyecatches (tag, message, created_at, update_at) 
+values 
+('その他', '銀行の観葉植物に役割があるって知ってる？
+　あれはただおいてあるだけじゃなくて、銀行強盗の身長を測るためにあるんだよ。だから銀行の出入り口に置かれていることが多いんだ。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('その他', '徒歩○○分の目安って知ってる？
+　分速80メートルで計測しているよ！ これはハイヒールの女性を基準にした数値なんだって。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('その他', '北極よりも南極の方が断然寒いって知ってた？
+　でも南極では寒すぎてウイルスが存在してなくて、どんなに寒くても人が風邪をひくことはないんだって。', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+create table logincounts (
+id int auto_increment primary key,
+user_id int (10) not null,
+created_at timestamp ,
+update_at timestamp 
+);
+create table gamecounts (
+id int auto_increment primary key,
+user_id int (10) not null,
+created_at timestamp ,
+update_at timestamp 
+);  
