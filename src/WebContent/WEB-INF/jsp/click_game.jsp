@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>まめぇまめぇ</title>
 <link rel="stylesheet" href="css/click_space_game.css">
+<link rel="stylesheet" href="css/game_modal.css">
 <script src="click_space_game.js"></script>
 </head>
 
@@ -20,9 +21,36 @@
 <img id="image_file" src = "/BtwoB/img/earth_image1.png" width = "525" height ="525" onclick="henkou()" ></p>
 
 <!-- ボタン -->
-<div align="right" class="example-r">
+<!-- <div align="right" class="example-r">
  <button id="save">削除</button>
- </div>
+ </div> -->
+
+</body>
+<!-- モーダルここから -->
+     <button class="button js-modal-button">地球が破壊されました！</button>
+<div class="layer js-modal">
+	<div class="modal">
+	<div class="modal__inner">
+		<div class="modal__button-wrap">
+			<!-- <button class="close-button js-close-button"> -->
+			<span></span>
+			<span></span>
+			<!-- </button> -->
+		</div>
+		<div class="modal__contents">
+		<div class="modal__content">
+		もう一回やる？ <br>
+		<form id="myForm">
+  <!-- フォームの入力フィールドなど -->
+  <button type="button" class="yes_button" onclick="submitForm('GameCheckServlet')">はい</button>
+  <button type="button" class="no_button" onclick="submitForm('TopServlet')">いいえ</button>
+</form>
+		</div>
+	</div>
+	</div>
+	</div>
+	</div>
+<!-- モーダルここまで -->
   <div id="saveResult"></div>
 
 <script>
@@ -40,7 +68,7 @@ function henkou() {
 		}
 		}
 
-document.getElementById("save").onclick = function() {
+/* document.getElementById("save").onclick = function() {
 	  let checkSaveFlg = window.confirm('削除を実行してもよろしいですか？');
 
 	  if(checkSaveFlg) {
@@ -49,7 +77,31 @@ document.getElementById("save").onclick = function() {
 	    document.getElementById("saveResult").textContent = "削除をキャンセルしました。";
 	  }
 	};
+ */
 
+	/* モーダルJSここから */
+	const modal = document.querySelector('.js-modal');
+	const modalButton = document.querySelector('.js-modal-button');
+
+
+  const modalClose = document.querySelector('.js-close-button');
+
+  modalButton.addEventListener('click', () => {
+    modal.classList.add('is-open');
+
+  });
+
+  modalClose.addEventListener('click', () => {
+    modal.classList.remove('is-open');
+
+  });
+
+  function submitForm(action) {
+	  var form = document.getElementById("myForm");
+	  form.action = action;
+	  form.submit();
+	}
+/* モーダルJSここまで */
 </script>
-</body>
+
 </html>
