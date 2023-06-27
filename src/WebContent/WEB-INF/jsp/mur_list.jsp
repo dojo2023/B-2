@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/scroll_graph.css">
 <link rel="stylesheet" href="css/mur_list.css">
 <link rel="stylesheet" href="/BtwoB/css/popup.css">
+<link rel="stylesheet" href="css/top.css">
 <script src="mur_list.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js "></script>
 </head>
@@ -144,6 +145,10 @@
 			</form>
 			</c:forEach>
 
+			<!-- pagetop遷移用 -->
+			<p id="page-top"><a href="#"><span>Page Top</span></a></p>
+			<!-- <input id="page-top"><a href="#"><span>Page Top</span></a> -->
+
 			</td>
             <td>
             <table class="delete_button">
@@ -189,6 +194,9 @@ datesValue = [
 
 </script>
 <script src="js/graph.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="js/page_top.js"></script>
+
 </body>
 
 <!-- ポップアップここから -->

@@ -20,7 +20,7 @@
 
 	<!-- まめぇまめぇのロゴ画像 -->
 	<div class="logo">
-		<img src="logo.png" alt="ロゴ">
+		<a href="/BtwoB/TopServlet"><img src="/BtwoB/img/logo.png" alt="まめぇまめぇ" ></a>
 	</div>
 	<nav class="right-align">
 		<ul class="menu">
@@ -85,12 +85,12 @@
                 <tr><td>tag</td><td><input type="text" name="TAG" value="${e.tag}"></td></tr>
                 <tr><td>murmurs</td><td><input type="text" name="MURMUR" value="${e.murmur}"></td></tr>
             </table> --%>
-            <table class="tagmurmur">
+            <!-- <table class="tagmurmur">
                 <tr style="width: 100px"><td class="tag">その他</td></tr>
                 <tr><td class="blank"></td></tr>
                 <tr><td class="murmur">暑すぎて無理。気温ちょうどいい世界になれ</td></tr>
             </table>
-
+ -->
             <!-- 6/20佐野　変更点
 			・データベースの情報を参照してlist表示した
 			 -->
@@ -104,22 +104,23 @@
 				・もしcreated_atの時間が現在から見て1週間以内だったら
 				を追加する必要あり
 			-->
-			<c:if test = "${MURMUR_CHECK == TRUE}">
 				<tr><td><input type="hidden" name="ID" value="${e.id}"></td></tr>
 				<tr><td><input type="hidden" name="USER_ID" value="${e.user_id}"></td></tr>
-				<tr style="width: 100px"><td class="tag"><input type="text" name="TAG" value="${e.tag}"></td></tr>
-				<tr><td class="murmur"><input type="text" name="MURMUR" value="${e.murmur}"></td></tr>
+				<tr style="width: 100px"><td class="tag">${e.tag}</td></tr>
+				<tr style ="width: 400px"><td class="murmur">${e.murmur}</td>
+				<%-- <tr style="width: 100px"><td class="tag"><input type="text" name="TAG" value="${e.tag}"></td></tr>
+				<tr><td class="murmur"><input type="text" name="MURMUR" value="${e.murmur}"></td></tr> --%>
 				<tr><td><input type="hidden" name="MURMUR_CHECK" value="${e.murmur_check}"></td></tr>
 				<tr><td><input type="hidden" name="MURMUR_DELETE" value="${e.murmur_delete}"></td></tr>
 				<tr><td><input type="hidden" name="CREATED_AT" value="${e.created_at}"></td></tr>
 				<tr><td><input type="hidden" name="UPDATE_AT" value="${e.update_at}"></td></tr>
-			</c:if>
 			</table>
 			</form>
 			</c:forEach>
 
 			<!-- pagetop遷移用 -->
 			<p id="page-top"><a href="#"><span>Page Top</span></a></p>
+			<!-- <input id="page-top"><a href="#"><span>Page Top</span></a> -->
 
         </div><!--split-left__inner-->
     </div><!--split-item split-left-->
@@ -160,8 +161,7 @@ datesValue = [
 <script src="js/graph.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="js/page_top.js"></script>
-<script src="js/8-1-8.js"></script>
-</body>
+
 </body>
 
 <input type="hidden" id ="top_count" name="top_count" value="${top_count}">
