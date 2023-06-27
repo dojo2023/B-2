@@ -20,7 +20,7 @@ text-align: center;
 <body>
 	<!-- まめぇまめぇのロゴ画像 -->
 	<div class="logo">
-		<a href="/BtwoB/TopServlet"><img src="/BtwoB/img/logo.png" alt="まめぇまめぇ" ></a>
+		<a><img src="/BtwoB/img/logo.png" alt="まめぇまめぇ" ></a>
 	</div>
 	<form method="POST" action="/BtwoB/LoginServlet">
 		<input type="text" name="user_name" placeholder="ゆ～ざ～メェ"><br>
