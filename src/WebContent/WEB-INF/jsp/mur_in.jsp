@@ -39,7 +39,7 @@
 			</ul>
 			</li>
 		<!-- ユーザ名表示 -->
-		<li><a href="" class="right-align no-underline">ゆ～ざ～メェ　${id_name.user_name}</a></li>
+		<li><a href="" class="right-align no-underline">${id_name.user_name}</a></li>
 
 		<!-- 称号アイコン -->
 		<li class="title-icon">

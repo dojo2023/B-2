@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/scroll_graph.css">
 <link rel="stylesheet" href="css/game_check.css">
 <link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/top.css">
 <script src="game_check.js"></script>
 <script src="header.js"></script>
 </head>
@@ -110,6 +111,11 @@
 			</c:forEach>
 			<!-- </form> -->
 
+			<!-- pagetop遷移用 -->
+			<p id="page-top"><a href="#"><span>Page Top</span></a></p>
+			<!-- <input id="page-top"><a href="#"><span>Page Top</span></a> -->
+
+
         </div><!--split-left__inner-->
     </div><!--split-item split-left-->
     <!-- 右画面のdiv -->
@@ -131,6 +137,9 @@
     </div><!--split-item split-right-->
 </div><!--split-->
 </form>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="js/page_top.js"></script>
 
 </body>
 <script>
