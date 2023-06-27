@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.MurmursDAO;
+import model.LoginUser;
+
 
 @WebServlet("/LambGame2Servlet")
 public class LambGame2Servlet extends HttpServlet {
@@ -30,7 +33,25 @@ public class LambGame2Servlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id_name") == null) {
+			response.sendRedirect("/BtwoB/LoginServlet");
+			return;
+		}
 
+		LoginUser lu = (LoginUser)session.getAttribute("id_name");
+		MurmursDAO mDao = new MurmursDAO();
+		mDao.updateDeleteTrue(lu);
+		request.setCharacterEncoding("UTF-8");
+		// ボタンごとの画面遷移を行う
+		if (request.getParameter("SUBMIT").equals("はい")) {
+			response.sendRedirect("/BtwoB/GameCheckServlet");
+			return;
+		} else {
+			response.sendRedirect("/BtwoB/TopServlet");
+			return;
+		}
 
 
 	}
