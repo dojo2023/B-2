@@ -15,7 +15,6 @@ import dao.MurmursDAO;
 import model.LoginUser;
 import model.Murmurs;
 
-
 @WebServlet("/MurListServlet")
 public class MurListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,6 +26,12 @@ public class MurListServlet extends HttpServlet {
 			response.sendRedirect("/BtwoB/LoginServlet");
 			return;
 		}
+
+		// 愚痴がたまっているかどうかの判定
+		boolean hasMurmurs = true;
+
+		// ポップアップの表示をリクエストスコープにセット
+		request.setAttribute("showPopup", hasMurmurs);
 
 		/*// MurmursDAOのインスタンス化
 		MurmursDAO mDao = new MurmursDAO();
@@ -49,7 +54,6 @@ public class MurListServlet extends HttpServlet {
 			response.sendRedirect("/BtwoB/LoginServlet");
 			return;
 		}
-		request.setAttribute("showPopup", true);
 		// ここで得たパラメータをMurmursDAOでアップデートする
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");

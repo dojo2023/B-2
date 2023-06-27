@@ -195,13 +195,25 @@ datesValue = [
 <div class="overlay">
 	<div class="window">
 		<label class="close" for="pop-up">×</label>
-		<p class="text">愚痴が溜まっています。<br> 発散しませんか？</p>
+		<p class="text">愚痴が溜まっています。<br> 発散しませんか？<br>
 
-  <c:if test="${not empty showPopup}">
+		<form id="myForm">
+  <!-- フォームの入力フィールドなど -->
+<button type="button" class="yes_button" onclick="submitForm('GameCheckServlet')">はい</button>
+  <button type="button" class="no_button" onclick="submitForm('MurListServlet')">いいえ</button>
+</form>
+		</p>
+
+  <c:if test="${showPopup}">
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("pop-up").checked = true;
     });
+    function submitForm(action) {
+  	  var form = document.getElementById("myForm");
+  	  form.action = action;
+  	  form.submit();
+  	}
   </script>
   </c:if>
 	</div>
