@@ -19,7 +19,7 @@
 
 	<!-- まめぇまめぇのロゴ画像 -->
 	<div class="logo">
-		<img src="logo.png" alt="ロゴ">
+		<a href="/BtwoB/TopServlet"><img src="/BtwoB/img/logo.png" alt="まめぇまめぇ" ></a>
 	</div>
 	<nav class="right-align">
 		<ul class="menu">
