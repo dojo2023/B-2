@@ -55,29 +55,29 @@
 
 </body>
 <!-- モーダルここから -->
-     <button class="button js-modal-button">ごちそうさまでした！</button>
+<button class="button js-modal-button">ごちそうさまでした！</button>
 <div class="layer js-modal">
 	<div class="modal">
-	<div class="modal__inner">
-		<div class="modal__button-wrap">
+		<div class="modal__inner">
+			<div class="modal__button-wrap">
 			<!-- <button class="close-button js-close-button"> -->
 			<span></span>
 			<span></span>
 			<!-- </button> -->
+			</div>
+			<div class="modal__contents">
+				<div class="modal__content">
+				もう一回やる？ <br>
+				<form id="myForm">
+					<!-- フォームの入力フィールドなど -->
+					<button type="button" class="yes_button" onclick="submitForm('GameCheckServlet')">はい</button>
+					<button type="button" class="no_button" onclick="submitForm('TopServlet')">いいえ</button>
+				</form>
+				</div>
+			</div>
 		</div>
-		<div class="modal__contents">
-		<div class="modal__content">
-		もう一回やる？ <br>
-		<form id="myForm">
-  <!-- フォームの入力フィールドなど -->
-  <button type="button" class="yes_button" onclick="submitForm('GameCheckServlet')">はい</button>
-  <button type="button" class="no_button" onclick="submitForm('TopServlet')">いいえ</button>
-</form>
-		</div>
 	</div>
-	</div>
-	</div>
-	</div>
+</div>
 <!-- モーダルここまで -->
 
  <script type="text/javascript">
