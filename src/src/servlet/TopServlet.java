@@ -31,32 +31,30 @@ public class TopServlet extends HttpServlet {
 
 		// MurmursDAOのインスタンス化
 		MurmursDAO mDao = new MurmursDAO();
-
-		// MurmursDAOのget()メソッドを呼び出して、返ってきた愚痴の情報のリストを取得
+		// sessionスコープに格納しているuser_idとuser_nameを取得
 		LoginUser lu = (LoginUser)session.getAttribute("id_name");
+
+		// MurmursDAOのget()メソッドを呼び出して、ログインしているuser_idの愚痴の情報のリストを取得し、cardListに入れる
 		List<Murmurs> cardList = mDao.get(lu);
-		// 愚痴取得結果をセッションスコープに格納する
+		// 愚痴取得結果を「cardList」って名前をつけてcardListをセッションスコープに格納する
 		session.setAttribute("cardList", cardList);
 
-//		// EyecatchesDAOのインスタンス化
-//		EyecatchesDAO eDao = new EyecatchesDAO();
-//		// EyecatchesDAOのget()メソッドを呼び出して、返ってきたタグの割合リストを取得
-//		List<TagPercentage> cardList = eDao.get();
-//		// 取得結果をリクエストスコープに格納する
-//		request.setAttribute("cardList", cardList);
+		// だけど直近1週間分の愚痴を取得したいので、別のgetOneWeek()メソッドを使って1週間の愚痴を取得する
+		List<Murmurs> weekList = mDao.getOneWeek(lu);
+		// 1週間の愚痴取得結果を「weekList」って名前をつけてweekListをリクエストスコープに格納する
+		// top.jspでしか表示しないのでリクエストスコープに入れた
+		request.setAttribute("weekList", weekList);
 
 		// EyecatchesDAOのインスタンス化
 		EyecatchesDAO eDao = new EyecatchesDAO();
-		// EyecatchesDAOのgetPercent()メソッドを呼び出して、返ってきたタグの割合リストを取得
+		// EyecatchesDAOのgetPercent()メソッドを呼び出して、ログインしているuser_idのタグの割合のリストを取得し、tagPersentListに入れる
 		List<TagPercentage> tagPersentList = eDao.getPercent(lu);
+		System.out.println(tagPersentList);
+		// タグの割合リストを「tagPersentList」って名前をつけてtagPersentListをリクエストスコープに格納する
+		session.setAttribute("tagPersentList", tagPersentList);
 
-		/*	// メッセージをリクエストスコープに格納
-			String message = eDao.getMessage(tagPersentList.get(0).getTag());
-			request.setAttribute("message", message);*/
-
-		// リストを宣言する
-//		List<percentage_of_orders> PoOList = new ArrayList<percentage_of_orders>();
-
+		// 一番愚痴の数が多いタグを見つけるためのfor文
+		// orders（愚痴の数）が一番多いもののタグでtagを上書きしている
 		String tag = null;
 		int murNum = 0;
 		for (TagPercentage tagPList : tagPersentList) {
@@ -64,46 +62,31 @@ public class TopServlet extends HttpServlet {
 		        murNum = tagPList.getOrders();
 		        tag = tagPList.getTag();
 		    }
-		    else if (tagPList.getOrders() == murNum) {
+//		    else if (tagPList.getOrders() == murNum) {
+//		    	tag = "その他";
+//		    }
+		    else {
 		    	tag = "その他";
 		    }
-
-
-		    // PoOListにPerentage_of_orders()を入れていく
-//		    PoOList.add(tagPList.getPercentage_of_orders());
 		}
 
 		System.out.println(tag);
-
-
-
-		// リクエストスコープにPercentage_of_ordersが入ったリストを格納
-		// セッションスコープに一番ordersが多いタグのmessageを保存する
-		System.out.println(tagPersentList);
-		session.setAttribute("tagPersentList", tagPersentList);
-
 		System.out.println(eDao.getMessage(tag));
+		// 一番ordersが多い（一番割合が大きい）アイキャッチのメッセージをセッションスコープに入れる
 		session.setAttribute("eyecatch", eDao.getMessage(tag));
-
 
 		// ログインしたらポップアップを表示する
 		request.setAttribute("showPopup", true);
+		// ポップアップをログインしたあとだけ表示するためにtop.jspが1回目に表示したときのみアイキャッチを表示するのに判定するためのtop_count
 		int x= (Integer)session.getAttribute("top_count");
 		x++;
 		session.setAttribute("top_count", x);
+		// この下2行はちゃんとインクリメントした値がsessionスコープに入っているか確認するためのデバッグ
 		int y= (Integer)session.getAttribute("top_count");
 		System.out.println(y);
+
 		// 登録ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/top.jsp");
 		dispatcher.forward(request, response);
 	}
-
-
-	/*	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-
-
-			}
-	*/
 }

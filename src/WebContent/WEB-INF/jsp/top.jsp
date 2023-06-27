@@ -79,31 +79,15 @@
         <div class="split-left__inner">
         <!-- ここに愚痴一覧のテーブル -->
             <h1>トップ</h1>
-            <%-- <c:forEach var="e" items="${murList}" >
-            <form method="GET" action="/BtwoB/GameCheckServlet">
-            <table>
-                <tr><td>tag</td><td><input type="text" name="TAG" value="${e.tag}"></td></tr>
-                <tr><td>murmurs</td><td><input type="text" name="MURMUR" value="${e.murmur}"></td></tr>
-            </table> --%>
             <!-- <table class="tagmurmur">
                 <tr style="width: 100px"><td class="tag">その他</td></tr>
                 <tr><td class="blank"></td></tr>
                 <tr><td class="murmur">暑すぎて無理。気温ちょうどいい世界になれ</td></tr>
             </table>
- -->
-            <!-- 6/20佐野　変更点
-			・データベースの情報を参照してlist表示した
-			 -->
-            <c:forEach var="e" items="${cardList}" >
+ 			-->
+            <c:forEach var="e" items="${weekList}" >
 			<form method="GET" action="/BtwoB/TopServlet">
 			<table class="tagmurmur">
-			<!--
-				・もしmurmur_checkがtrueだったら
-				・(もしmurmur_deleteがtrueだったら)これいらないかも
-				・もしセッションスコープに保存されてるuser_idと同じだったら
-				・もしcreated_atの時間が現在から見て1週間以内だったら
-				を追加する必要あり
-			-->
 				<tr><td><input type="hidden" name="ID" value="${e.id}"></td></tr>
 				<tr><td><input type="hidden" name="USER_ID" value="${e.user_id}"></td></tr>
 				<tr style="width: 100px"><td class="tag">${e.tag}</td></tr>
