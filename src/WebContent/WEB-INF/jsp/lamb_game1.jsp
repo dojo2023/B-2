@@ -30,7 +30,7 @@
 	</div>
 	</div>
 	</div>
-	</div> 
+	</div>
  -->
 <!-- モーダルここまで -->
 
@@ -40,7 +40,7 @@
 	<div class="split-item split-left">
 		<!-- 左画面の中のdiv -->
 		<div class="split-left__inner">
-		
+
          <c:forEach var="e" items="${chTdeF}" >
 			<!-- <form method="GET" action="/BtwoB/LambGame1Servlet"> -->
 			<table class="tagmurmur">
@@ -57,7 +57,7 @@
 		</c:forEach>
 		</div><!--split-left__inner-->
 	</div><!--split-item split-left-->
-        
+
     <!-- 右画面のdiv -->
     <div class="split-item split-right">
     	<!-- 右画面の中のdiv -->
@@ -69,10 +69,10 @@
             	<td><img src="https://4.bp.blogspot.com/-piPWJlRYOIo/UUhH7Pfy1rI/AAAAAAAAO5k/4JfvOTxND24/s400/mail.png"align="right"width="200" height="100"></td>
 			</table>
 
-
         </div><!--split-right__inner-->
     </div><!--split-item split-right-->
 </div><!--split-->
+
 
 	<div class="post-btn">
 		<button onclick="location.href='http://localhost:8080/BtwoB/LambGame2Servlet'">次へ</button>
@@ -99,7 +99,8 @@
 
   });
 /* モーダルJSここまで */
-  </script>
- 
+ *
+ */
+ </script>
 
 </html>
