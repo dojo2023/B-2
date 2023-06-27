@@ -40,10 +40,10 @@
 			<div class="modal__contents">
 				<div class="modal__content">
 				もう一回やる？ <br>
-				<form id="myForm">
+				<form id="myForm" method="POST" action="/BtwoB/ClickGameServlet">
 					<!-- フォームの入力フィールドなど -->
-					<button type="button" class="yes_button" onclick="submitForm('GameCheckServlet')">はい</button>
-					<button type="button" class="no_button" onclick="submitForm('TopServlet')">いいえ</button>
+					<input type="submit" class="yes_button" name="SUBMIT" value="はい">
+					<input type="submit" class="no_button" name="SUBMIT" value="いいえ">
 				</form>
 				</div>
 			</div>
