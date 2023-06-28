@@ -1,9 +1,14 @@
 @charset "UTF-8";
 /* 愚痴入力のcss */
 /* 背景色変更 */
-.container {
-      background-color: #FFE4E1;
+html {
+	background-color: #ffffff;
+}
+body {
+	min-height: 100vh;
+	background-color: #FFE4E1;
     }
+
 /* 入力欄を真ん中に設定 */
 .mur_in {
 	text-align:center;
@@ -48,6 +53,47 @@
 	width: 800px; /* 幅（ピクセル単位） */
 	height: 200px;
 	font-size: 25px; /* 好みのサイズに変更してください */
+}
+
+/* ボタン */
+
+.btn,
+a.btn,
+button.btn {
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding-top: 5px;
+   padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border: 1px solid black;
+  border-radius: 0.5em;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #ff8080;
+  background-color: #ffffff;
+}
+
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #ff8080;
 }
 
 /* エラーメッセージの色 */

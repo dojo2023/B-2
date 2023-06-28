@@ -78,7 +78,7 @@
         <!-- 左画面の中のdiv -->
         <div class="split-left__inner">
         <!-- ここに愚痴一覧のテーブル -->
-            <h1>トップ</h1>
+            <h1>とっぷ</h1>
             <!-- <table class="tagmurmur">
                 <tr style="width: 100px"><td class="tag">その他</td></tr>
                 <tr><td class="blank"></td></tr>
