@@ -125,11 +125,15 @@
             <!-- <form method="POST" action="/BtwoB/GameCheckServlet"> -->
             <div class="game">
             <table>
-            	<!-- 6/20佐野　button→submitに変更 -->
-            	<tr><td class="button1"><a href="/BtwoB/ClickGameServlet"><img src="/BtwoB/img/click.png" alt="クリック破壊" ></a></td>
+<!--             	<tr><td class="button1"><a href="/BtwoB/ClickGameServlet"><img src="/BtwoB/img/click.png" alt="クリック破壊" ></a></td>
             		<td class="button2"><a href="/BtwoB/SpaceGameServlet"><img src="/BtwoB/img/space.png" alt="スペースキー" ></a></td></tr>
             	<tr><td class="button3"><a href="/BtwoB/MojiGameServlet"><img src="/BtwoB/img/mojiclick.png" alt="文字クリック" ></a></td>
-            		<td class="button4"><a href="/BtwoB/LambGame1Servlet"><img src="/BtwoB/img/yagigohan.png" alt="ヤギのご飯" ></a></td>
+            		<td class="button4"><a href="/BtwoB/LambGame1Servlet"><img src="/BtwoB/img/yagigohan.png" alt="ヤギのご飯" ></a></td> -->
+
+            	<tr><td><input type="submit" src="/BtwoB/img/click.png" name="submit1"  class="button1" alt="クリック破壊ゲーム"></td>
+            		<td><input type="submit" src="/BtwoB/img/space.png" name="submit2" class="button2" alt="スペースキー連打ゲーム"></td></tr>
+            	<tr><td><input type="submit" src="/BtwoB/img/mojiclick.png" name="submit3" class="button3" alt="文字クリックゲーム"></td>
+            		<td><input type="submit" src="/BtwoB/img/yagigohan.png" name="submit4" class="button4" alt="ヤギのご飯ゲーム"></td>
 			</table>
 			</div>
 			<!-- </form> -->
