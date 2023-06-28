@@ -36,12 +36,54 @@ input[type="password"] {
 	margin-top: 0;
 	margin-bottom: 5px;
 }
-.btn-primary {
+/* .btn-primary {
 	margin-bottom: 5px;
-}
+} */
 .copyright {
 	margin-top: 20px;
 }
+
+/* ボタン */
+
+.btn,
+a.btn,
+button.btn {
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding-top: 5px;
+   padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border: 1px solid black;
+  border-radius: 0.5em;
+}
+
+.btn-primary,
+a.btn-primary {
+  color: #ff8080;
+  background-color: #ffffff;
+}
+
+.btn-primary:hover,
+a.btn-primary:hover {
+  color: #fff;
+  background: #ff8080;
+}
+
 /* リンク */
 .link a:current {color: #FF6347;}
 .link a:visited {color: #FF6347;}
