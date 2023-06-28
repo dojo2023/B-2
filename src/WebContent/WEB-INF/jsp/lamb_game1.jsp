@@ -64,7 +64,7 @@
         <div class="split-right__inner">
         <div class="demo1">「次へ」ボタンを押してヤギに手紙を食べてもらいましょう！</div>
 <p style="margin-top:1px">
-<img id="image_file" src = "/BtwoB/img/28vc85bm.png" width = "400" height ="400" onclick="letter()" ></p>
+<img id="image_file" src = "/BtwoB/img/C:\dojo6\doc\img\28vc85bm.png" width = "400" height ="400" onclick="letter()" ></p>
 
 
         </div><!--split-right__inner-->
