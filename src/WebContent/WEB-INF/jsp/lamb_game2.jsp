@@ -14,13 +14,13 @@
 <div id="app">
     <img src="https://1.bp.blogspot.com/-QFrT5TR3PMI/XQjt8VWsUAI/AAAAAAABTOA/t9SkJ5C1_mEE7Fv4Ia0EVImkEfIO36vTQCLcBGAs/s300/bunbougu_envelope_ura.png" id="ball"align="left"width="400" height="300"><br>
 
-    <img src="https://3.bp.blogspot.com/-FKXvovCjmvY/Vycei0kkSeI/AAAAAAAA6VE/iQJMhrASMjYO4bYnIyxOMiQBurk9MiACgCLcB/s180-c/tegami_yagi.png" id="yagi"align="right"width="200" height="200"><br>
+    <img src="/BtwoB/img/hidarimukilamb.png" id="yagi"align="right"width="200" height="200"><br>
 
 </div>
 
 <div>
 
- <img src="https://4.bp.blogspot.com/-GJasGyRK6jQ/WdyD-2252gI/AAAAAAABHhU/o_h6FVCJQkIs8s8v4QXdrD0KKxOC-2J0ACLcBGAs/s180-c/tegami_yagi_black.png" align="right"width="200" height="200"><br>
+ <img src="/BtwoB/img/hidarimukilamb.png" align="right"width="200" height="200"><br>
 
 </div>
 
