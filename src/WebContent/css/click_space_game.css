@@ -15,7 +15,7 @@ body {
 /* スペースキー連打ゲームタイトル */
 .earth_spacegame_title{
 	color : #f9f9f9;
-	font-size : 50px;
+	font-size : 80px;
 }
 
 /* 地球画像１ */
@@ -25,12 +25,44 @@ body {
 
 	.btn {
     box-sizing: border-box;
-    background-color: #000;
+    background-color: rgb(255, 255, 128);
     color: #fff;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 45px;
+    height: 50px;
     width: 80%;
+}
+
+html {
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+}
+#main {
+    position: sticky;
+    top: 0px;
+    background-color: #fff;
+    padding-bottom: 12px;
+}
+#display {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+button {
+    width: 48%;
+    height: 50px;
+    max-width: 200px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: 2px #888 solid;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+#lap {
+    font-size: 15px;
+    margin-top: 20px;
+    color:white;
 }

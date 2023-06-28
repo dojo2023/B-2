@@ -62,7 +62,7 @@
     <div class="split-item split-right">
     	<!-- 右画面の中のdiv -->
         <div class="split-right__inner">
-        <div class="demo1">【画像をクリックして手紙の封をしましょう！】</div>
+        <div>【画像をクリックして手紙の封をしましょう！】</div>
 <p style="margin-top:1px">
 <img id="image_file" src = "https://1.bp.blogspot.com/--c8jqInQ-Xs/XQjt7MeSegI/AAAAAAABTN0/_uNW9FHs_1kSjdHgv7V0dWgDXy2p79UmACLcBGAs/s343/bunbougu_envelope_letter.png" width = "350" height ="250" onclick="letter()" ></p>
 

@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name='viewport' content='user-scalable=no,width=device-width,initial-scale=1'>
 <title>まめぇまめぇ</title>
 <link rel="stylesheet" href="css/click_space_game.css">
 <link rel="stylesheet" href="css/game_modal.css">
@@ -12,6 +13,13 @@
 
 <body>
 
+<!-- タイマー -->
+    <div id='main'>
+        <div id='display'></div>
+        <button id='start'>START</button>
+        <button id='reset'>RESET</button>
+    </div>
+    <div id='lap'></div>
 
 <!-- タイトル -->
 <h1 class = earth_clickgame_title style="margin-bottom:1px">クリック破壊ゲーム</h1>
@@ -103,5 +111,152 @@ function henkou() {
 	}
 /* モーダルJSここまで */
 </script>
+
+<script>
+'use strict';
+const
+    storageName = 'stopWatch_status',
+    elem        = {};
+
+let
+    startTime  = 0,
+    lapTime    = 0,
+    lapCount   = 0,
+    lapRecords = [];
+
+window.addEventListener('DOMContentLoaded', function() {
+    ['start', 'reset', 'display', 'lap'].forEach(function(id) {
+        elem[id] = document.getElementById(id)
+    });
+
+    // ボタンへのイベントリスナー追加
+    const e = window.ontouchstart !== undefined ? 'touchstart' : 'mousedown';
+    elem.start.addEventListener(e, clickStart);
+    elem.reset.addEventListener(e, clickReset);
+
+    timePrint(0, 0);
+    const storage = getStorage();
+    // localStorageにデータがあれば状態復元
+    if(Object.keys(storage).length > 0) {
+        startTime  = storage.startTime;
+        lapTime    = storage.lapTime;
+        lapRecords = storage.lapRecords;
+        // 動作中
+        if(startTime > 0) {
+            elem.start.textContent = 'STOP';
+            elem.reset.textContent = 'LAP';
+            countUp();
+        }
+        // 一時停止中
+        else if(startTime < 0) {
+            timePrint(-startTime, -lapTime);
+        }
+        // ラップタイムレコード復元
+        if(lapRecords.length > 0) {
+            let str = '';
+            for(let i in lapRecords) {
+                str = '[' + (++lapCount) + '] ' + lapRecords[i] + '<br>' + str;
+            }
+            elem.lap.innerHTML = str;
+        }
+    }
+});
+
+// START/STOPボタン押下
+function clickStart() {
+    const now = Date.now();
+    // 停止時
+    if(startTime <= 0) {
+        // 計測開始
+        startTime += now;
+        lapTime   += now;
+        countUp();
+        elem.start.textContent = 'STOP';
+        elem.reset.textContent = 'LAP';
+    }
+    // 動作時
+    else {
+        // 一時停止
+        startTime -= now;
+        lapTime   -= now;
+        timePrint(-startTime, -lapTime);
+        elem.start.textContent = 'START';
+        elem.reset.textContent = 'RESET';
+    }
+    setStorage();
+}
+
+// RESET/LAPボタン押下
+function clickReset() {
+    // 計測中
+    if(startTime > 0) {
+        // LAP
+        const now = Date.now();
+        timePrint(now - startTime, now - lapTime);
+        lapTimePrint();
+        lapTime = now;
+        setStorage();
+        window.scrollTo(0, 0);
+    }
+    // 停止中
+    else {
+        // リセット
+        startTime = lapTime = 0;
+        timePrint(0, 0);
+        elem.lap.textContent = '';
+        lapCount = 0;
+        lapRecords = [];
+        clearStorage();
+    }
+}
+
+// 計測
+function countUp() {
+    if(startTime > 0) {
+        const now = Date.now();
+        timePrint(now - startTime, now - lapTime);
+        requestAnimationFrame(countUp);
+    }
+}
+
+// タイム表示
+function timePrint(t, l) {
+    elem.display.textContent = timeFormat(t) + ' / ' + timeFormat(l);
+}
+
+// 時間表示フォーマット
+function timeFormat(t) {
+    return Math.floor(t / 36e5) + new Date(t).toISOString().slice(13, 23);
+}
+
+// ラップタイムレコード追加
+function lapTimePrint() {
+    const str = display.textContent;
+    lapRecords.push(str);
+    elem.lap.innerHTML = '[' + (++lapCount) + '] ' + str + '<br>' + lap.innerHTML;
+}
+
+// localStorageデータ保存
+function setStorage() {
+    localStorage.setItem(storageName, JSON.stringify({
+        startTime : startTime,
+        lapTime   : lapTime,
+        lapRecords: lapRecords,
+    }));
+}
+
+// localStorageデータ削除
+function clearStorage() {
+    localStorage.removeItem(storageName);
+}
+
+// localStorageデータ取得
+function getStorage() {
+    const params = localStorage.getItem(storageName);
+    return params ? JSON.parse(params) : {};
+}
+</script>
+
+
 
 </html>
