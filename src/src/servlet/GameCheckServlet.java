@@ -103,7 +103,7 @@ public class GameCheckServlet extends HttpServlet {
 		session.setAttribute("chTdeF", mDao.chTrueDeFalse(lu));
 
 		// ボタンごとの画面遷移を行う
-		if (request.getParameter("submit").equals("クリック破壊ゲーム")) {
+		/*if (request.getParameter("submit").equals("クリック破壊ゲーム")) {
 			response.sendRedirect("/BtwoB/ClickGameServlet");
 			return;
 		} else if (request.getParameter("submit").equals("スペースキー連打ゲーム")) {
@@ -113,6 +113,23 @@ public class GameCheckServlet extends HttpServlet {
 			response.sendRedirect("/BtwoB/MojiGameServlet");
 			return;
 		} else if (request.getParameter("submit").equals("ヤギのご飯ゲーム")) {
+			response.sendRedirect("/BtwoB/LambGame1Servlet");
+			return;
+		}*/
+		if (request.getParameter("submit1") != null) {
+			System.out.println("submit1が押されたよ");
+			response.sendRedirect("/BtwoB/ClickGameServlet");
+			return;
+		}
+		else if (request.getParameter("submit2") != null) {
+			response.sendRedirect("/BtwoB/SpaceGameServlet");
+			return;
+		}
+		else if (request.getParameter("submit3") != null) {
+			response.sendRedirect("/BtwoB/MojiGameServlet");
+			return;
+		}
+		else if (request.getParameter("submit4") != null) {
 			response.sendRedirect("/BtwoB/LambGame1Servlet");
 			return;
 		}
