@@ -73,7 +73,7 @@
 <div class="container">
 <!-- タグのプルダウンメニュー -->
 <form method="POST" action="/BtwoB/MurInServlet">
-<div class="mur_in">
+<div class="mur_in" style="margin-top: 20px;">
 <label class="tag_menu">
 <p>入力　　</p>
 	<select name="TAG">
@@ -91,15 +91,12 @@
 	<textarea name="MURMUR" id="nyuryokuarea"></textarea><br>
 
 	<!-- 戻るボタンと入力完了ボタン -->
-	<input type="submit" value="戻る" class="back_button" name="SUBMIT">
-	<input type="submit" value="入力完了" class="murmur_end_button" name="SUBMIT">
+	<input type="submit" value="戻る" class="btn btn--orange" name="SUBMIT">
+	<input type="submit" value="入力完了" class="btn btn--orange" name="SUBMIT">
 <br>
 	<!-- 愚痴が未入力だった時のエラーメッセージ -->
 	<span class="error-message">${errorMessage}</span>
 	<%-- <c:out value="${errorMessage}"></c:out> --%>
-
-
-
 
 </div>
 
