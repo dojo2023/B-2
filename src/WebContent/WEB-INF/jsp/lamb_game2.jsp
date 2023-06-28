@@ -10,13 +10,19 @@
 <link rel="stylesheet" href="css/game_modal.css">
 </head>
 <body>
+       <div class="demo1">【手紙をドラッグしてヤギに食べてもらいましょう♪】</div>
 <div id="app">
-    <img src="https://4.bp.blogspot.com/-piPWJlRYOIo/UUhH7Pfy1rI/AAAAAAAAO5k/4JfvOTxND24/s400/mail.png" id="ball"align="left"width="500" height="500"><br>
+    <img src="https://1.bp.blogspot.com/-QFrT5TR3PMI/XQjt8VWsUAI/AAAAAAABTOA/t9SkJ5C1_mEE7Fv4Ia0EVImkEfIO36vTQCLcBGAs/s300/bunbougu_envelope_ura.png" id="ball"align="left"width="400" height="300"><br>
 
-    <img src="https://4.bp.blogspot.com/-O_6mCoV6Ffk/VveIznoHZDI/AAAAAAAA5N4/8DpXpRHEpa42Zq2kiHAZv91bqWXGMIMXg/s400/animal_yagi.png" id="yagi"align="right"width="200" height="200"><br>
+    <img src="https://3.bp.blogspot.com/-FKXvovCjmvY/Vycei0kkSeI/AAAAAAAA6VE/iQJMhrASMjYO4bYnIyxOMiQBurk9MiACgCLcB/s180-c/tegami_yagi.png" id="yagi"align="right"width="200" height="200"><br>
+
 </div>
 
+<div>
 
+ <img src="https://4.bp.blogspot.com/-GJasGyRK6jQ/WdyD-2252gI/AAAAAAABHhU/o_h6FVCJQkIs8s8v4QXdrD0KKxOC-2J0ACLcBGAs/s180-c/tegami_yagi_black.png" align="right"width="200" height="200"><br>
+
+</div>
 
   <script>
   var ball = document.getElementById("ball");
