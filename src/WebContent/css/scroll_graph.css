@@ -14,8 +14,8 @@
     padding: 8px;
 }
 .murmur {
-	width: 50vw; /* 画面幅の50% */
-    max-width: 50%; /* 最大幅を50%に制限 */
+	width: 400px; /* 画面幅の50% */
+    /* max-width: 50%; */ /* 最大幅を50%に制限 */
 	border-collapse: collapse;
 	padding: 8px;
 	background-color: #ffffff; /* 白い塗りつぶし */

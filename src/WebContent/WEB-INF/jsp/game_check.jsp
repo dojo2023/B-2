@@ -96,11 +96,9 @@
 
 				<tr><td><input type="hidden" name="ID" value="${e.id}"></td></tr>
 				<tr><td><input type="hidden" name="USER_ID" value="${e.user_id}"></td></tr>
-				<tr style="width: 100px"><td class="TAG"><input type="text" name="TAG + ${e.id}" value="${e.tag}"></td></tr>
+				<tr style="width: 100px"><td class="tag">${e.tag}</td></tr>
 				<tr><td><input type="checkbox" name="checkbox${e.id}"></td>
-				<td class="murmur">
-				<input type="text" name="MURMUR  + ${e.id}" value="${e.murmur}">
-				</td>
+				<td class="murmur">${e.murmur}</td>
 				</tr>
 				<tr><td><input type="hidden" name="MURMUR_CHECK + ${e.id}" value="${e.murmur_check}"></td></tr>
 				<tr><td><input type="hidden" name="MURMUR_DELETE  + ${e.id}" value="${e.murmur_delete}"></td></tr>
@@ -119,19 +117,21 @@
         </div><!--split-left__inner-->
     </div><!--split-item split-left-->
     <!-- 右画面のdiv -->
-    <div class="split-item split-right">
+    <div class="split-item split-right" style = "padding-top: 10px">
     	<!-- 右画面の中のdiv -->
         <div class="split-right__inner">
-        	<p>ゲーム選択</p>
+        	<p style="margin-buttom: 0px;margin-buttom: 0px">ゲーム選択</p>
             <!-- ボタン４つ設置 -->
             <!-- <form method="POST" action="/BtwoB/GameCheckServlet"> -->
+            <div class="game">
             <table>
             	<!-- 6/20佐野　button→submitに変更 -->
-            	<tr><td><input type="submit" name="submit" value="クリック破壊ゲーム" class="button1"></td>
-            		<td><input type="submit" name="submit" value="スペースキー連打ゲーム" class="button2"></td></tr>
-            	<tr><td><input type="submit" name="submit" value="文字クリックゲーム" class="button3"></td>
-            		<td><input type="submit" name="submit" value="ヤギのご飯ゲーム" class="button4"></td>
+            	<tr><td class="button1"><a href="/BtwoB/ClickGameServlet"><img src="/BtwoB/img/click.png" alt="クリック破壊" ></a></td>
+            		<td class="button2"><a href="/BtwoB/SpaceGameServlet"><img src="/BtwoB/img/space.png" alt="スペースキー" ></a></td></tr>
+            	<tr><td class="button3"><a href="/BtwoB/MojiGameServlet"><img src="/BtwoB/img/mojiclick.png" alt="文字クリック" ></a></td>
+            		<td class="button4"><a href="/BtwoB/LambGame1Servlet"><img src="/BtwoB/img/yagigohan.png" alt="ヤギのご飯" ></a></td>
 			</table>
+			</div>
 			<!-- </form> -->
         </div><!--split-right__inner-->
     </div><!--split-item split-right-->
