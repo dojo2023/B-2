@@ -62,9 +62,9 @@
     <div class="split-item split-right">
     	<!-- 右画面の中のdiv -->
         <div class="split-right__inner">
-        <div class="demo1">「次へ」ボタンを押してヤギに手紙を食べてもらいましょう！</div>
+        <div class="demo1">【画像をクリックして手紙の封をしましょう！】</div>
 <p style="margin-top:1px">
-<img id="image_file" src = "/BtwoB/img/C:\dojo6\doc\img\28vc85bm.png" width = "400" height ="400" onclick="letter()" ></p>
+<img id="image_file" src = "https://1.bp.blogspot.com/--c8jqInQ-Xs/XQjt7MeSegI/AAAAAAABTN0/_uNW9FHs_1kSjdHgv7V0dWgDXy2p79UmACLcBGAs/s343/bunbougu_envelope_letter.png" width = "350" height ="250" onclick="letter()" ></p>
 
 
         </div><!--split-right__inner-->
@@ -97,19 +97,18 @@
 
   });
 /* モーダルJSここまで */
- *
- */
-var img_src = new Array("https://1.bp.blogspot.com/--c8jqInQ-Xs/XQjt7MeSegI/AAAAAAABTN0/_uNW9FHs_1kSjdHgv7V0dWgDXy2p79UmACLcBGAs/s343/bunbougu_envelope_letter.png","https://1.bp.blogspot.com/-67IAPevN35M/XQjt8CDXgiI/AAAAAAABTN8/ZEnnoZBGvB4TTWg-YRc9uV9xwiLXHyAFQCLcBGAs/s343/bunbougu_envelope_open.png","","");
+ </script>
+
+ <script>
+var img_src = new Array("https://1.bp.blogspot.com/--c8jqInQ-Xs/XQjt7MeSegI/AAAAAAABTN0/_uNW9FHs_1kSjdHgv7V0dWgDXy2p79UmACLcBGAs/s343/bunbougu_envelope_letter.png","https://1.bp.blogspot.com/-67IAPevN35M/XQjt8CDXgiI/AAAAAAABTN8/ZEnnoZBGvB4TTWg-YRc9uV9xwiLXHyAFQCLcBGAs/s343/bunbougu_envelope_open.png","https://1.bp.blogspot.com/-QFrT5TR3PMI/XQjt8VWsUAI/AAAAAAABTOA/t9SkJ5C1_mEE7Fv4Ia0EVImkEfIO36vTQCLcBGAs/s300/bunbougu_envelope_ura.png");
 var i = 0;
 
 function letter() {
 	document.getElementById("image_file").innerHTML = ++i;
-	if (i == 3) {
+	if (i == 2) {
 		document.getElementById("image_file").src = "https://1.bp.blogspot.com/-67IAPevN35M/XQjt8CDXgiI/AAAAAAABTN8/ZEnnoZBGvB4TTWg-YRc9uV9xwiLXHyAFQCLcBGAs/s343/bunbougu_envelope_open.png";
-		} else if (i == 4) {
-		document.getElementById("image_file").src = "";
-		} else if (i == 5) {
-		document.getElementById("image_file").src = "";
+		} else if (i == 3) {
+		document.getElementById("image_file").src = "https://1.bp.blogspot.com/-QFrT5TR3PMI/XQjt8VWsUAI/AAAAAAABTOA/t9SkJ5C1_mEE7Fv4Ia0EVImkEfIO36vTQCLcBGAs/s300/bunbougu_envelope_ura.png";
 		}
 		}
 
