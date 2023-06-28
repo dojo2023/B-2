@@ -71,7 +71,7 @@ public class EyecatchesDAO {
 	//ランダムでもらえたら嬉しい
 	public String getMessage(String tag) {
 		Connection conn = null;
-		String result = "あいうえお";
+		String result = "ぼくはラムだよ！ これからよろしく！";
 
 		try {
 			// JDBCドライバを読み込む
