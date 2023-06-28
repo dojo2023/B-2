@@ -81,7 +81,7 @@
     	<!-- 左画面の中のdiv -->
         <div class="split-left__inner">
         <!-- ここに愚痴一覧のテーブル -->
-            <p>チェックボックス</p>
+            <p>ゲームでけしたいぐちにチェックをつけてね</p>
 
 
 
@@ -120,7 +120,7 @@
     <div class="split-item split-right" style = "padding-top: 10px">
     	<!-- 右画面の中のdiv -->
         <div class="split-right__inner">
-        	<p style="margin-buttom: 0px;margin-buttom: 0px">ゲーム選択</p>
+        	<p style="margin-buttom: 0px;margin-buttom: 0px">ゲームをえらんでね</p>
             <!-- ボタン４つ設置 -->
             <!-- <form method="POST" action="/BtwoB/GameCheckServlet"> -->
             <div class="game">
