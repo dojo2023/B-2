@@ -79,7 +79,7 @@
         <!-- 左画面の中のdiv -->
         <div class="split-left__inner">
 
-            <h1>一覧</h1>
+            <h1>いちらん</h1>
             <%-- <c:forEach var="e" items="${murList}" >
             <form method="GET" action="/BtwoB/GameCheckServlet">
             <table>
