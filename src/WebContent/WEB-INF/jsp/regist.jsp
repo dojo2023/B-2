@@ -18,16 +18,18 @@ text-align: center;
 </style>
 <body>
 <!-- まめぇまめぇのロゴ画像 -->
+
 	<div class="logo">
 		<a href="/BtwoB/TopServlet"><img src="/BtwoB/img/logo.png" alt="まめぇまめぇ" ></a>
 	</div>
+	<h1>しんきとうろく</h1>
 	<form method="POST" action="/BtwoB/RegistServlet">
 	<input type="text" name="user_name" placeholder="ゆ～ざ～メェ"><br>
 	<input type="password" name="user_pw" placeholder="ぱすわ～ど"><br>
 	<button type="submit" class="btn btn-primary">とうろく</button>
 	<button type="submit" class="btn btn-primary">りせっと</button><br>
 	</form>
-	<a href="/BtwoB/LoginServlet">ろぐいんぺーじにもどる？</a>
+	<p class="link"><a href="/BtwoB/LoginServlet">ろぐいんぺーじにもどる？</a></p>
 </body>
 
 <!-- ポップアップ -->

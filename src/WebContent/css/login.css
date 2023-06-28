@@ -1,12 +1,51 @@
 @charset "UTF-8";
+
+body{
+	background: #FFE4E1;
+	padding: 140px 0 0 0;
+}
+
 h1{
 text-align: center;
+margin: 0;
 }
-.center{
-text-align: center;
+.logo {
+  text-align: center;
+  margin-bottom: 15px;
 }
 /* まめぇまめぇのロゴ画像 */
 .logo img {
     width: 300px;
     height: auto;
 }
+
+/* 全体の調整 */
+input[type="text"] {
+    display: inline-block;
+    width: 200px;
+    padding: 4px;
+    border: 1px solid;
+    box-sizing: border-box;
+    margin: 0.5em 0;
+}
+input[type="password"] {
+	display: inline-block;
+	width: 200px;
+	padding: 4px;
+	border: 1px solid;
+	box-sizing: border-box;
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+.btn-primary {
+	margin-bottom: 5px;
+}
+.copyright {
+	margin-top: 20px;
+}
+
+/* リンク */
+.link a:current {color: #FF6347;}
+.link a:visited {color: #FF6347;}
+.link a:hover {color: #a21800;}
+
