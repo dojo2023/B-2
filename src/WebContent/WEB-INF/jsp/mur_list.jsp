@@ -96,7 +96,7 @@
 			</select>
 			</label><!--sortmenu" -->
 			<input type="submit" name="SUBMIT" value="決定">
-</form>
+			</form>
 			<!-- ここに愚痴一覧のテーブル -->
 			<!-- <table class="mur_list">
 			<tr>
@@ -199,34 +199,48 @@ datesValue = [
 
 </body>
 
-<!-- ポップアップここから -->
+<input type="hidden" id ="mur_count" name="mur_count" value="${mur_count}">
+<input type="hidden" id ="murList_count" name="murList_count" value="${murList_count}">
+
+<!-- 愚痴たまってませんかポップアップここから -->
 <input type="checkbox" id="pop-up">
 <div class="overlay">
 	<div class="window">
 		<label class="close" for="pop-up">×</label>
-		<p class="text">愚痴が溜まっています。<br> 発散しませんか？<br>
+		<p class="text">愚痴が溜まっています。<br> 発散しませんか？<br></p>
+<!-- 		<form id="myForm">
+	  		フォームの入力フィールドなど
+			<button type="button" class="yes_button" onclick="submitForm('GameCheckServlet')">はい</button>
+	  		<button type="button" class="no_button" onclick="submitForm('MurListServlet')">いいえ</button>
+		</form> -->
 
-		<form id="myForm">
-  <!-- フォームの入力フィールドなど -->
-<button type="button" class="yes_button" onclick="submitForm('GameCheckServlet')">はい</button>
-  <button type="button" class="no_button" onclick="submitForm('MurListServlet')">いいえ</button>
-</form>
-		</p>
 
-  <c:if test="${showPopup}">
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.getElementById("pop-up").checked = true;
-    });
-    function submitForm(action) {
-  	  var form = document.getElementById("myForm");
-  	  form.action = action;
-  	  form.submit();
-  	}
-  </script>
-  </c:if>
+		<form id="myForm" method="POST" action="/BtwoB/ClickGameServlet">
+			<input type="submit" class="yes_button" name="SUBMIT" value="はい">
+			<!-- <input type="submit" class="no_button" name="SUBMIT" value="いいえ"> -->
+		</form>
 	</div>
 </div>
+
+	<%-- <c:if test="${showPopup}"> --%>
+<script>
+const mur_count = document.getElementById("mur_count").value;
+const murList_count = document.getElementById("murList_count").value;
+if(mur_count >= 10 && murList_count == 1){
+	document.getElementById("pop-up").checked=true ;
+};
+
+   /* document.addEventListener("DOMContentLoaded", function() {
+     document.getElementById("pop-up").checked = true;
+   }); */
+   /* function submitForm(action) {
+ 	  var form = document.getElementById("myForm");
+ 	  form.action = action;
+ 	  form.submit();
+ 	} */
+</script>
+  	<%-- </c:if> --%>
+
 <!-- ポップアップここまで -->
 
 

@@ -27,19 +27,17 @@ public class MurListServlet extends HttpServlet {
 			return;
 		}
 
-		// 愚痴がたまっているかどうかの判定
-		boolean hasMurmurs = true;
-
-		// ポップアップの表示をリクエストスコープにセット
-		request.setAttribute("showPopup", hasMurmurs);
-
-		/*// MurmursDAOのインスタンス化
+		LoginUser lu = (LoginUser)session.getAttribute("id_name");
 		MurmursDAO mDao = new MurmursDAO();
-		// MurmursDAOのget()メソッドを呼び出して、返ってきた愚痴の情報のリストを取得
-		LoginUser lu = new LoginUser(1, "ラム");
-		List<Murmurs> cardList = mDao.get(lu);
-		// 愚痴取得結果をリクエストスコープに格納する
-		request.setAttribute("cardList", cardList);*/
+		// ログインしているユーザの愚痴の件数を取得
+		// ポップアップについてmur_list.jsp222行目で使用
+
+		System.out.println("愚痴の件数=" + mDao.murCount(lu));
+		session.setAttribute("mur_count", mDao.murCount(lu));
+
+		int x= (Integer)session.getAttribute("murList_count");
+		x++;
+		session.setAttribute("murList_count", x);
 
 		// 登録ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mur_list.jsp");
@@ -90,7 +88,14 @@ public class MurListServlet extends HttpServlet {
 				doGet(request,response);
 			}
 		}
-		
+		else if (request.getParameter("SUBMIT").equals("はい")) {
+			response.sendRedirect("/BtwoB/GameCheckServlet");
+			return;
+		}
+//		else if (request.getParameter("SUBMIT").equals("いいえ")){
+//			// doGetメソッド呼び出し
+//			doGet(request,response);
+//		}
 		else {
 			int id = Integer.parseInt(request.getParameter("ID"));
 			// 削除処理を行う（trueをfalseに）

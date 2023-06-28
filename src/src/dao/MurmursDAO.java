@@ -612,4 +612,51 @@ public class MurmursDAO {
 		return result;
 	}
 
+	// ユーザの愚痴の件数をカウントするメソッド(詳しく言えばuser_idが○○の人のmurmursテーブルに入ってる行数数えてるだけ)
+	// 愚痴一覧表示のポップアップ表示条件に使用
+	public int murCount(LoginUser lu) {
+		Connection conn = null;
+		int result = 0;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:\\dojo6Data\\B2", "sa", "");
+
+			// SQL文を準備する
+			String sql = "select count (*) from murmurs where user_id = ? and murmur_check is false and murmur_delete is false";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setInt(1, lu.getUser_id());
+
+			// SQL文を実行する
+			ResultSet rs = pStmt.executeQuery();
+			rs.next();
+			result = rs.getInt(1);
+
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
 }

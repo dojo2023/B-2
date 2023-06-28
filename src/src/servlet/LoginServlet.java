@@ -62,6 +62,9 @@ public class LoginServlet extends HttpServlet {
 			Integer top_count = 0;
 			session.setAttribute("top_count",top_count);
 
+			Integer murList_count = 0;
+			session.setAttribute("murList_count",murList_count);
+
 			// トップサーブレットにリダイレクトする
 			response.sendRedirect("/BtwoB/TopServlet");
 		}
