@@ -64,7 +64,7 @@
         <div class="split-right__inner">
         <div class="demo1">「次へ」ボタンを押してヤギに手紙を食べてもらいましょう！</div>
 <p style="margin-top:1px">
-<img id="image_file" src = "https://4.bp.blogspot.com/-piPWJlRYOIo/UUhH7Pfy1rI/AAAAAAAAO5k/4JfvOTxND24/s400/mail.png" width = "400" height ="400" onclick="henkou()" ></p>
+<img id="image_file" src = "/BtwoB/img/28vc85bm.png" width = "400" height ="400" onclick="letter()" ></p>
 
 
         </div><!--split-right__inner-->
@@ -99,17 +99,17 @@
 /* モーダルJSここまで */
  *
  */
-var img_src = new Array("https://1.bp.blogspot.com/--c8jqInQ-Xs/XQjt7MeSegI/AAAAAAABTN0/_uNW9FHs_1kSjdHgv7V0dWgDXy2p79UmACLcBGAs/s343/bunbougu_envelope_letter.png","/BtwoB/img/earth_image2.png","/BtwoB/img/earth_image3.png","/BtwoB/img/earth_image4.png");
+var img_src = new Array("https://1.bp.blogspot.com/--c8jqInQ-Xs/XQjt7MeSegI/AAAAAAABTN0/_uNW9FHs_1kSjdHgv7V0dWgDXy2p79UmACLcBGAs/s343/bunbougu_envelope_letter.png","https://1.bp.blogspot.com/-67IAPevN35M/XQjt8CDXgiI/AAAAAAABTN8/ZEnnoZBGvB4TTWg-YRc9uV9xwiLXHyAFQCLcBGAs/s343/bunbougu_envelope_open.png","","");
 var i = 0;
 
-function henkou() {
+function letter() {
 	document.getElementById("image_file").innerHTML = ++i;
-	if (i == 18) {
-		document.getElementById("image_file").src = "/BtwoB/img/earth_image2.png";
-		} else if (i == 34) {
-		document.getElementById("image_file").src = "/BtwoB/img/earth_image3.png";
-		} else if (i == 50) {
-		document.getElementById("image_file").src = "/BtwoB/img/earth_image4.png";
+	if (i == 3) {
+		document.getElementById("image_file").src = "https://1.bp.blogspot.com/-67IAPevN35M/XQjt8CDXgiI/AAAAAAABTN8/ZEnnoZBGvB4TTWg-YRc9uV9xwiLXHyAFQCLcBGAs/s343/bunbougu_envelope_open.png";
+		} else if (i == 4) {
+		document.getElementById("image_file").src = "";
+		} else if (i == 5) {
+		document.getElementById("image_file").src = "";
 		}
 		}
 
