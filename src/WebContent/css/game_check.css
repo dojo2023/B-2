@@ -279,21 +279,23 @@ padding: 500px 0;
 }
 
 .game img {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
 }
 
 
 
 
 
- .button1{
+.button1{
 	width: 200px;
 	height:200px;
 	padding: 10px;
 	margin: 0px 10px 10px 0px;
 	box-sizing: border-box;
 	cursor: pointer;
+	background: url(/BtwoB/img/click.png) left top no-repeat;
+	background-size: contain;
 }
 
 .button2{
@@ -303,6 +305,8 @@ padding: 500px 0;
 	margin: 0px 0px 10px 10px;
 	box-sizing: border-box;
 	cursor: pointer;
+	background: url(/BtwoB/img/space.png) left top no-repeat;
+	background-size: contain;
 }
 
 .button3{
@@ -312,6 +316,8 @@ padding: 500px 0;
 	margin: 10px 10px 0px 0px;
 	box-sizing: border-box;
 	cursor: pointer;
+	background: url(/BtwoB/img/mojiclick.png) left top no-repeat;
+	background-size: contain;
 }
 
 .button4{
@@ -321,5 +327,7 @@ padding: 500px 0;
 	margin: 10px 0px 0px 10px;
 	box-sizing: border-box;
 	cursor: pointer;
+	background: url(/BtwoB/img/yagigohan.png) left top no-repeat;
+	background-size: contain;
 }
 

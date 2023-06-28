@@ -74,7 +74,7 @@
 <!-- ヘッダーここまで -->
 
 <!-- 左右画面のdiv -->
-<form method="POST" action="/BtwoB/GameCheckServlet">
+<form method="POST" name="form" action="/BtwoB/GameCheckServlet">
 <div class="split">
 	<!-- 左画面のdiv -->
     <div class="split-left">
@@ -130,10 +130,31 @@
             	<tr><td class="button3"><a href="/BtwoB/MojiGameServlet"><img src="/BtwoB/img/mojiclick.png" alt="文字クリック" ></a></td>
             		<td class="button4"><a href="/BtwoB/LambGame1Servlet"><img src="/BtwoB/img/yagigohan.png" alt="ヤギのご飯" ></a></td> -->
 
-            	<tr><td><input type="submit" src="/BtwoB/img/click.png" name="submit1"  class="button1" alt="クリック破壊ゲーム"></td>
-            		<td><input type="submit" src="/BtwoB/img/space.png" name="submit2" class="button2" alt="スペースキー連打ゲーム"></td></tr>
-            	<tr><td><input type="submit" src="/BtwoB/img/mojiclick.png" name="submit3" class="button3" alt="文字クリックゲーム"></td>
-            		<td><input type="submit" src="/BtwoB/img/yagigohan.png" name="submit4" class="button4" alt="ヤギのご飯ゲーム"></td>
+            	<tr><td><input type="submit" name="submit" class="button1" value="　"></td>
+            		<td><input type="submit" name="submit" class="button2" value="　　"></td></tr>
+            	<tr><td><input type="submit" name="submit" class="button3" value="　　　"></td>
+            		<td><input type="submit" name="submit" class="button4" value="　　　　"></td>
+
+            	<!-- <tr>
+            		<td>
+            			<input type="hidden" name="submit1" class="button1" value="クリック破壊ゲーム">
+            			<a href=""><img src="/BtwoB/img/click.png" alt="クリック破壊ゲーム"></a>
+            		</td>
+            		<td>
+            			<input type="hidden" name="submit2" class="button2" value="スペースキー連打ゲーム">
+            			<a href=""><img src="/BtwoB/img/space.png" alt="スペースキー連打ゲーム"></a>
+            		</td>
+            	</tr>
+            	<tr>
+            		<td>
+            			<input type="hidden" name="submit3" class="button3" value="文字クリックゲーム">
+            			<a href=""><img src="/BtwoB/img/mojiclick.png" alt="文字クリックゲーム"></a>
+            		</td>
+            		<td>
+            			<input type="hidden" name="submit4" class="button4" value="ヤギのご飯ゲーム">
+            			<a href=""><img src="/BtwoB/img/yagigohan.png" alt="ヤギのご飯ゲーム"></a>
+            		</td>
+            	</tr> -->
 			</table>
 			</div>
 			<!-- </form> -->
