@@ -99,7 +99,7 @@
 /* モーダルJSここまで */
  </script>
 
- <script>
+<script>
 var img_src = new Array("https://1.bp.blogspot.com/--c8jqInQ-Xs/XQjt7MeSegI/AAAAAAABTN0/_uNW9FHs_1kSjdHgv7V0dWgDXy2p79UmACLcBGAs/s343/bunbougu_envelope_letter.png","https://1.bp.blogspot.com/-67IAPevN35M/XQjt8CDXgiI/AAAAAAABTN8/ZEnnoZBGvB4TTWg-YRc9uV9xwiLXHyAFQCLcBGAs/s343/bunbougu_envelope_open.png","https://1.bp.blogspot.com/-QFrT5TR3PMI/XQjt8VWsUAI/AAAAAAABTOA/t9SkJ5C1_mEE7Fv4Ia0EVImkEfIO36vTQCLcBGAs/s300/bunbougu_envelope_ura.png");
 var i = 0;
 
@@ -111,8 +111,6 @@ function letter() {
 		document.getElementById("image_file").src = "https://1.bp.blogspot.com/-QFrT5TR3PMI/XQjt8VWsUAI/AAAAAAABTOA/t9SkJ5C1_mEE7Fv4Ia0EVImkEfIO36vTQCLcBGAs/s300/bunbougu_envelope_ura.png";
 		}
 		}
-
-
  </script>
 
 </html>
