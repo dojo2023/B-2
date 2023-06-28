@@ -165,12 +165,21 @@ header {
 	overflow-x:hidden;
 	padding:10px 50px 20px 50px;
 }
-.split-right__inner{
+.split-right__inner {
     height: 100%;
     position: fixed;
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10px;
 }
 
+
+.split-item split-right {
+	padding-top:10px;
+}
  /*========= ページトップのためのCSS ===============*/
 /*リンクを右下に固定*/
 #page-top {
@@ -264,13 +273,26 @@ padding: 500px 0;
 
 
 /* ゲーム選択の4つのボタンのクラス */
-.button1{
+.game {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.game img {
+    width: 200px;
+    height: 200px;
+}
+
+
+
+
+
+ .button1{
 	width: 200px;
 	height:200px;
 	padding: 10px;
 	margin: 0px 10px 10px 0px;
 	box-sizing: border-box;
-	background: #ffffff;
 	cursor: pointer;
 }
 
@@ -280,7 +302,6 @@ padding: 500px 0;
 	padding: 10px;
 	margin: 0px 0px 10px 10px;
 	box-sizing: border-box;
-	background: #ffffff;
 	cursor: pointer;
 }
 
@@ -290,7 +311,6 @@ padding: 500px 0;
 	padding: 10px;
 	margin: 10px 10px 0px 0px;
 	box-sizing: border-box;
-	background: #ffffff;
 	cursor: pointer;
 }
 
@@ -300,7 +320,6 @@ padding: 500px 0;
 	padding: 10px;
 	margin: 10px 0px 0px 10px;
 	box-sizing: border-box;
-	background: #ffffff;
 	cursor: pointer;
 }
 
