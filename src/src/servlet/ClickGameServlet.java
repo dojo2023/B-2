@@ -41,25 +41,32 @@ public class ClickGameServlet extends HttpServlet {
 			response.sendRedirect("/BtwoB/LoginServlet");
 			return;
 		}
+		// setCharacterEncoding()メソッドはリクエストボディに含まれるデータの文字コードを指定した値（UTF-8）に書き換えるメソッド
 		request.setCharacterEncoding("UTF-8");
 
-		// deleteをtrueにする
+		// sessionスコープに入ってるuser_idとuser_nameを取得（ログイン時に"id_nameと名付けてる"）
 		LoginUser lu = (LoginUser)session.getAttribute("id_name");
+		// MurmursDAOをインスタンス化
 		MurmursDAO mDao = new MurmursDAO();
+		// deleteをtrueにする
 		mDao.updateDeleteTrue(lu);
 
-		// ゲームカウントをするためにinsert
+		// GamecountsDAOをインスタンス化
 		GamecountsDAO gcDao = new GamecountsDAO();
+		// ゲームカウントをするためにinser()メソッドに
 		gcDao.gameInsert(lu);
 
 		/*System.out.println(gcDao.gameInsert(lu));*/
 
-		// ゲームをカウントする
+		// ゲームをカウントするgameCount()メソッド使用
 		gcDao.gameCount(lu);
-
+		// ログインしてるユーザのゲームプレイ回数デバッグしてる（コンソール表示）
 		System.out.println(lu.getUser_name() + "のゲームプレイ回数 =" + gcDao.gameCount(lu));
 
 		// ボタンごとの画面遷移を行う
+		// request.getParameter("SUBMIT").equals("はい")
+		// →click_game.jspでformで囲ったsubmitボタンでnameがSUBMITのボタンのvalueが"はい"だったらtrue
+		// if文の条件式の結果はtureかfalseしかない
 		if (request.getParameter("SUBMIT").equals("はい")) {
 			response.sendRedirect("/BtwoB/GameCheckServlet");
 			return;
@@ -67,8 +74,6 @@ public class ClickGameServlet extends HttpServlet {
 			response.sendRedirect("/BtwoB/TopServlet");
 			return;
 		}
-
-
 	}
 
 }

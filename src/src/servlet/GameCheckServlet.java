@@ -30,12 +30,11 @@ public class GameCheckServlet extends HttpServlet {
 
 		// MurmursDAOのインスタンス化
 		MurmursDAO mDao = new MurmursDAO();
-		// MurmursDAOのget()メソッドを呼び出して、返ってきた愚痴の情報のリストを取得
-		//後でここはセッションスコープの値を取り出して入れる。
-		//LoginUser lu = new LoginUser(1, "ラム");
+		// 開発段階で使用したもの、user_idが1のuser_nameがラムの情報を使っていた
+		// LoginUser lu = new LoginUser(1, "ラム");
 		LoginUser lu = (LoginUser)session.getAttribute("id_name");
 
-		//murmur_checkがtrue でかつ murmur_deleteがfalseのデータのmurmur_checkはfalseにする
+		// murmur_checkがtrue でかつ murmur_deleteがfalseのデータのmurmur_checkはfalseにするupdateFalseメソッドを使用
 		mDao.updateMurFalse(lu);
 
 		List<Murmurs> cardList = mDao.get(lu);
@@ -116,22 +115,5 @@ public class GameCheckServlet extends HttpServlet {
 			response.sendRedirect("/BtwoB/LambGame1Servlet");
 			return;
 		}
-//		if (request.getParameter("submit1") != "") {
-//			System.out.println("submit1が押されたよ");
-//			response.sendRedirect("/BtwoB/ClickGameServlet");
-//			return;
-//		}
-//		else if (request.getParameter("submit2") != null) {
-//			response.sendRedirect("/BtwoB/SpaceGameServlet");
-//			return;
-//		}
-//		else if (request.getParameter("submit3") != null) {
-//			response.sendRedirect("/BtwoB/MojiGameServlet");
-//			return;
-//		}
-//		else if (request.getParameter("submit4") != null) {
-//			response.sendRedirect("/BtwoB/LambGame1Servlet");
-//			return;
-//		}
 	}
 }
