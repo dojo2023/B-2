@@ -11,6 +11,9 @@ import model.Users;
 
 public class UsersDAO {
 	// ログイン出来たらtrueを返すメソッド
+	// 引数はuser_nameとuser_pwを渡して、SQL文に渡されたuser_nameとuser_pwをいれて実行する
+	// もしデータベースにuser_nameとuser_pwが入っていた時、trueを返す
+	// LoginServletのdoGetメソッドの中のif文でもしtrueだったら…っていうので使う
 	public boolean isLoginOK(Users users) {
 		Connection conn = null;
 		boolean loginResult = false;
@@ -62,7 +65,9 @@ public class UsersDAO {
 		return loginResult;
 	}
 
-	//データの登録メソッド
+	// ユーザの新規登録のメソッド
+	// MurmursDAOのinsert()メソッドとは別のメソッドです。名前同じにしてしまって分かりにくくてごめんなさい
+	// user_nameとuser_pwをこのinsert()メソッドに引数として渡すと、データベースに登録することができるメソッドです
 	public boolean insert(Users card) {
 		Connection conn = null;
 		boolean result = false;

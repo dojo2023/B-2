@@ -13,6 +13,7 @@ import model.TagPercentage;
 
 public class EyecatchesDAO {
 	// メソッド①　タグの割合をリスト形式で持ってくる
+	// getPercent()メソッドにLoginUserの変数を引数として渡すことで処理を行ってTagPercentageのリスト型で戻り値を設定してる
 	public List<TagPercentage> getPercent(LoginUser lu) {
 		Connection conn = null;
 		List<TagPercentage> tagPersentList = new ArrayList<TagPercentage>();
@@ -68,7 +69,9 @@ public class EyecatchesDAO {
 	}
 
 	// メソッド②　tag=? でEyecatchesのメッセージをもらうメソッド
-	//ランダムでもらえたら嬉しい
+	// ランダムでもらえたら嬉しい
+	// 一番order（愚痴の数）が多いタグを引数で渡すことで、アイキャッチのメッセージをランダムで貰うメソッド
+	// SQLは変数として渡されたタグでselectされて、ランダムで並び変えた1番上のメッセージを取得している
 	public String getMessage(String tag) {
 		Connection conn = null;
 		String result = "ぼくはラムだよ！ これからよろしく！";

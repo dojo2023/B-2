@@ -10,6 +10,7 @@ import model.LoginUser;
 
 public class LogincountsDAO {
 	// ユーザのログインしたuser_idと時間を登録するメソッド
+	// ログインをしたあとにこのメソッドを使用することで、データベースに履歴として残る(この履歴を後でカウントする)
 	public boolean loginInsert(LoginUser lu) {
 		Connection conn = null;
 		boolean result = false;
@@ -56,6 +57,7 @@ public class LogincountsDAO {
 	}
 
 	// ユーザのログイン回数をカウントするメソッド
+	// 上記のメソッドでデータベースにinsertしたものをcountすることでログイン回数とした
 	public int loginCount(LoginUser lu) {
 		Connection conn = null;
 		int result = 0;

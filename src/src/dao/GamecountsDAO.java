@@ -11,6 +11,7 @@ import model.LoginUser;
 
 public class GamecountsDAO {
 	// ゲームをしたユーザのuser_idと時間を登録するメソッド
+	// ゲームをしたあとにこのメソッドを使用することで、データベースに履歴として残る(この履歴を後でカウントする)
 	public boolean gameInsert(LoginUser lu) {
 	    Connection conn = null;
 	    boolean result = false;
@@ -57,6 +58,7 @@ public class GamecountsDAO {
 	  }
 
 	// ユーザのゲーム回数をカウントするメソッド
+	// 上記のメソッドでデータベースにinsertしたものをcountすることでゲームのプレイ回数とした
 	  public int gameCount(LoginUser lu) {
 	    Connection conn = null;
 	    int result;
