@@ -40,6 +40,8 @@ public class LambGame2Servlet extends HttpServlet {
 			response.sendRedirect("/BtwoB/LoginServlet");
 			return;
 		}
+
+		// ここからはもしモーダルでsubmitされたら（はい、いいえボタン押されたら）どうなるの？って処理をしてます
 		request.setCharacterEncoding("UTF-8");
 
 		LoginUser lu = (LoginUser)session.getAttribute("id_name");
@@ -47,16 +49,17 @@ public class LambGame2Servlet extends HttpServlet {
 		mDao.updateDeleteTrue(lu);
 
 		// ゲームカウントをするためにinsert
+		// ここでゲームのプレイした履歴をデータベースに格納する
 		GamecountsDAO gcDao = new GamecountsDAO();
 		gcDao.gameInsert(lu);
 
 		/*System.out.println(gcDao.gameInsert(lu));*/
 
 		// ゲームをカウントする
+		// 54行目で格納した履歴の個数をカウントして、その結果をゲームのプレイ回数としてる
 		gcDao.gameCount(lu);
-
+		// デバッグとしてコンソールにゲームのプレイしてたユーザとプレイ回数を表示
 		System.out.println(lu.getUser_name() + "のゲームプレイ回数 =" + gcDao.gameCount(lu));
-
 
 		// ボタンごとの画面遷移を行う
 		if (request.getParameter("SUBMIT").equals("はい")) {

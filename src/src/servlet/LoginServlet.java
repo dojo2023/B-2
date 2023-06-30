@@ -34,14 +34,18 @@ public class LoginServlet extends HttpServlet {
 
 		// ログイン処理を行う
 		UsersDAO uDao = new UsersDAO();
+		// 38行目の条件式分かりにくいけど最終的なゴールは、UsersDAOのisLoginOKメソッドにuser_nameとuser_pwを引数として渡すこと
+		// modelのUsersにuser_nameとuser_pwを引数として渡したものをisLoginOKメソッドに引数と渡してる
 		if (uDao.isLoginOK(new Users(user_name, user_pw))) {	// ログイン成功
 			// ログイン成功確認用
 			System.out.println("ログイン成功");
+
+			System.out.println("user_name =" + user_name + "user_pw =" + user_pw);
+			// sessionスコープ準備
+			HttpSession session = request.getSession();
+			// 取り出したuser_idとuser_nameをセッションスコープに保存する
 			// ログインできた時にloginInfo()メソッドを呼び出す
 			// 取り出して来たuser_nameとuser_pwをloginInfoに渡すことで、user_idとuser_nameを取り出した
-			// 取り出したuser_idとuser_nameをセッションスコープに保存した
-			System.out.println("user_name =" + user_name + "user_pw =" + user_pw);
-			HttpSession session = request.getSession();
 			session.setAttribute("id_name" ,uDao.loginInfo(new Users(user_name, user_pw)));
 			request.setAttribute("showPopup", true);
 			// セッションスコープに保存されているかデバッグ
@@ -62,6 +66,7 @@ public class LoginServlet extends HttpServlet {
 			Integer top_count = 0;
 			session.setAttribute("top_count",top_count);
 
+			// murList_countは愚痴一覧画面で、ポップアップをログイン後1回だけ表示する判定に使用する
 			Integer murList_count = 0;
 			session.setAttribute("murList_count",murList_count);
 

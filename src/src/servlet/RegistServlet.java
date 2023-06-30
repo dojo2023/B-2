@@ -34,7 +34,11 @@ public class RegistServlet extends HttpServlet {
 		String user_pw = request.getParameter("user_pw");
 
 		// 登録処理を行う
+		// UsersDAOのインスタンス化
 		UsersDAO uDAO = new UsersDAO();
+		// 最終的にはUsersDAOのinsertメソッドにuser_nameとuser_pwを渡したい
+		// 一回Usersってmodelに入れてインスタンス化してから渡してる
+		// 上手くinsertできてたらtureが返ってくる
 		if (uDAO.insert(new Users(user_name, user_pw))) {	// 登録成功
 			System.out.println("登録成功");
 			System.out.println(user_pw);
@@ -42,7 +46,7 @@ public class RegistServlet extends HttpServlet {
 			response.sendRedirect("/BtwoB/LoginServlet");
 		}
 		else if (uDAO.insert(new Users(user_name, user_pw)) == true){												// 登録失敗
-			 request.setAttribute("showPopup", true);
+			request.setAttribute("showPopup", true);
 
 			// トップサーブレットにリダイレクトする
 			response.sendRedirect("/BtwoB/LoginServlet");

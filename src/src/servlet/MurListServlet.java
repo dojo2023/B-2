@@ -27,16 +27,22 @@ public class MurListServlet extends HttpServlet {
 			return;
 		}
 
+		// sessionスコープからuser_idとuser_nameを取り出す
 		LoginUser lu = (LoginUser)session.getAttribute("id_name");
+		// MurmursDAOのインスタンス化
 		MurmursDAO mDao = new MurmursDAO();
-		// ログインしているユーザの愚痴の件数を取得
+		// ログインしているユーザの愚痴の件数を取得、ポップアップに使用する
 		// ポップアップについてmur_list.jsp222行目で使用
-
 		System.out.println("愚痴の件数=" + mDao.murCount(lu));
+		// sessionスコープに愚痴の件数を"mur_count"と名前をつけて保存
 		session.setAttribute("mur_count", mDao.murCount(lu));
 
+		// LoginServletのdoPost()メソッドの中で0を入れたsessionスコープを取り出した
 		int x= (Integer)session.getAttribute("murList_count");
 		x++;
+		// インクリメント（1増やして）して、同じ名前にしてもう一回sessionスコープに入れた
+		// こうすることでこのdoGet()メソッドが呼ばれたとき、インクリメントされていく
+		// で、ページが何回読み込まれたか分かる
 		session.setAttribute("murList_count", x);
 
 		// 登録ページにフォワードする

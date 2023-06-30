@@ -55,6 +55,8 @@ public class TopServlet extends HttpServlet {
 
 		// 一番愚痴の数が多いタグを見つけるためのfor文
 		// orders（愚痴の数）が一番多いもののタグでtagを上書きしている
+		// アイキャッチとグラフに使用してる
+		// 初期値nullのtag用意しておいてそこに最終的に一番orders多いやつ入れたい
 		String tag = null;
 		int murNum = 0;
 		for (TagPercentage tagPList : tagPersentList) {
@@ -62,9 +64,6 @@ public class TopServlet extends HttpServlet {
 		        murNum = tagPList.getOrders();
 		        tag = tagPList.getTag();
 		    }
-//		    else if (tagPList.getOrders() == murNum) {
-//		    	tag = "その他";
-//		    }
 		    else {
 		    	tag = "その他";
 		    }
@@ -80,6 +79,7 @@ public class TopServlet extends HttpServlet {
 		// ポップアップをログインしたあとだけ表示するためにtop.jspが1回目に表示したときのみアイキャッチを表示するのに判定するためのtop_count
 		int x= (Integer)session.getAttribute("top_count");
 		x++;
+		// 一個増して同じ名前でsessionスコープいれることでこのページを何回開いたかの判定に使用してる
 		session.setAttribute("top_count", x);
 		// この下2行はちゃんとインクリメントした値がsessionスコープに入っているか確認するためのデバッグ
 		int y= (Integer)session.getAttribute("top_count");

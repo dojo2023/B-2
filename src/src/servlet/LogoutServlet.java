@@ -15,6 +15,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/LogoutServlet")
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
+	// このメソッド呼ばれたらsessionスコープを破棄する。
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// セッションスコープを破棄する
 		HttpSession session = request.getSession();
